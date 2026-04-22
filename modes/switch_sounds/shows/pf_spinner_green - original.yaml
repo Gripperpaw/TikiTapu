@@ -1,0 +1,216 @@
+#show_version=6
+
+- time: 0
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_312: '67C707'
+    l_led_314: 'B96700'
+    l_led_326: '62BE06'
+    l_led_328: '060200'
+    
+- time: +60ms
+  lights:
+    l_led_312: '6DCF08'
+    l_led_314: 'E78200'
+    l_led_326: '6DCF08'
+    l_led_328: 'E68100'
+    
+- time: +60ms
+  lights:
+    l_led_328: 'E78200'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_312: '376904'
+    l_led_314: '7A4400'
+    l_led_326: '376904'
+    
+- time: +60ms
+  lights:
+    l_led_312: '000000'
+    l_led_314: '000000'
+    l_led_326: '000000'
+    l_led_328: '040200'
+    
+- time: +60ms
+  lights:
+    l_led_328: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_312: '010000'
+    l_led_314: '050C00'
+    l_led_326: '040100'
+    
+- time: +60ms
+  lights:
+    l_led_312: 'E68100'
+    l_led_314: '6CCF08'
+    l_led_326: 'E58100'
+    l_led_328: '418203'
+    
+- time: +60ms
+  lights:
+    l_led_312: 'E78200'
+    l_led_314: '6DCF08'
+    l_led_326: 'E78200'
+    l_led_328: '6DCF08'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_312: '060300'
+    l_led_314: '000000'
+    l_led_326: '080400'
+    
+- time: +60ms
+  lights:
+    l_led_312: '000000'
+    l_led_326: '000000'
+    l_led_328: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_312: '204101'
+    l_led_314: '0A0400'
+    l_led_326: '1F4701'
+    
+- time: +60ms
+  lights:
+    l_led_312: '6DCF08'
+    l_led_314: 'E78200'
+    l_led_326: '6DCF08'
+    l_led_328: '904F00'
+    
+- time: +60ms
+  lights:
+    l_led_328: 'E78200'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_312: '000000'
+    l_led_314: '020100'
+    l_led_326: '000000'
+    l_led_328: 'AC6000'
+    
+- time: +60ms
+  lights:
+    l_led_314: '000000'
+    l_led_328: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_312: '5F3200'
+    l_led_314: '4E9904'
+    l_led_326: '4C2900'
+    l_led_328: '020500'
+    
+- time: +60ms
+  lights:
+    l_led_312: 'E78200'
+    l_led_314: '6DCF08'
+    l_led_326: 'E78200'
+    l_led_328: '6ACA08'
+    
+- time: +60ms
+  lights:
+    l_led_328: '6DCF08'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_312: '000000'
+    l_led_314: '000000'
+    l_led_326: '000000'
+    l_led_328: '0E1B01'
+    
+- time: +60ms
+  lights:
+    l_led_328: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    

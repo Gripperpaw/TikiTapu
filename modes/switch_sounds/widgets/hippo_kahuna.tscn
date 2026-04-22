@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://8h4l2y42nhkr"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_td6gi"]
+[ext_resource type="Texture2D" uid="uid://5cp673hmrlqe" path="res://modes/images/kahuna_hoppo_00.png" id="2_dd4mf"]
+[ext_resource type="Texture2D" uid="uid://b8yenvqok8tjm" path="res://modes/images/kahuna_hoppo_01.png" id="2_jcxfn"]
+[ext_resource type="Texture2D" uid="uid://bfbfc45a05y48" path="res://modes/images/kahuna_hoppo_02.png" id="3_eo3yn"]
+[ext_resource type="Texture2D" uid="uid://bsnw8qjs3jsks" path="res://modes/images/kahuna_hoppo_03.png" id="4_2qd6u"]
+[ext_resource type="Texture2D" uid="uid://3mcoiiieye61" path="res://modes/images/kahuna_hoppo_04.png" id="5_m8j0k"]
+[ext_resource type="Texture2D" uid="uid://doi0wsrh5qn2c" path="res://modes/images/kahuna_hoppo_05.png" id="6_adidj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2aw4x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jcxfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eo3yn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2qd6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m8j0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_adidj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="hippo_kahuna" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_td6gi")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("2_dd4mf")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+z_index = 3
+sprite_frames = SubResource("SpriteFrames_2aw4x")
+autoplay = "default"
+frame_progress = 0.792459
+centered = false

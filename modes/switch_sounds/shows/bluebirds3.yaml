@@ -1,0 +1,414 @@
+#show_version=6
+
+- time: 0
+  lights:
+    l_led_336: '1600D0'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_334: '040023'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_334: '1600CF'
+    
+- time: +60ms
+  lights:
+    l_led_334: '1600D0'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_336: '0F008E'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_336: '000001'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_336: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_334: '000000'
+    l_led_338: '1600D0'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_336: '040023'
+    
+- time: +60ms
+  lights:
+    l_led_338: '1600CF'
+    l_led_336: '1600CF'
+    
+- time: +60ms
+  lights:
+    l_led_338: '0C0071'
+    
+- time: +60ms
+  lights:
+    l_led_338: '000005'
+    l_led_336: '1600D0'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_338: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_334: '1600D0'
+    l_led_336: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_338: '0B0065'
+    
+- time: +60ms
+  lights:
+    l_led_338: '1400BB'
+    
+- time: +60ms
+  lights:
+    l_led_338: '1600D0'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_334: '1600CE'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_334: '000004'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_334: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    

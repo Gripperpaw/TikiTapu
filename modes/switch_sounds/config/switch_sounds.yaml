@@ -1,0 +1,301 @@
+#config_version=6
+
+#switch_sounds
+
+mode:
+  start_events: ball_started
+  stop_events: game_ended
+  priority: 475
+
+#---------------------------------------------------------------------------------------------
+
+widget_player:
+   s_pop_1_active:
+     bird1:
+      slide: base
+      expire: 500ms
+   s_pop_2_active:
+     bird2:
+      slide: base
+      expire: 500ms
+   s_pop_3_active:
+     bird3:
+      slide: base
+      expire: 500ms
+   s_pop_4_active:
+     bird4:
+      slide: base
+      expire: 500ms
+
+   s_plunger_active:
+     plunge_ball:
+       slide: base
+       expire: 2
+
+   s_target_l1_active:
+     akuaku:
+       slide: base
+       expire: 3
+
+   s_side_right_active:
+     hippo_kahuna:
+       slide: base
+       expire: 4s
+
+   s_drop_l1_active:
+     kmc05:
+       slide: base
+       expire: 1s
+   s_drop_l2_active:
+     kmc02:
+       slide: base
+       expire: 1s
+   s_drop_l3_active:
+     kmc07:
+       slide: base
+       expire: 1s
+   s_drop_l4_active:
+     kmc04:
+       slide: base
+       expire: 1s
+   s_drop_r1_active:
+     kmc01:
+       slide: base
+       expire: 1s
+   s_drop_r2_active:
+     kmc06:
+       slide: base
+       expire: 1s
+   s_drop_r3_active:
+     kmc03:
+       slide: base
+       expire: 1s
+   s_drop_r4_active:
+     kmc08:
+       slide: base
+       expire: 1s
+
+   multitarget_complete:   
+     targets_complete:
+       slide: base
+       expire: 5s
+
+#---------------------------------------------------------------------------------------------
+
+sound_player:
+  s_pop_1_active:             #switch active (switch name + active)
+    birdcall1:
+      bus: effects
+  s_pop_2_active:
+    birdcall2:
+      bus: effects
+  s_pop_3_active:
+    birdcall3:
+      bus: effects
+  s_pop_4_active:
+    birdcall4:
+      bus: effects
+  s_kicker_active:
+    sneakytiki:
+      bus: effects
+  s_sling_upright_active:
+    birdcall5:
+      bus: effects
+  s_sling_right_active:
+    splash:
+      bus: effects
+  s_sling_left_active:
+    splash:
+      bus: effects
+  s_target_l1_active:         #akuaku / ariel
+    akuakutarget:
+      bus: effects
+  s_drop_l1_active:
+    droptarget:
+      bus: effects
+  s_drop_l2_active:
+    droptarget:
+      bus: effects
+  s_drop_l3_active:
+    droptarget:
+      bus: effects
+  s_drop_l4_active:
+    droptarget:
+      bus: effects
+  s_drop_r1_active:
+    droptarget:
+      bus: effects
+  s_drop_r2_active:
+    droptarget:
+      bus: effects
+  s_drop_r3_active:
+    droptarget:
+      bus: effects
+  s_drop_r4_active:
+    droptarget:
+      bus: effects
+  s_scoop_active:
+    scoop:
+      bus: effects
+  s_spinner_mid_active:
+    spinnertiki:
+      bus: effects
+  s_spinner_right_active:
+    spinnertiki:
+      bus: effects
+  s_ramp_back_active:
+    ramprumble:
+      bus: effects
+  s_target_b_active:
+    bop3:
+      bus: effects             #you can tell it which bus to use
+      volume: .6               #you can only lower volume
+  s_target_o_active:
+    bop2:
+      bus: effects
+      volume: .6
+  s_target_p_active:
+    bop1:
+      bus: effects
+      volume: .6
+  s_side_left_active:
+    toucan:
+      bus: effects
+  s_target_cap_active:
+    captive:
+      bus: effects
+  s_side_right_active:
+    kahuna:
+      bus: effects
+  s_left_ramp_active:
+    ramplono:
+      bus: effects
+  s_findingnemo_active:
+    drain:
+      bus: effects
+  s_loop_left_active:
+    kane:
+      bus: effects
+  s_plunger_active:
+    welcome:
+      bus: effects
+  s_volsound_active:
+    volcanoswitch:
+      bus: effects
+  s_target_r3_active:
+    thunder:
+      bus: effects
+  s_target_r4_active:
+    thunder:
+      bus: effects
+  s_target_r5_active:
+    thunder:
+      bus: effects
+  s_hina_active:
+    kane:
+      bus: effects
+  s_spinner_pf_active:
+    pfswoosh:
+      bus: effects
+  s_inner_left_active:
+    hula_lane_hit:
+      bus: effects
+  s_inner_right_active:
+    hula_lane_hit:
+      bus: effects
+  s_outer_left_active:
+    hula_lane_hit:
+      bus: effects
+  s_outer_right_active:
+    hula_lane_hit:
+      bus: effects
+  s_loop_top_active:
+    kanaloa_hit:
+      bus: effects
+
+#---------------------------------------------------------------------------------------------
+
+event_player:
+  s_plunger_active: plungeblink_hit
+    
+#---------------------------------------------------------------------------------------------
+
+coil_player:
+  s_coin_left_active: c_trap_door
+  player_turn_ended:
+    c_trap_release: pulse
+
+#---------------------------------------------------------------------------------------------
+
+shots:
+  volcano:
+    switch: s_volsound, s_left_ramp, s_ramp_back
+  plungeblink:
+    switch: s_plunger
+  kaka_drops:
+    switch: s_drop_l1, s_drop_l2, s_drop_l3, s_drop_l4
+  mora_drops:
+    switch: s_drop_r1, s_drop_r2, s_drop_r3, s_drop_r4
+  multi_target:
+    switch: s_target_r3, s_target_r4, s_target_r5
+  pf_spinner_spin:
+    switch: s_spinner_pf
+
+#---------------------------------------------------------------------------------------------
+
+show_player:
+  plungeblink_hit:
+    led_004_blink:
+      show: flash_color
+      speed: 3
+      loops: 5
+      show_tokens:
+        led: l_led_004
+        color: yellow
+    led_007_blink:
+      show: flash_color
+      speed: 5
+      loops: 9
+      show_tokens:
+        led: l_led_007
+        color: yellow
+
+  volcano_hit:
+    flash_color:
+      speed: 2     
+      loops: 2
+      show_tokens:
+        led: l_led_217, l_led_218, l_led_220, l_led_221, l_led_223, l_led_224, l_led_226, l_led_227, l_led_228, l_ledbg_011, l_ledbg_012, l_ledbg_013
+        color: ff4500
+
+  kaka_drops_hit:
+    kaka_hit:
+      speed: 9
+      loops: 1
+  mora_drops_hit:
+    mora_hit:
+      speed: 9
+      loops: 1
+  multi_target_hit:
+    bluebirds1:
+      speed: 6
+      loops: 3
+    bluebirds2:
+      speed: 6
+      loops: 3
+    bluebirds3:
+      speed: 6
+      loops: 3
+    bluebirds4:
+      speed: 6
+      loops: 3  
+    bluevolcano:
+      speed: 6
+      loops: 2  
+    side_spin_blue:
+      speed: 24
+      loops: 2  
+  pf_spinner_spin_hit:
+    pf_spinner_green:
+      speed: 4
+      loops: 1

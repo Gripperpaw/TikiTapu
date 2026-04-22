@@ -1,0 +1,147 @@
+#show_version=6
+
+- time: 0
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_055: '834972'
+    l_led_058: 'A55C8F'
+    
+- time: +60ms
+  lights:
+    l_led_055: '7F476F'
+    
+- time: +60ms
+  lights:
+    l_led_055: 'CF73B4'
+    l_led_058: 'D878BC'
+    l_led_061: '150C12'
+    l_led_064: '3C2134'
+    
+- time: +60ms
+  lights:
+    l_led_055: 'CE73B3'
+    l_led_061: '180D14'
+    l_led_064: '43253A'
+    
+- time: +60ms
+  lights:
+    l_led_055: 'D577B9'
+    l_led_058: 'CB71B1'
+    l_led_061: 'C76FAD'
+    l_led_064: 'D275B7'
+    
+- time: +60ms
+  lights:
+    l_led_055: '9C5687'
+    l_led_058: '68395A'
+    l_led_061: 'E57FC6'
+    l_led_064: 'DE7BC0'
+    
+- time: +60ms
+  lights:
+    l_led_055: 'A1598C'
+    l_led_058: '693A5B'
+    l_led_061: 'E57FC7'
+    l_led_064: 'DD7ABF'
+    
+- time: +60ms
+  lights:
+    l_led_055: '000000'
+    l_led_058: '000000'
+    l_led_061: 'AF6197'
+    l_led_064: '734063'
+    
+- time: +60ms
+  lights:
+    l_led_061: '2C1926'
+    l_led_064: '010001'
+    
+- time: +60ms
+  lights:
+    l_led_061: '2B1825'
+    l_led_064: '000000'
+    
+- time: +60ms
+  lights:
+    l_led_061: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    

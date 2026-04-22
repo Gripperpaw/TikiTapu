@@ -1,0 +1,582 @@
+#show_version=6
+
+- time: 0
+  lights:
+    l_led_218: '029CFC'
+    
+- time: +60ms
+  lights:
+    l_led_226: '109C89'
+    
+- time: +60ms
+  lights:
+    l_led_220: '751CDC'
+    l_led_223: '3712FA'
+    l_led_224: '029CFC'
+    l_led_226: '1B9E37'
+    l_led_227: '129B7D'
+    
+- time: +60ms
+  lights:
+    l_led_220: '8702FC'
+    l_led_221: '8702FC'
+    l_led_223: '2F14FA'
+    l_led_227: '1B9E37'
+    l_led_228: '2E18FA'
+    
+- time: +60ms
+  lights:
+    l_led_218: '189D50'
+    l_led_228: '029CFC'
+    
+- time: +60ms
+  lights:
+    l_led_218: '1B9E37'
+    
+- time: +60ms
+  lights:
+    l_led_224: '169D59'
+    l_led_226: '8702FC'
+    
+- time: +60ms
+  lights:
+    l_led_220: '2F14FA'
+    l_led_221: '7C05FB'
+    l_led_223: '029CFC'
+    l_led_224: '1B9E37'
+    l_led_227: '8702FC'
+    
+- time: +60ms
+  lights:
+    l_led_221: '2F14FA'
+    l_led_228: '199D48'
+    
+- time: +60ms
+  lights:
+    l_led_218: '8702FC'
+    l_led_228: '1B9E37'
+    
+- time: +60ms
+  lights:
+    l_led_226: '7307FA'
+    
+- time: +60ms
+  lights:
+    l_led_223: '0D9C9F'
+    l_led_224: '8702FC'
+    l_led_226: '2F14FA'
+    l_led_227: '6C08FB'
+    
+- time: +60ms
+  lights:
+    l_led_220: '029CFC'
+    l_led_221: '088BFC'
+    l_led_223: '1B9E37'
+    l_led_227: '2F14FA'
+    
+- time: +60ms
+  lights:
+    l_led_218: '6F07FB'
+    l_led_221: '029CFC'
+    l_led_228: '8702FC'
+    
+- time: +60ms
+  lights:
+    l_led_218: '2F14FA'
+    
+- time: +60ms
+  lights:
+    l_led_224: '540EF8'
+    l_led_226: '029CFC'
+    
+- time: +60ms
+  lights:
+    l_led_220: '1B9E37'
+    l_led_221: '029CFA'
+    l_led_223: '8702FC'
+    l_led_224: '2F14FA'
+    l_led_227: '029CFC'
+    
+- time: +60ms
+  lights:
+    l_led_221: '1B9D37'
+    l_led_228: '4B0FF9'
+    
+- time: +60ms
+  lights:
+    l_led_218: '029CFC'
+    l_led_221: '1B9E37'
+    l_led_228: '2F14FA'
+    
+- time: +60ms
+  lights:
+    l_led_226: '039CF4'
+    
+- time: +60ms
+  lights:
+    l_led_223: '7B05FB'
+    l_led_224: '029CFC'
+    l_led_226: '1B9E37'
+    l_led_227: '049CED'
+    
+- time: +60ms
+  lights:
+    l_led_220: '8702FC'
+    l_led_221: '3A716F'
+    l_led_223: '2F14FA'
+    l_led_227: '1B9E37'
+    
+- time: +60ms
+  lights:
+    l_led_218: '029CFB'
+    l_led_221: '8702FC'
+    l_led_228: '029CFC'
+    
+- time: +60ms
+  lights:
+    l_led_218: '1B9E37'
+    
+- time: +60ms
+  lights:
+    l_led_224: '069CD7'
+    l_led_226: '6336BB'
+    
+- time: +60ms
+  lights:
+    l_led_220: '4211FA'
+    l_led_223: '029CFC'
+    l_led_224: '1B9E37'
+    l_led_226: '8702FC'
+    l_led_227: '6238B8'
+    
+- time: +60ms
+  lights:
+    l_led_220: '2F14FA'
+    l_led_221: '3413FA'
+    l_led_227: '8702FC'
+    l_led_228: '069CDC'
+    
+- time: +60ms
+  lights:
+    l_led_218: '8702FC'
+    l_led_221: '2F14FA'
+    l_led_228: '1B9E37'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_224: '8702FC'
+    l_led_226: '3014FA'
+    l_led_227: '8602FC'
+    
+- time: +60ms
+  lights:
+    l_led_220: '029CFC'
+    l_led_223: '1B9E37'
+    l_led_226: '2F14FA'
+    l_led_227: '3113FA'
+    
+- time: +60ms
+  lights:
+    l_led_221: '029CFC'
+    l_led_227: '2F14FA'
+    l_led_228: '8702FC'
+    
+- time: +60ms
+  lights:
+    l_led_218: '2F14FA'
+    
+- time: +60ms
+  lights:
+    l_led_224: '8303FC'
+    l_led_226: '2C1DFA'
+    
+- time: +60ms
+  lights:
+    l_led_220: '049CE6'
+    l_led_223: '524F9B'
+    l_led_224: '2F14FA'
+    l_led_226: '029CFC'
+    l_led_227: '2927FA'
+    
+- time: +60ms
+  lights:
+    l_led_220: '1B9E37'
+    l_led_221: '159C61'
+    l_led_223: '8702FC'
+    l_led_227: '029CFC'
+    l_led_228: '8602FC'
+    
+- time: +60ms
+  lights:
+    l_led_218: '2A25FA'
+    l_led_221: '1B9E37'
+    l_led_228: '2F14FA'
+    
+- time: +60ms
+  lights:
+    l_led_218: '029CFC'
+    
+- time: +60ms
+  lights:
+    l_led_226: '109C89'
+    
+- time: +60ms
+  lights:
+    l_led_220: '751CDC'
+    l_led_223: '3712FA'
+    l_led_224: '029CFC'
+    l_led_226: '1B9E37'
+    l_led_227: '129B7D'
+    
+- time: +60ms
+  lights:
+    l_led_220: '8702FC'
+    l_led_221: '8702FC'
+    l_led_223: '2F14FA'
+    l_led_227: '1B9E37'
+    l_led_228: '2E18FA'
+    
+- time: +60ms
+  lights:
+    l_led_218: '189D50'
+    l_led_228: '029CFC'
+    
+- time: +60ms
+  lights:
+    l_led_218: '1B9E37'
+    
+- time: +60ms
+  lights:
+    l_led_224: '169D59'
+    l_led_226: '8702FC'
+    
+- time: +60ms
+  lights:
+    l_led_220: '2F14FA'
+    l_led_221: '7C05FB'
+    l_led_223: '029CFC'
+    l_led_224: '1B9E37'
+    l_led_227: '8702FC'
+    
+- time: +60ms
+  lights:
+    l_led_221: '2F14FA'
+    l_led_228: '199D48'
+    
+- time: +60ms
+  lights:
+    l_led_218: '8702FC'
+    l_led_228: '1B9E37'
+    
+- time: +60ms
+  lights:
+    l_led_226: '7307FA'
+    
+- time: +60ms
+  lights:
+    l_led_223: '0D9C9F'
+    l_led_224: '8702FC'
+    l_led_226: '2F14FA'
+    l_led_227: '6C08FB'
+    
+- time: +60ms
+  lights:
+    l_led_220: '029CFC'
+    l_led_221: '088BFC'
+    l_led_223: '1B9E37'
+    l_led_227: '2F14FA'
+    
+- time: +60ms
+  lights:
+    l_led_218: '6F07FB'
+    l_led_221: '029CFC'
+    l_led_228: '8702FC'
+    
+- time: +60ms
+  lights:
+    l_led_218: '2F14FA'
+    
+- time: +60ms
+  lights:
+    l_led_224: '540EF8'
+    l_led_226: '029CFC'
+    
+- time: +60ms
+  lights:
+    l_led_220: '1B9E37'
+    l_led_221: '029CFA'
+    l_led_223: '8702FC'
+    l_led_224: '2F14FA'
+    l_led_227: '029CFC'
+    
+- time: +60ms
+  lights:
+    l_led_221: '1B9D37'
+    l_led_228: '4B0FF9'
+    
+- time: +60ms
+  lights:
+    l_led_218: '029CFC'
+    l_led_221: '1B9E37'
+    l_led_228: '2F14FA'
+    
+- time: +60ms
+  lights:
+    l_led_226: '039CF4'
+    
+- time: +60ms
+  lights:
+    l_led_223: '7B05FB'
+    l_led_224: '029CFC'
+    l_led_226: '1B9E37'
+    l_led_227: '049CED'
+    
+- time: +60ms
+  lights:
+    l_led_220: '8702FC'
+    l_led_221: '3A716F'
+    l_led_223: '2F14FA'
+    l_led_227: '1B9E37'
+    
+- time: +60ms
+  lights:
+    l_led_218: '029CFB'
+    l_led_221: '8702FC'
+    l_led_228: '029CFC'
+    
+- time: +60ms
+  lights:
+    l_led_218: '1B9E37'
+    
+- time: +60ms
+  lights:
+    l_led_224: '069CD7'
+    l_led_226: '6336BB'
+    
+- time: +60ms
+  lights:
+    l_led_220: '4211FA'
+    l_led_223: '029CFC'
+    l_led_224: '1B9E37'
+    l_led_226: '8702FC'
+    l_led_227: '6238B8'
+    
+- time: +60ms
+  lights:
+    l_led_220: '2F14FA'
+    l_led_221: '3413FA'
+    l_led_227: '8702FC'
+    l_led_228: '069CDC'
+    
+- time: +60ms
+  lights:
+    l_led_218: '8702FC'
+    l_led_221: '2F14FA'
+    l_led_228: '1B9E37'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_224: '8702FC'
+    l_led_226: '3014FA'
+    l_led_227: '8602FC'
+    
+- time: +60ms
+  lights:
+    l_led_220: '029CFC'
+    l_led_223: '1B9E37'
+    l_led_226: '2F14FA'
+    l_led_227: '3113FA'
+    
+- time: +60ms
+  lights:
+    l_led_221: '029CFC'
+    l_led_227: '2F14FA'
+    l_led_228: '8702FC'
+    
+- time: +60ms
+  lights:
+    l_led_218: '2F14FA'
+    
+- time: +60ms
+  lights:
+    l_led_224: '8303FC'
+    l_led_226: '2C1DFA'
+    
+- time: +60ms
+  lights:
+    l_led_220: '049CE6'
+    l_led_223: '524F9B'
+    l_led_224: '2F14FA'
+    l_led_226: '029CFC'
+    l_led_227: '2927FA'
+    
+- time: +60ms
+  lights:
+    l_led_220: '1B9E37'
+    l_led_221: '159C61'
+    l_led_223: '8702FC'
+    l_led_227: '029CFC'
+    l_led_228: '8602FC'
+    
+- time: +60ms
+  lights:
+    l_led_218: '2A25FA'
+    l_led_221: '1B9E37'
+    l_led_228: '2F14FA'
+    
+- time: +60ms
+  lights:
+    l_led_218: '2F14FA'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_218: '2F16FA'
+    
+- time: +60ms
+  lights:
+    l_led_218: '2E18FA'
+    
+- time: +60ms
+  lights:
+    l_led_218: '2D1BFA'
+    
+- time: +60ms
+  lights:
+    l_led_218: '2C1DFA'
+    
+- time: +60ms
+  lights:
+    l_led_218: '2B1FFA'
+    
+- time: +60ms
+  lights:
+    l_led_218: '2A23FA'
+    
+- time: +60ms
+  lights:
+    l_led_218: '2A25FA'
+    

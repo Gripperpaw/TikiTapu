@@ -1,0 +1,149 @@
+#show_version=6
+
+- time: 0
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+- time: +60ms
+  lights:
+    l_led_184: '0F080D'
+    l_led_187: '502D46'
+    
+- time: +60ms
+  lights:
+    l_led_181: '0B0609'
+    l_led_184: '7C456D'
+    l_led_187: 'BC69A4'
+    
+- time: +60ms
+  lights:
+    l_led_178: '3A2133'
+    l_led_181: '5C3350'
+    l_led_184: 'C870AE'
+    l_led_187: 'D778BC'
+    
+- time: +60ms
+  lights:
+    l_led_178: 'B06299'
+    l_led_181: 'C46DAB'
+    l_led_184: 'E17DC3'
+    l_led_187: 'DD7BC0'
+    
+- time: +60ms
+  lights:
+    l_led_181: 'C56EAB'
+    
+- time: +60ms
+  lights:
+    l_led_178: 'E17DC4'
+    l_led_181: 'DB7ABE'
+    l_led_184: 'B06299'
+    l_led_187: '6B3B5D'
+    
+- time: +60ms
+  lights:
+    l_led_178: 'E27EC4'
+    l_led_184: 'B1639A'
+    l_led_187: '6D3D5F'
+    
+- time: +60ms
+  lights:
+    l_led_178: '844972'
+    l_led_181: '633756'
+    l_led_184: '010001'
+    l_led_187: '000000'
+    
+- time: +60ms
+  lights:
+    l_led_178: '864A74'
+    l_led_181: '653858'
+    l_led_184: '020102'
+    
+- time: +60ms
+  lights:
+    l_led_178: '180D15'
+    l_led_181: '070406'
+    l_led_184: '000000'
+    
+- time: +60ms
+  lights:
+    l_led_178: '000000'
+    l_led_181: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +60ms
+    

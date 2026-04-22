@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://557aka8ltvyu"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_ah6kr"]
+[ext_resource type="Texture2D" uid="uid://djjxvxevjysyc" path="res://images/bird1.png" id="2_m034u"]
+
+[node name="bird1" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ah6kr")
+
+[node name="bird1" type="Sprite2D" parent="."]
+top_level = true
+z_index = 2
+z_as_relative = false
+position = Vector2(959, 537)
+texture = ExtResource("2_m034u")

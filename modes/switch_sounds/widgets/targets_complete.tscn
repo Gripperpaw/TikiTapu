@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://bs5m4vfify4fn"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_h4l56"]
+[ext_resource type="Texture2D" uid="uid://cm2c88s3qoyho" path="res://modes/images/base.png" id="2_sn8fs"]
+[ext_resource type="Texture2D" uid="uid://bfr031swp5suo" path="res://images/tm_increase01.png" id="3_gj2s3"]
+[ext_resource type="Texture2D" uid="uid://xwslxsnrxu8h" path="res://images/tm_increase02.png" id="4_fmju5"]
+[ext_resource type="Texture2D" uid="uid://df47vof7js80l" path="res://images/tm_increase03.png" id="5_3mgca"]
+[ext_resource type="Texture2D" uid="uid://dfokpefwdb6nb" path="res://images/tm_increase04.png" id="6_avkts"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_edw1h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gj2s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fmju5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3mgca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_avkts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3mgca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fmju5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="targets_complete" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_h4l56")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_sn8fs")
+centered = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_edw1h")
+autoplay = "default"
+frame_progress = 0.144114
+centered = false
