@@ -8,4 +8,4 @@ Tiki Tapu was created using MPF .80 dev9 and Godot 4.3. In the future I may upda
 
 I am running a CobraPin Controller and an added Sweet board. 
 
-This game code was my first atempt at this kind of thing, and then I got lots of extra help from an awesome community.
+This game code was my first attempt at this kind of thing, and then I got lots of extra help from an awesome community.
