@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=3 uid="uid://bgxonbgpedhsp"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_ns2uj"]
+[ext_resource type="Texture2D" uid="uid://cm2c88s3qoyho" path="res://modes/images/base.png" id="2_xb781"]
+[ext_resource type="FontFile" uid="uid://wnwc8yko3tau" path="res://fonts/TropicalIslandVibes-ARL6L.ttf" id="3_6ss11"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="4_qqhqa"]
+[ext_resource type="Texture2D" uid="uid://dhsuk14v04ajs" path="res://images/base_water01.png" id="5_mo4gr"]
+[ext_resource type="Texture2D" uid="uid://bkcrvkh78d2pa" path="res://images/base_water02.png" id="6_5i0vs"]
+[ext_resource type="Texture2D" uid="uid://dvxhfx73yyk37" path="res://images/base_water03.png" id="7_7a0qv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ohsx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_mo4gr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5i0vs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7a0qv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5i0vs")
+}],
+"loop": true,
+"name": &"water",
+"speed": 2.0
+}]
+
+[node name="Base" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ns2uj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(958, 542)
+texture = ExtResource("2_xb781")
+
+[node name="MPFVariable" type="Label" parent="Sprite2D"]
+offset_left = -807.0
+offset_top = 368.0
+offset_right = -223.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(0.990001, 0.980014, 0.977586, 1)
+theme_override_colors/font_shadow_color = Color(0.261579, 0.152884, 0.100029, 1)
+theme_override_fonts/font = ExtResource("3_6ss11")
+theme_override_font_sizes/font_size = 100
+text = "999,999,999,999"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_qqhqa")
+variable_type = 4
+variable_name = "score"
+comma_separate = true
+min_digits = 2
+
+[node name="MPFVariable2" type="Label" parent="Sprite2D"]
+offset_left = 252.0
+offset_top = 371.0
+offset_right = 836.0
+offset_bottom = 488.0
+theme_override_colors/font_color = Color(0.990001, 0.980014, 0.977586, 1)
+theme_override_colors/font_shadow_color = Color(0.261579, 0.152884, 0.100029, 1)
+theme_override_fonts/font = ExtResource("3_6ss11")
+theme_override_font_sizes/font_size = 100
+text = "999,999,999,999"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_qqhqa")
+variable_type = 5
+variable_name = "score"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+sprite_frames = SubResource("SpriteFrames_0ohsx")
+animation = &"water"
+autoplay = "water"
+frame_progress = 0.963058
+
+[node name="ball" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 958.0
+offset_right = 1130.0
+offset_bottom = 1028.0
+theme_override_colors/font_color = Color(0.945098, 0.917647, 0.443137, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6ss11")
+theme_override_font_sizes/font_size = 50
+text = "bALl"
+
+[node name="MPFVariable" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.158
+anchor_top = -1.0
+anchor_right = 0.158
+anchor_bottom = -1.0
+offset_left = 1047.0
+offset_top = 894.0
+offset_right = 1116.0
+offset_bottom = 964.0
+theme_override_colors/font_color = Color(0.286182, 0.82757, 0.913491, 1)
+theme_override_fonts/font = ExtResource("3_6ss11")
+theme_override_font_sizes/font_size = 60
+script = ExtResource("4_qqhqa")
+variable_name = "ball"
+min_digits = 1
+
+[node name="player" type="Label" parent="."]
+layout_mode = 0
+offset_left = 855.0
+offset_top = 965.0
+offset_right = 998.0
+offset_bottom = 1040.0
+theme_override_colors/font_color = Color(0.941176, 0.882353, 0.439216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6ss11")
+theme_override_font_sizes/font_size = 65
+text = "PLAYER"
+
+[node name="MPFVariable2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 907.0
+offset_top = 886.0
+offset_right = 989.0
+offset_bottom = 967.0
+theme_override_colors/font_color = Color(0.286275, 0.827451, 0.913725, 1)
+theme_override_fonts/font = ExtResource("3_6ss11")
+theme_override_font_sizes/font_size = 70
+script = ExtResource("4_qqhqa")
+variable_name = "number"
+min_digits = 1

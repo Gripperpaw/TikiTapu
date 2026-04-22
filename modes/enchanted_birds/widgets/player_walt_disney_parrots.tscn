@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://kvucl52fdt25"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_ufxrs"]
+[ext_resource type="Texture2D" uid="uid://b1gq1lq1gtrtg" path="res://modes/images/birds_green_dot.png" id="2_a87nd"]
+[ext_resource type="Theme" uid="uid://ckj25p27k6t5u" path="res://fonts/200pixlels.tres" id="2_wwmgg"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_0pilt"]
+[ext_resource type="FontFile" uid="uid://wnwc8yko3tau" path="res://fonts/TropicalIslandVibes-ARL6L.ttf" id="4_ai6y4"]
+
+[node name="bird_pops_remaining" type="Control"]
+z_index = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ufxrs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_a87nd")
+centered = false
+
+[node name="MPFVariable" type="Label" parent="."]
+z_index = 3
+layout_mode = 0
+offset_left = 807.0
+offset_top = 80.0
+offset_right = 941.0
+offset_bottom = 308.0
+theme = ExtResource("2_wwmgg")
+theme_override_colors/font_color = Color(1, 0.388235, 0.0588235, 1)
+theme_override_colors/font_outline_color = Color(0.169145, 0.172302, 0.377736, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 200
+text = "15"
+script = ExtResource("3_0pilt")
+variable_name = "walt_disney_parrots"
+update_event = "finished_bird_pops_complete,s_findingnemo_active"
+
+[node name="of 15" type="Label" parent="."]
+layout_mode = 0
+offset_left = 956.0
+offset_top = 136.0
+offset_right = 1084.0
+offset_bottom = 206.0
+theme_override_colors/font_color = Color(0.985241, 1, 0.536679, 1)
+theme_override_colors/font_outline_color = Color(0.326178, 0.234244, 0.0597658, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_ai6y4")
+theme_override_font_sizes/font_size = 60
+text = "of 15"
+
+[node name="hit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 977.0
+offset_top = 186.0
+offset_right = 1105.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(0.985241, 1, 0.536679, 1)
+theme_override_colors/font_outline_color = Color(0.326178, 0.234244, 0.0597658, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_ai6y4")
+theme_override_font_sizes/font_size = 60
+text = "HIT
+"

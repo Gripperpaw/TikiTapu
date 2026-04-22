@@ -1,0 +1,234 @@
+#show_version=6
+- time: 0
+  lights:
+    l_ledbg_019: '000301'
+    l_ledbg_020: '12DB5B'
+    l_ledbg_021: '12DB5B'
+    l_ledbg_046: '12DB5B'
+    l_ledbg_047: '12DB5B'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: '22DB59'
+    l_ledbg_021: '22DB59'
+    l_ledbg_046: '22DB59'
+    l_ledbg_047: '22DB59'
+    
+- time: '+1'
+  lights:
+    l_ledbg_019: '000201'
+    l_ledbg_020: '32DB57'
+    l_ledbg_021: '32DB57'
+    l_ledbg_046: '32DB57'
+    l_ledbg_047: '32DB57'
+    
+- time: '+1'
+  lights:
+    l_ledbg_019: '000101'
+    l_ledbg_020: '42DB55'
+    l_ledbg_021: '42DB55'
+    l_ledbg_046: '42DB55'
+    l_ledbg_047: '42DB55'
+    
+- time: '+1'
+  lights:
+    l_ledbg_019: '000100'
+    l_ledbg_020: '51DB53'
+    l_ledbg_021: '51DB53'
+    l_ledbg_046: '51DB53'
+    l_ledbg_047: '51DB53'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: '61DB51'
+    l_ledbg_021: '61DB51'
+    l_ledbg_046: '61DB51'
+    l_ledbg_047: '61DB51'
+    
+- time: '+1'
+  lights:
+    l_ledbg_019: '000000'
+    l_ledbg_020: '71DB4F'
+    l_ledbg_021: '71DB4F'
+    l_ledbg_046: '71DB4F'
+    l_ledbg_047: '71DB4F'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: '81DB4E'
+    l_ledbg_021: '81DB4E'
+    l_ledbg_046: '81DB4E'
+    l_ledbg_047: '81DB4E'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: '90DA4C'
+    l_ledbg_021: '90DA4C'
+    l_ledbg_046: '90DA4C'
+    l_ledbg_047: '90DA4C'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: 'A0DA4A'
+    l_ledbg_021: 'A0DA4A'
+    l_ledbg_046: 'A0DA4A'
+    l_ledbg_047: 'A0DA4A'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: 'B0DA48'
+    l_ledbg_021: 'B0DA48'
+    l_ledbg_046: 'B0DA48'
+    l_ledbg_047: 'B0DA48'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: 'C0DA46'
+    l_ledbg_021: 'C0DA46'
+    l_ledbg_046: 'C0DA46'
+    l_ledbg_047: 'C0DA46'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: 'CFDA44'
+    l_ledbg_021: 'CFDA44'
+    l_ledbg_046: 'CFDA44'
+    l_ledbg_047: 'CFDA44'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: 'DFDA42'
+    l_ledbg_021: 'DFDA42'
+    l_ledbg_046: 'DFDA42'
+    l_ledbg_047: 'DFDA42'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: 'EFDA40'
+    l_ledbg_021: 'EFDA40'
+    l_ledbg_046: 'EFDA40'
+    l_ledbg_047: 'EFDA40'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: 'FFDA3F'
+    l_ledbg_021: 'FFDA3F'
+    l_ledbg_046: 'FFDA3F'
+    l_ledbg_047: 'FFDA3F'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: 'EFDA40'
+    l_ledbg_021: 'EFDA40'
+    l_ledbg_046: 'EFDA40'
+    l_ledbg_047: 'EFDA40'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: 'DFDA42'
+    l_ledbg_021: 'DFDA42'
+    l_ledbg_046: 'DFDA42'
+    l_ledbg_047: 'DFDA42'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: 'CFDA44'
+    l_ledbg_021: 'CFDA44'
+    l_ledbg_046: 'CFDA44'
+    l_ledbg_047: 'CFDA44'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: 'C0DA46'
+    l_ledbg_021: 'C0DA46'
+    l_ledbg_046: 'C0DA46'
+    l_ledbg_047: 'C0DA46'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: 'B0DA48'
+    l_ledbg_021: 'B0DA48'
+    l_ledbg_046: 'B0DA48'
+    l_ledbg_047: 'B0DA48'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: 'A0DA4A'
+    l_ledbg_021: 'A0DA4A'
+    l_ledbg_046: 'A0DA4A'
+    l_ledbg_047: 'A0DA4A'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: '90DA4C'
+    l_ledbg_021: '90DA4C'
+    l_ledbg_046: '90DA4C'
+    l_ledbg_047: '90DA4C'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: '81DB4E'
+    l_ledbg_021: '81DB4E'
+    l_ledbg_046: '81DB4E'
+    l_ledbg_047: '81DB4E'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: '71DB4F'
+    l_ledbg_021: '71DB4F'
+    l_ledbg_046: '71DB4F'
+    l_ledbg_047: '71DB4F'
+    
+- time: '+1'
+  lights:
+    l_ledbg_019: '000100'
+    l_ledbg_020: '61DB51'
+    l_ledbg_021: '61DB51'
+    l_ledbg_046: '61DB51'
+    l_ledbg_047: '61DB51'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: '51DB53'
+    l_ledbg_021: '51DB53'
+    l_ledbg_046: '51DB53'
+    l_ledbg_047: '51DB53'
+    
+- time: '+1'
+  lights:
+    l_ledbg_019: '000101'
+    l_ledbg_020: '42DB55'
+    l_ledbg_021: '42DB55'
+    l_ledbg_046: '42DB55'
+    l_ledbg_047: '42DB55'
+    
+- time: '+1'
+  lights:
+    l_ledbg_019: '000201'
+    l_ledbg_020: '32DB57'
+    l_ledbg_021: '32DB57'
+    l_ledbg_046: '32DB57'
+    l_ledbg_047: '32DB57'
+    
+- time: '+1'
+  lights:
+    l_ledbg_019: '000301'
+    l_ledbg_020: '22DB59'
+    l_ledbg_021: '22DB59'
+    l_ledbg_046: '22DB59'
+    l_ledbg_047: '22DB59'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: '12DB5B'
+    l_ledbg_021: '12DB5B'
+    l_ledbg_046: '12DB5B'
+    l_ledbg_047: '12DB5B'
+    
+- time: '+1'
+  lights:
+    l_ledbg_020: '03DC5D'
+    l_ledbg_021: '03DC5D'
+    l_ledbg_046: '03DC5D'
+    l_ledbg_047: '03DC5D'
+    

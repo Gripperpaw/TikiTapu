@@ -1,0 +1,864 @@
+#show_version=6
+
+- time: 0
+  lights:
+    l_ledside_055: '73F33F'
+    l_ledside_056: '6DE73C'
+    
+- time: +60ms
+  lights:
+    l_ledside_053: '6FEC45'
+    l_ledside_054: '69DF41'
+    l_ledside_055: '5FCB3B'
+    l_ledside_056: '55B635'
+    
+- time: +60ms
+  lights:
+    l_ledside_051: '68DF49'
+    l_ledside_052: '63D445'
+    l_ledside_053: '5BC340'
+    l_ledside_054: '51AF39'
+    l_ledside_055: '469631'
+    l_ledside_056: '3B7E29'
+    
+- time: +60ms
+  lights:
+    l_ledside_048: '69E352'
+    l_ledside_049: '64D84E'
+    l_ledside_050: '5CC647'
+    l_ledside_051: '53B240'
+    l_ledside_052: '4CA33B'
+    l_ledside_053: '428E33'
+    l_ledside_054: '37772B'
+    l_ledside_055: '2B5D21'
+    l_ledside_056: '214719'
+    
+- time: +60ms
+  lights:
+    l_ledside_046: '65DC57'
+    l_ledside_047: '5FCE51'
+    l_ledside_048: '57BD4A'
+    l_ledside_049: '4FAB43'
+    l_ledside_050: '44933A'
+    l_ledside_051: '397D31'
+    l_ledside_052: '326C2B'
+    l_ledside_053: '285722'
+    l_ledside_054: '1E4119'
+    l_ledside_055: '142B11'
+    l_ledside_056: '0B190A'
+    
+- time: +60ms
+  lights:
+    l_ledside_044: '5FD15B'
+    l_ledside_045: '59C455'
+    l_ledside_046: '51B34E'
+    l_ledside_047: '489F45'
+    l_ledside_048: '3F8B3C'
+    l_ledside_049: '357633'
+    l_ledside_050: '2A5E29'
+    l_ledside_051: '20471F'
+    l_ledside_052: '193718'
+    l_ledside_053: '112611'
+    l_ledside_054: '091509'
+    l_ledside_055: '030603'
+    l_ledside_056: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_042: '5BCB60'
+    l_ledside_043: '54BC59'
+    l_ledside_044: '4CA950'
+    l_ledside_045: '449747'
+    l_ledside_046: '3B833E'
+    l_ledside_047: '316D34'
+    l_ledside_048: '275729'
+    l_ledside_049: '1E4420'
+    l_ledside_050: '142E16'
+    l_ledside_051: '0D1C0D'
+    l_ledside_052: '071008'
+    l_ledside_053: '020502'
+    l_ledside_054: '000000'
+    l_ledside_055: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_039: '5DD16B'
+    l_ledside_040: '58C565'
+    l_ledside_041: '51B55D'
+    l_ledside_042: '48A153'
+    l_ledside_043: '3F8D48'
+    l_ledside_044: '35763D'
+    l_ledside_045: '2C6232'
+    l_ledside_046: '234F29'
+    l_ledside_047: '1A3B1E'
+    l_ledside_048: '122814'
+    l_ledside_049: '0B180C'
+    l_ledside_050: '040905'
+    l_ledside_051: '000000'
+    l_ledside_052: '000000'
+    l_ledside_053: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_037: '5ACC72'
+    l_ledside_038: '55BF6B'
+    l_ledside_039: '4DAF62'
+    l_ledside_040: '459C57'
+    l_ledside_041: '3B864B'
+    l_ledside_042: '316F3E'
+    l_ledside_043: '285A32'
+    l_ledside_044: '1E4426'
+    l_ledside_045: '16321C'
+    l_ledside_046: '0F2213'
+    l_ledside_047: '08130A'
+    l_ledside_048: '020603'
+    l_ledside_049: '000000'
+    l_ledside_050: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_036: '52BC71'
+    l_ledside_037: '4BAB67'
+    l_ledside_038: '42975B'
+    l_ledside_039: '39814E'
+    l_ledside_040: '2F6B40'
+    l_ledside_041: '255533'
+    l_ledside_042: '1C3F26'
+    l_ledside_043: '132C1B'
+    l_ledside_044: '0B1A10'
+    l_ledside_045: '050D08'
+    l_ledside_046: '000000'
+    l_ledside_047: '000000'
+    l_ledside_048: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_034: '4FB978'
+    l_ledside_035: '48A96E'
+    l_ledside_036: '409460'
+    l_ledside_037: '367E52'
+    l_ledside_038: '2C6743'
+    l_ledside_039: '235134'
+    l_ledside_040: '1A3C27'
+    l_ledside_041: '11281A'
+    l_ledside_042: '0A160E'
+    l_ledside_043: '040906'
+    l_ledside_044: '000000'
+    l_ledside_045: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_032: '4DB680'
+    l_ledside_033: '46A675'
+    l_ledside_034: '3F9467'
+    l_ledside_035: '367F59'
+    l_ledside_036: '2B6647'
+    l_ledside_037: '214F37'
+    l_ledside_038: '183827'
+    l_ledside_039: '10251A'
+    l_ledside_040: '09150F'
+    l_ledside_041: '030705'
+    l_ledside_042: '000000'
+    l_ledside_043: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_030: '4CB588'
+    l_ledside_031: '46A77E'
+    l_ledside_032: '3D936E'
+    l_ledside_033: '357E5F'
+    l_ledside_034: '2C684F'
+    l_ledside_035: '22523D'
+    l_ledside_036: '183A2C'
+    l_ledside_037: '10261D'
+    l_ledside_038: '09140F'
+    l_ledside_039: '030705'
+    l_ledside_040: '000000'
+    l_ledside_041: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_028: '49B08E'
+    l_ledside_029: '44A484'
+    l_ledside_030: '3D9376'
+    l_ledside_031: '358067'
+    l_ledside_032: '2B6753'
+    l_ledside_033: '225242'
+    l_ledside_034: '193C30'
+    l_ledside_035: '102820'
+    l_ledside_036: '091511'
+    l_ledside_037: '030706'
+    l_ledside_038: '000000'
+    l_ledside_039: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_026: '46AA94'
+    l_ledside_027: '419F8B'
+    l_ledside_028: '3A8F7C'
+    l_ledside_029: '337E6D'
+    l_ledside_030: '2B6A5C'
+    l_ledside_031: '225449'
+    l_ledside_032: '193C34'
+    l_ledside_033: '102823'
+    l_ledside_034: '091714'
+    l_ledside_035: '030807'
+    l_ledside_036: '000000'
+    l_ledside_037: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_024: '41A499'
+    l_ledside_025: '3D988E'
+    l_ledside_026: '378980'
+    l_ledside_027: '307A71'
+    l_ledside_028: '29675F'
+    l_ledside_029: '21534D'
+    l_ledside_030: '193E3B'
+    l_ledside_031: '112B28'
+    l_ledside_032: '091716'
+    l_ledside_033: '040909'
+    l_ledside_034: '000000'
+    l_ledside_035: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_022: '3E9E9E'
+    l_ledside_023: '3A9393'
+    l_ledside_024: '348484'
+    l_ledside_025: '2D7474'
+    l_ledside_026: '266262'
+    l_ledside_027: '205151'
+    l_ledside_028: '183D3D'
+    l_ledside_029: '112B2C'
+    l_ledside_030: '0A1A1A'
+    l_ledside_031: '050C0C'
+    l_ledside_032: '000000'
+    l_ledside_033: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_020: '3B98A3'
+    l_ledside_021: '368C96'
+    l_ledside_022: '307E86'
+    l_ledside_023: '2B6E76'
+    l_ledside_024: '245D64'
+    l_ledside_025: '1D4B50'
+    l_ledside_026: '16393D'
+    l_ledside_027: '102A2D'
+    l_ledside_028: '0A191B'
+    l_ledside_029: '050C0D'
+    l_ledside_030: '000000'
+    l_ledside_031: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_017: '3A9AAF'
+    l_ledside_018: '3791A5'
+    l_ledside_019: '33879A'
+    l_ledside_020: '2E7A8B'
+    l_ledside_021: '286A79'
+    l_ledside_022: '225966'
+    l_ledside_023: '1C4953'
+    l_ledside_024: '153840'
+    l_ledside_025: '0F272D'
+    l_ledside_026: '09181C'
+    l_ledside_027: '050D0F'
+    l_ledside_028: '000000'
+    l_ledside_029: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_015: '3795B6'
+    l_ledside_016: '348CAB'
+    l_ledside_017: '2F7E9B'
+    l_ledside_018: '2A718B'
+    l_ledside_019: '25647B'
+    l_ledside_020: '1F5568'
+    l_ledside_021: '194453'
+    l_ledside_022: '13333F'
+    l_ledside_023: '0E252D'
+    l_ledside_024: '08161C'
+    l_ledside_025: '040B0D'
+    l_ledside_026: '000000'
+    l_ledside_027: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_013: '328CB7'
+    l_ledside_014: '2F83AC'
+    l_ledside_015: '2B7A9F'
+    l_ledside_016: '276C8E'
+    l_ledside_017: '215C78'
+    l_ledside_018: '1B4D64'
+    l_ledside_019: '163F52'
+    l_ledside_020: '11303F'
+    l_ledside_021: '0C212B'
+    l_ledside_022: '07141A'
+    l_ledside_023: '03090D'
+    l_ledside_024: '000000'
+    l_ledside_025: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_010: '318CC3'
+    l_ledside_011: '2E85BA'
+    l_ledside_012: '2B7BAB'
+    l_ledside_013: '276F9B'
+    l_ledside_014: '23638B'
+    l_ledside_015: '1F587C'
+    l_ledside_016: '194865'
+    l_ledside_017: '13374E'
+    l_ledside_018: '0E293A'
+    l_ledside_019: '0A1E2A'
+    l_ledside_020: '061219'
+    l_ledside_021: '03080B'
+    l_ledside_022: '000000'
+    l_ledside_023: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_008: '2D84C6'
+    l_ledside_009: '2A7CBA'
+    l_ledside_010: '2774AE'
+    l_ledside_011: '23699E'
+    l_ledside_012: '1F5B89'
+    l_ledside_013: '1A4E74'
+    l_ledside_014: '164162'
+    l_ledside_015: '123551'
+    l_ledside_016: '0D273A'
+    l_ledside_017: '081925'
+    l_ledside_018: '050E15'
+    l_ledside_019: '020609'
+    l_ledside_020: '000000'
+    l_ledside_021: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_006: '297ECA'
+    l_ledside_007: '2776BD'
+    l_ledside_008: '236AAA'
+    l_ledside_009: '1F5F97'
+    l_ledside_010: '1C5487'
+    l_ledside_011: '184874'
+    l_ledside_012: '133A5C'
+    l_ledside_013: '0F2D48'
+    l_ledside_014: '0B2135'
+    l_ledside_015: '081826'
+    l_ledside_016: '040C14'
+    l_ledside_017: '010305'
+    l_ledside_018: '000000'
+    l_ledside_019: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_004: '2679CF'
+    l_ledside_005: '2470C0'
+    l_ledside_006: '2065AE'
+    l_ledside_007: '1D5A9A'
+    l_ledside_008: '184D83'
+    l_ledside_009: '14406D'
+    l_ledside_010: '11355B'
+    l_ledside_011: '0D2947'
+    l_ledside_012: '091D31'
+    l_ledside_013: '06121E'
+    l_ledside_014: '030911'
+    l_ledside_015: '010306'
+    l_ledside_016: '000000'
+    l_ledside_017: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_002: '2272D3'
+    l_ledside_003: '206AC4'
+    l_ledside_004: '1D60B1'
+    l_ledside_005: '19549C'
+    l_ledside_006: '154783'
+    l_ledside_007: '113B6C'
+    l_ledside_008: '0E2E54'
+    l_ledside_009: '0A223E'
+    l_ledside_010: '07192D'
+    l_ledside_011: '05101D'
+    l_ledside_012: '02070C'
+    l_ledside_013: '000000'
+    l_ledside_014: '000000'
+    l_ledside_015: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_002: '195AB1'
+    l_ledside_003: '164F9B'
+    l_ledside_004: '134385'
+    l_ledside_005: '0F366B'
+    l_ledside_006: '0C2952'
+    l_ledside_007: '091E3C'
+    l_ledside_008: '051326'
+    l_ledside_009: '030A15'
+    l_ledside_010: '010509'
+    l_ledside_011: '000000'
+    l_ledside_012: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_002: '113D82'
+    l_ledside_003: '0E326A'
+    l_ledside_004: '0A2752'
+    l_ledside_005: '071B39'
+    l_ledside_006: '041023'
+    l_ledside_007: '020812'
+    l_ledside_008: '000000'
+    l_ledside_009: '000000'
+    l_ledside_010: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_002: '09224E'
+    l_ledside_003: '061837'
+    l_ledside_004: '040F22'
+    l_ledside_005: '020710'
+    l_ledside_006: '000000'
+    l_ledside_007: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_002: '030C1E'
+    l_ledside_003: '01060E'
+    l_ledside_004: '000000'
+    l_ledside_005: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_002: '000000'
+    l_ledside_003: '000000'
+    
+- time: +60ms
+  lights:
+    l_ledside_002: 'ED06E4'
+    l_ledside_003: 'FB07F1'
+    
+- time: +60ms
+  lights:
+    l_ledside_002: 'BF0AB3'
+    l_ledside_003: 'D50CC8'
+    l_ledside_004: 'E80DD9'
+    l_ledside_005: 'F90EE9'
+    
+- time: +60ms
+  lights:
+    l_ledside_002: '860C7A'
+    l_ledside_003: 'A00E92'
+    l_ledside_004: 'B810A8'
+    l_ledside_005: 'D112BF'
+    l_ledside_006: 'E714D3'
+    l_ledside_007: 'F715E2'
+    
+- time: +60ms
+  lights:
+    l_ledside_002: '4B0942'
+    l_ledside_003: '640B59'
+    l_ledside_004: '7F0E70'
+    l_ledside_005: '9B1289'
+    l_ledside_006: 'B615A1'
+    l_ledside_007: 'CD17B6'
+    l_ledside_008: 'E31AC9'
+    l_ledside_009: 'F41CD8'
+    
+- time: +60ms
+  lights:
+    l_ledside_002: '1A0416'
+    l_ledside_003: '2E0728'
+    l_ledside_004: '450A3C'
+    l_ledside_005: '600E53'
+    l_ledside_006: '7C126B'
+    l_ledside_007: '961681'
+    l_ledside_008: 'B21A9A'
+    l_ledside_009: 'C91DAD'
+    l_ledside_010: 'DB20BD'
+    l_ledside_011: 'EC22CC'
+    l_ledside_012: 'FB24D9'
+    
+- time: +60ms
+  lights:
+    l_ledside_002: '000000'
+    l_ledside_003: '070106'
+    l_ledside_004: '170413'
+    l_ledside_005: '2C0825'
+    l_ledside_006: '450C3A'
+    l_ledside_007: '5D104F'
+    l_ledside_008: '7A1566'
+    l_ledside_009: '941A7C'
+    l_ledside_010: 'A91D8E'
+    l_ledside_011: 'BF21A0'
+    l_ledside_012: 'D725B4'
+    l_ledside_013: 'EA28C4'
+    l_ledside_014: 'F82BD0'
+    
+- time: +60ms
+  lights:
+    l_ledside_003: '000000'
+    l_ledside_004: '000000'
+    l_ledside_005: '000000'
+    l_ledside_006: '150411'
+    l_ledside_007: '280821'
+    l_ledside_008: '400D34'
+    l_ledside_009: '591249'
+    l_ledside_010: '6E165A'
+    l_ledside_011: '861B6D'
+    l_ledside_012: 'A22184'
+    l_ledside_013: 'BB2699'
+    l_ledside_014: 'CF2AA9'
+    l_ledside_015: 'E02EB7'
+    l_ledside_016: 'F331C6'
+    
+- time: +60ms
+  lights:
+    l_ledside_006: '000000'
+    l_ledside_007: '000000'
+    l_ledside_008: '12040E'
+    l_ledside_009: '24081C'
+    l_ledside_010: '360C2B'
+    l_ledside_011: '4B113B'
+    l_ledside_012: '671851'
+    l_ledside_013: '811E66'
+    l_ledside_014: '992379'
+    l_ledside_015: 'AD2888'
+    l_ledside_016: 'C72E9D'
+    l_ledside_017: 'E034B1'
+    l_ledside_018: 'F138BE'
+    l_ledside_019: 'FD3BC7'
+    
+- time: +60ms
+  lights:
+    l_ledside_008: '000000'
+    l_ledside_009: '000000'
+    l_ledside_010: '0B0308'
+    l_ledside_011: '1A0714'
+    l_ledside_012: '300D25'
+    l_ledside_013: '471336'
+    l_ledside_014: '5D1848'
+    l_ledside_015: '731E58'
+    l_ledside_016: '8F266D'
+    l_ledside_017: 'AD2D84'
+    l_ledside_018: 'C53497'
+    l_ledside_019: 'D939A6'
+    l_ledside_020: 'EC3EB4'
+    l_ledside_021: 'FB42C0'
+    
+- time: +60ms
+  lights:
+    l_ledside_010: '000000'
+    l_ledside_011: '000000'
+    l_ledside_012: '070205'
+    l_ledside_013: '170711'
+    l_ledside_014: '280C1E'
+    l_ledside_015: '3A112B'
+    l_ledside_016: '54183E'
+    l_ledside_017: '732155'
+    l_ledside_018: '8D2968'
+    l_ledside_019: 'A4307A'
+    l_ledside_020: 'BD378C'
+    l_ledside_021: 'D53E9E'
+    l_ledside_022: 'EA44AD'
+    l_ledside_023: 'F948B9'
+    
+- time: +60ms
+  lights:
+    l_ledside_012: '000000'
+    l_ledside_013: '000000'
+    l_ledside_014: '000000'
+    l_ledside_015: '0F050B'
+    l_ledside_016: '230B19'
+    l_ledside_017: '3C132B'
+    l_ledside_018: '541B3C'
+    l_ledside_019: '6C234D'
+    l_ledside_020: '862B60'
+    l_ledside_021: 'A23474'
+    l_ledside_022: 'BD3D88'
+    l_ledside_023: 'D34497'
+    l_ledside_024: 'E84BA6'
+    l_ledside_025: 'F950B3'
+    
+- time: +60ms
+  lights:
+    l_ledside_015: '000000'
+    l_ledside_016: '000000'
+    l_ledside_017: '0F050A'
+    l_ledside_018: '210C17'
+    l_ledside_019: '341224'
+    l_ledside_020: '4B1A34'
+    l_ledside_021: '672447'
+    l_ledside_022: '832E5A'
+    l_ledside_023: '9D376C'
+    l_ledside_024: 'B8407F'
+    l_ledside_025: 'D14990'
+    l_ledside_026: 'E7519F'
+    l_ledside_027: 'F756AA'
+    
+- time: +60ms
+  lights:
+    l_ledside_017: '000000'
+    l_ledside_018: '000000'
+    l_ledside_019: '0A0407'
+    l_ledside_020: '1A0A11'
+    l_ledside_021: '301220'
+    l_ledside_022: '491C31'
+    l_ledside_023: '622541'
+    l_ledside_024: '7F3055'
+    l_ledside_025: '9B3B67'
+    l_ledside_026: 'B64579'
+    l_ledside_027: 'CD4E89'
+    l_ledside_028: 'E55799'
+    l_ledside_029: 'F75EA5'
+    
+- time: +60ms
+  lights:
+    l_ledside_019: '000000'
+    l_ledside_020: '000000'
+    l_ledside_021: '070304'
+    l_ledside_022: '180A0F'
+    l_ledside_023: '2C121C'
+    l_ledside_024: '451C2C'
+    l_ledside_025: '60273E'
+    l_ledside_026: '7C3350'
+    l_ledside_027: '963D60'
+    l_ledside_028: 'B44974'
+    l_ledside_029: 'CD5484'
+    l_ledside_030: 'E55D93'
+    l_ledside_031: 'F8659F'
+    
+- time: +60ms
+  lights:
+    l_ledside_021: '000000'
+    l_ledside_022: '000000'
+    l_ledside_023: '000000'
+    l_ledside_024: '15090D'
+    l_ledside_025: '2A121A'
+    l_ledside_026: '431D29'
+    l_ledside_027: '5B2838'
+    l_ledside_028: '7A364C'
+    l_ledside_029: '96425D'
+    l_ledside_030: 'B44F70'
+    l_ledside_031: 'CF5B80'
+    l_ledside_032: 'EA6791'
+    l_ledside_033: 'FB6E9C'
+    
+- time: +60ms
+  lights:
+    l_ledside_024: '000000'
+    l_ledside_025: '000000'
+    l_ledside_026: '150A0C'
+    l_ledside_027: '281318'
+    l_ledside_028: '431F28'
+    l_ledside_029: '5D2B38'
+    l_ledside_030: '7C3A49'
+    l_ledside_031: '9B485C'
+    l_ledside_032: 'BD5870'
+    l_ledside_033: 'D7647F'
+    l_ledside_034: 'ED6F8C'
+    l_ledside_035: 'FD7696'
+    
+- time: +60ms
+  lights:
+    l_ledside_026: '000000'
+    l_ledside_027: '000000'
+    l_ledside_028: '13090B'
+    l_ledside_029: '281417'
+    l_ledside_030: '432126'
+    l_ledside_031: '603037'
+    l_ledside_032: '83414A'
+    l_ledside_033: 'A2515C'
+    l_ledside_034: 'BF5F6D'
+    l_ledside_035: 'D96C7B'
+    l_ledside_036: 'F07788'
+    
+- time: +60ms
+  lights:
+    l_ledside_028: '000000'
+    l_ledside_029: '000000'
+    l_ledside_030: '130A0B'
+    l_ledside_031: '2A1617'
+    l_ledside_032: '492628'
+    l_ledside_033: '673638'
+    l_ledside_034: '864649'
+    l_ledside_035: 'A45659'
+    l_ledside_036: 'C3666A'
+    l_ledside_037: 'DC7478'
+    l_ledside_038: 'F17F83'
+    
+- time: +60ms
+  lights:
+    l_ledside_030: '000000'
+    l_ledside_031: '000000'
+    l_ledside_032: '180D0D'
+    l_ledside_033: '301B19'
+    l_ledside_034: '4B2A27'
+    l_ledside_035: '693A37'
+    l_ledside_036: '8A4D48'
+    l_ledside_037: 'A95E58'
+    l_ledside_038: 'C56E67'
+    l_ledside_039: 'DC7A73'
+    l_ledside_040: 'F0867D'
+    
+- time: +60ms
+  lights:
+    l_ledside_032: '000000'
+    l_ledside_033: '070403'
+    l_ledside_034: '1A0F0D'
+    l_ledside_035: '321D19'
+    l_ledside_036: '502F27'
+    l_ledside_037: '6E4036'
+    l_ledside_038: '8D5246'
+    l_ledside_039: 'A96353'
+    l_ledside_040: 'C37260'
+    l_ledside_041: 'DB806C'
+    l_ledside_042: 'EF8C76'
+    l_ledside_043: 'FC937D'
+    
+- time: +60ms
+  lights:
+    l_ledside_033: '000000'
+    l_ledside_034: '000000'
+    l_ledside_035: '0A0605'
+    l_ledside_036: '1F130F'
+    l_ledside_037: '38221A'
+    l_ledside_038: '543427'
+    l_ledside_039: '704535'
+    l_ledside_040: '8D5742'
+    l_ledside_041: 'A96850'
+    l_ledside_042: 'C3785C'
+    l_ledside_043: 'D98666'
+    l_ledside_044: 'ED9270'
+    l_ledside_045: 'FA9A76'
+    
+- time: +60ms
+  lights:
+    l_ledside_035: '000000'
+    l_ledside_036: '000000'
+    l_ledside_037: '0C0805'
+    l_ledside_038: '21150F'
+    l_ledside_039: '382419'
+    l_ledside_040: '523525'
+    l_ledside_041: '6E4731'
+    l_ledside_042: '8A593E'
+    l_ledside_043: 'A46949'
+    l_ledside_044: 'BF7B55'
+    l_ledside_045: 'D3885E'
+    l_ledside_046: 'E59366'
+    l_ledside_047: 'F59E6E'
+    
+- time: +60ms
+  lights:
+    l_ledside_037: '000000'
+    l_ledside_038: '000000'
+    l_ledside_039: '0C0805'
+    l_ledside_040: '1F150D'
+    l_ledside_041: '362417'
+    l_ledside_042: '503622'
+    l_ledside_043: '69472C'
+    l_ledside_044: '865A39'
+    l_ledside_045: '9D6A42'
+    l_ledside_046: 'B4794C'
+    l_ledside_047: 'CB8956'
+    l_ledside_048: 'E0975F'
+    l_ledside_049: 'F0A266'
+    
+- time: +60ms
+  lights:
+    l_ledside_039: '000000'
+    l_ledside_040: '000000'
+    l_ledside_041: '0B0804'
+    l_ledside_042: '1D140B'
+    l_ledside_043: '322314'
+    l_ledside_044: '4B351E'
+    l_ledside_045: '624527'
+    l_ledside_046: '7A5630'
+    l_ledside_047: '94683B'
+    l_ledside_048: 'AD7944'
+    l_ledside_049: 'C3894D'
+    l_ledside_050: 'DB9A57'
+    l_ledside_051: 'EDA65E'
+    l_ledside_052: 'F8AE62'
+    
+- time: +60ms
+  lights:
+    l_ledside_041: '000000'
+    l_ledside_042: '000000'
+    l_ledside_043: '080603'
+    l_ledside_044: '1A130A'
+    l_ledside_045: '2C2010'
+    l_ledside_046: '402F18'
+    l_ledside_047: '594121'
+    l_ledside_048: '73542B'
+    l_ledside_049: '8A6533'
+    l_ledside_050: 'A67A3E'
+    l_ledside_051: 'BF8C47'
+    l_ledside_052: 'CF984D'
+    l_ledside_053: 'E2A654'
+    l_ledside_054: 'F3B25B'
+    
+- time: +60ms
+  lights:
+    l_ledside_043: '000000'
+    l_ledside_044: '000000'
+    l_ledside_045: '060502'
+    l_ledside_046: '130E07'
+    l_ledside_047: '261D0D'
+    l_ledside_048: '3C2E15'
+    l_ledside_049: '523E1D'
+    l_ledside_050: '6E5426'
+    l_ledside_051: '88672F'
+    l_ledside_052: '9B7636'
+    l_ledside_053: 'B2873E'
+    l_ledside_054: 'C99946'
+    l_ledside_055: 'E0AA4E'
+    l_ledside_056: 'F1B754'
+    
+- time: +60ms
+  lights:
+    l_ledside_045: '000000'
+    l_ledside_046: '000000'
+    l_ledside_047: '000000'
+    l_ledside_048: '0F0C05'
+    l_ledside_049: '1F190A'
+    l_ledside_050: '362B12'
+    l_ledside_051: '4E3E19'
+    l_ledside_052: '604C1F'
+    l_ledside_053: '775E27'
+    l_ledside_054: '927430'
+    l_ledside_055: 'AD8938'
+    l_ledside_056: 'C59C40'
+    
+- time: +60ms
+  lights:
+    l_ledside_048: '000000'
+    l_ledside_049: '000000'
+    l_ledside_050: '0B0903'
+    l_ledside_051: '1C1708'
+    l_ledside_052: '2A220D'
+    l_ledside_053: '3E3312'
+    l_ledside_054: '57471A'
+    l_ledside_055: '735E22'
+    l_ledside_056: '8D742A'
+    
+- time: +60ms
+  lights:
+    l_ledside_050: '000000'
+    l_ledside_051: '000000'
+    l_ledside_052: '000000'
+    l_ledside_053: '100E05'
+    l_ledside_054: '231E0A'
+    l_ledside_055: '3A3110'
+    l_ledside_056: '524616'
+    
+- time: +60ms
+  lights:
+    l_ledside_053: '000000'
+    l_ledside_054: '000000'
+    l_ledside_055: '0E0C03'
+    l_ledside_056: '1F1B08'
+    
+- time: +60ms
+  lights:
+    l_ledside_055: '000000'
+    l_ledside_056: '000000'
+    

@@ -1,0 +1,289 @@
+#show_version=6
+- time: 0
+  lights:
+    l_ledbg_035: 'FCC100'
+    l_ledbg_039: 'FCC100'
+    l_ledbg_040: 'FCC100'
+    l_ledbg_041: 'FCC100'
+    l_ledbg_042: 'FCC100'
+    l_ledbg_043: 'FCC100'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'FAB900'
+    l_ledbg_039: 'FAB900'
+    l_ledbg_040: 'FAB900'
+    l_ledbg_041: 'FAB900'
+    l_ledbg_042: 'FAB900'
+    l_ledbg_043: 'FAB900'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'F7B100'
+    l_ledbg_039: 'F7B100'
+    l_ledbg_040: 'F7B100'
+    l_ledbg_041: 'F7B100'
+    l_ledbg_042: 'F7B100'
+    l_ledbg_043: 'F7B100'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'F5A900'
+    l_ledbg_039: 'F5A900'
+    l_ledbg_040: 'F5A900'
+    l_ledbg_041: 'F5A900'
+    l_ledbg_042: 'F5A900'
+    l_ledbg_043: 'F5A900'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'F2A100'
+    l_ledbg_039: 'F2A100'
+    l_ledbg_040: 'F2A100'
+    l_ledbg_041: 'F2A100'
+    l_ledbg_042: 'F2A100'
+    l_ledbg_043: 'F2A100'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'F09900'
+    l_ledbg_039: 'F09900'
+    l_ledbg_040: 'F09900'
+    l_ledbg_041: 'F09900'
+    l_ledbg_042: 'F09900'
+    l_ledbg_043: 'F09900'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'ED9100'
+    l_ledbg_039: 'ED9100'
+    l_ledbg_040: 'ED9100'
+    l_ledbg_041: 'ED9100'
+    l_ledbg_042: 'ED9100'
+    l_ledbg_043: 'ED9100'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'EB8A00'
+    l_ledbg_039: 'EB8A00'
+    l_ledbg_040: 'EB8A00'
+    l_ledbg_041: 'EB8A00'
+    l_ledbg_042: 'EB8A00'
+    l_ledbg_043: 'EB8A00'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'E98200'
+    l_ledbg_039: 'E98200'
+    l_ledbg_040: 'E98200'
+    l_ledbg_041: 'E98200'
+    l_ledbg_042: 'E98200'
+    l_ledbg_043: 'E98200'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'E67A00'
+    l_ledbg_039: 'E67A00'
+    l_ledbg_040: 'E67A00'
+    l_ledbg_041: 'E67A00'
+    l_ledbg_042: 'E67A00'
+    l_ledbg_043: 'E67A00'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'E47200'
+    l_ledbg_039: 'E47200'
+    l_ledbg_040: 'E47200'
+    l_ledbg_041: 'E47200'
+    l_ledbg_042: 'E47200'
+    l_ledbg_043: 'E47200'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'E16A00'
+    l_ledbg_039: 'E16A00'
+    l_ledbg_040: 'E16A00'
+    l_ledbg_041: 'E16A00'
+    l_ledbg_042: 'E16A00'
+    l_ledbg_043: 'E16A00'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'DF6200'
+    l_ledbg_039: 'DF6200'
+    l_ledbg_040: 'DF6200'
+    l_ledbg_041: 'DF6200'
+    l_ledbg_042: 'DF6200'
+    l_ledbg_043: 'DF6200'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'DC5A00'
+    l_ledbg_039: 'DC5A00'
+    l_ledbg_040: 'DC5A00'
+    l_ledbg_041: 'DC5A00'
+    l_ledbg_042: 'DC5A00'
+    l_ledbg_043: 'DC5A00'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'DA5200'
+    l_ledbg_039: 'DA5200'
+    l_ledbg_040: 'DA5200'
+    l_ledbg_041: 'DA5200'
+    l_ledbg_042: 'DA5200'
+    l_ledbg_043: 'DA5200'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'D84B00'
+    l_ledbg_039: 'D84B00'
+    l_ledbg_040: 'D84B00'
+    l_ledbg_041: 'D84B00'
+    l_ledbg_042: 'D84B00'
+    l_ledbg_043: 'D84B00'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'DA5200'
+    l_ledbg_039: 'DA5200'
+    l_ledbg_040: 'DA5200'
+    l_ledbg_041: 'DA5200'
+    l_ledbg_042: 'DA5200'
+    l_ledbg_043: 'DA5200'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'DC5A00'
+    l_ledbg_039: 'DC5A00'
+    l_ledbg_040: 'DC5A00'
+    l_ledbg_041: 'DC5A00'
+    l_ledbg_042: 'DC5A00'
+    l_ledbg_043: 'DC5A00'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'DF6200'
+    l_ledbg_039: 'DF6200'
+    l_ledbg_040: 'DF6200'
+    l_ledbg_041: 'DF6200'
+    l_ledbg_042: 'DF6200'
+    l_ledbg_043: 'DF6200'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'E16A00'
+    l_ledbg_039: 'E16A00'
+    l_ledbg_040: 'E16A00'
+    l_ledbg_041: 'E16A00'
+    l_ledbg_042: 'E16A00'
+    l_ledbg_043: 'E16A00'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'E47200'
+    l_ledbg_039: 'E47200'
+    l_ledbg_040: 'E47200'
+    l_ledbg_041: 'E47200'
+    l_ledbg_042: 'E47200'
+    l_ledbg_043: 'E47200'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'E67A00'
+    l_ledbg_039: 'E67A00'
+    l_ledbg_040: 'E67A00'
+    l_ledbg_041: 'E67A00'
+    l_ledbg_042: 'E67A00'
+    l_ledbg_043: 'E67A00'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'E98200'
+    l_ledbg_039: 'E98200'
+    l_ledbg_040: 'E98200'
+    l_ledbg_041: 'E98200'
+    l_ledbg_042: 'E98200'
+    l_ledbg_043: 'E98200'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'EB8A00'
+    l_ledbg_039: 'EB8A00'
+    l_ledbg_040: 'EB8A00'
+    l_ledbg_041: 'EB8A00'
+    l_ledbg_042: 'EB8A00'
+    l_ledbg_043: 'EB8A00'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'ED9100'
+    l_ledbg_039: 'ED9100'
+    l_ledbg_040: 'ED9100'
+    l_ledbg_041: 'ED9100'
+    l_ledbg_042: 'ED9100'
+    l_ledbg_043: 'ED9100'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'F09900'
+    l_ledbg_039: 'F09900'
+    l_ledbg_040: 'F09900'
+    l_ledbg_041: 'F09900'
+    l_ledbg_042: 'F09900'
+    l_ledbg_043: 'F09900'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'F2A100'
+    l_ledbg_039: 'F2A100'
+    l_ledbg_040: 'F2A100'
+    l_ledbg_041: 'F2A100'
+    l_ledbg_042: 'F2A100'
+    l_ledbg_043: 'F2A100'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'F5A900'
+    l_ledbg_039: 'F5A900'
+    l_ledbg_040: 'F5A900'
+    l_ledbg_041: 'F5A900'
+    l_ledbg_042: 'F5A900'
+    l_ledbg_043: 'F5A900'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'F7B100'
+    l_ledbg_039: 'F7B100'
+    l_ledbg_040: 'F7B100'
+    l_ledbg_041: 'F7B100'
+    l_ledbg_042: 'F7B100'
+    l_ledbg_043: 'F7B100'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'FAB900'
+    l_ledbg_039: 'FAB900'
+    l_ledbg_040: 'FAB900'
+    l_ledbg_041: 'FAB900'
+    l_ledbg_042: 'FAB900'
+    l_ledbg_043: 'FAB900'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'FCC100'
+    l_ledbg_039: 'FCC100'
+    l_ledbg_040: 'FCC100'
+    l_ledbg_041: 'FCC100'
+    l_ledbg_042: 'FCC100'
+    l_ledbg_043: 'FCC100'
+    
+- time: +500ms
+  lights:
+    l_ledbg_035: 'FFC900'
+    l_ledbg_039: 'FFC900'
+    l_ledbg_040: 'FFC900'
+    l_ledbg_041: 'FFC900'
+    l_ledbg_042: 'FFC900'
+    l_ledbg_043: 'FFC900'
+    

@@ -1,0 +1,111 @@
+#config_version=6
+
+#enchanted_birds
+
+mode:
+  start_events: scoop_enchanted_birds
+  stop_events: finished_bird_pops_complete #, mode_bonus_started         #ties to line iten 16  (finished_bird_pops_complete)
+  events_when_stopped: play_base_music_again
+  priority: 200
+      
+#----------------------------------------------------------------------------------------------
+
+counters:
+  bird_pops:
+    count_events: s_pop_1_active, s_pop_2_active, s_pop_3_active, s_pop_4_active, s_sling_upright_active
+    events_when_hit: bird_pop_hit
+    starting_count: 0
+    count_complete_value: 15
+    direction: up
+    events_when_complete: finished_bird_pops_complete  #you can name this what ever you want
+      
+#----------------------------------------------------------------------------------------------
+
+widget_player:
+  mode_enchanted_birds_started:
+    tiki_birds:
+      slide: base
+    pierre:
+      slide: base
+    jose:
+      slide: base
+    michael:
+      slide: base
+    fritz:
+      slide: base
+    tiki_timer:
+      slide: base
+      
+  player_walt_disney_parrots:
+    player_walt_disney_parrots:              #part of counter linked to godot
+      slide: base
+
+  pop_1_hit:
+    pop_value_1:
+      slide: base
+      expire: 1s
+      
+#----------------------------------------------------------------------------------------------
+
+sound_player:
+  mode_enchanted_birds_started:
+    tikiroom:
+      bus: music
+      action: play
+      loops: -1
+      
+#----------------------------------------------------------------------------------------------
+
+ball_saves:
+  bird_save:
+    active_time: 8s
+    timer_start_events: mode_enchanted_birds_started
+    balls_to_save: 1
+    early_ball_save_events: s_outer_left_active, s_outer_right_active
+      
+#----------------------------------------------------------------------------------------------
+
+variable_player:
+  mode_enchanted_birds_started:
+    walt_disney_parrots:                       #part of counter linked to godot
+      int: 0
+      action: set
+  ball_starting:
+    walt_disney_parrots:
+      int: 0
+      action: set
+  pop_hit:
+    score: 2500
+  bird_pop_hit:                    
+    walt_disney_parrots:
+      int: 1
+      action: add
+
+  finished_bird_pops_complete:
+    score: 100000 * current_player.pf_multiplier 
+    walt_disney_parrots:
+      int: 0
+      action: set
+      
+#----------------------------------------------------------------------------------------------
+
+show_player:
+  mode_enchanted_birds_started:
+    rainbow_birds:
+      speed: 30
+      loops: -1
+    birds_sides:
+      speed: 5
+      loops: -1
+
+#----------------------------------------------------------------------------------------------
+
+timers:                          #156s song, once timer is out, create a new event to stop mode  
+  tiki_room_timer:               #enchanted_birds_tiki_room_timer_tick
+    start_value: 156
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: start
+        event: mode_enchanted_birds_started    

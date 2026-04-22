@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsotycptp4v5u"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_mccnv"]
+[ext_resource type="VideoStream" path="res://images/ogv/lighttorches100k.ogv" id="2_7yx80"]
+[ext_resource type="Texture2D" uid="uid://cm2c88s3qoyho" path="res://modes/images/base.png" id="2_16rqj"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_video_player.gd" id="3_w07ei"]
+
+[node name="Lighttorches100k" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_mccnv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_16rqj")
+centered = false
+
+[node name="MPFVideoPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_top = -216.0
+offset_right = 1920.0
+offset_bottom = 872.0
+stream = ExtResource("2_7yx80")
+autoplay = true
+loop = true
+script = ExtResource("3_w07ei")

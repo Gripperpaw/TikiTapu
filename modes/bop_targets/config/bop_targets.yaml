@@ -1,0 +1,88 @@
+#config_version=6
+
+#bop_targets
+
+mode:
+  start_events: bop_target_group_lit_complete
+  stop_events: game_ended, s_spinner_mid_active, mode_bop_targets_stopped, disable_shot_spinner_mid
+  priority: 175
+
+#---------------------------------------------------------------------------------------------
+
+shots:
+  spinner_mid:                       #does not link to anything - just make a name
+    switch: s_spinner_mid
+    profile: spinner_success_profile
+    enable_events: bop_target_group_lit_complete
+    disable_events: spinner_mid_shot, s_spinner_mid_active, mode_bop_targets_stopped, s_findingnemo_active, timer_hurry_up_timer_complete, spinner_spinner_mid_hit
+
+#---------------------------------------------------------------------------------------------
+
+shot_profiles:
+  spinner_success_profile:
+    states:
+      - name: unlit
+        show: off
+      - name: lit
+        show: flash_volcano
+
+#---------------------------------------------------------------------------------------------
+
+shows:
+  flash_volcano:
+    - time: 0
+      lights:
+        l_led_211: cd5c5c
+    - time: +250ms
+      lights:
+        l_led_211: 000000
+    - time: +250ms
+      lights:
+        l_led_211: ff0000
+
+#---------------------------------------------------------------------------------------------
+
+show_player:
+  mode_bop_targets_started:
+    flash_volcano:
+      action: play
+      priority: 500
+      loops: -1
+  timer_hurry_up_timer_complete:
+    flash_volcano:
+      action: stop
+
+#---------------------------------------------------------------------------------------------
+
+event_player:
+  mode_bop_targets_started:
+    - enable_shot_spinner_mid
+    - start_hurry_up_timer
+  spinner_spinner_mid_hit:
+    - award_hurry_up_score
+    - stop_hurry_up_timer
+    - disable_shot_spinner_mid
+  timer_hurry_up_timer_complete:
+    - disable_shot_spinner_mid
+
+#---------------------------------------------------------------------------------------------
+
+timers:
+  hurry_up_timer:
+    start_value: 15
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: start
+        event: start_hurry_up_timer
+      - action: stop
+        event: spinner_spinner_mid_hit
+
+#---------------------------------------------------------------------------------------------
+
+variable_player:
+  s_spinner_mid_active:
+    score: 25000
+
+

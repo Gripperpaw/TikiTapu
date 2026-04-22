@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmqb1xwu1mh63"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_eilue"]
+[ext_resource type="Texture2D" uid="uid://cp0tv86fh01un" path="res://modes/images/tiki birds/etb_michael.png" id="2_hklln"]
+
+[sub_resource type="Animation" id="Animation_fxcvo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jwofw"]
+resource_name = "michael"
+length = 3.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -104)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gncyb"]
+_data = {
+"RESET": SubResource("Animation_fxcvo"),
+"michael": SubResource("Animation_jwofw")
+}
+
+[node name="Michael" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_eilue")
+
+[node name="michael" type="Sprite2D" parent="."]
+texture = ExtResource("2_hklln")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../michael")
+libraries = {
+"": SubResource("AnimationLibrary_gncyb")
+}
+autoplay = "michael"

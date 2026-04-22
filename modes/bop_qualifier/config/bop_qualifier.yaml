@@ -1,0 +1,90 @@
+#config_version=6
+
+# bop_qualifier
+
+mode:
+  start_events: ball_started
+  stop_events: game_ended
+  priority: 150
+
+#---------------------------------------------------------------------------------------------
+
+shots:
+  bop_target_b:
+    switch: s_target_b
+    profile: bop_profile
+    show_tokens:
+      led: l_led_073
+      color: d2691e
+  bop_target_o:
+    switch: s_target_o
+    profile: bop_profile
+    show_tokens:
+      led: l_led_070
+      color: d2691e
+  bop_target_p:
+    switch: s_target_p
+    profile: bop_profile
+    show_tokens:
+      led: l_led_067
+      color: d2691e
+
+#---------------------------------------------------------------------------------------------
+
+shot_groups:
+  bop_target_group:
+    shots: bop_target_b, bop_target_o, bop_target_p
+    enable_events: mode_base_started
+    reset_events: s_findingnemo_active, mode_bop_targets_stopped, timer_hurry_up_timer_complete, spinner_spinner_mid_hit
+
+#---------------------------------------------------------------------------------------------
+
+shot_profiles:
+  bop_profile:
+    states:
+      - name: unlit
+        show: off
+      - name: lit
+        show: flash_then_on
+
+#---------------------------------------------------------------------------------------------
+
+shows:
+  flash_then_on:
+    - duration: 0.2s
+      lights:
+        (led): (color)
+    - duration: 0.2s
+      lights:
+        (led): off
+    - duration: 0.2s
+      lights:
+        (led): (color)
+    - duration: 0.2s
+      lights:
+        (led): off
+    - duration: -1
+      lights:
+        (led): (color)
+
+#---------------------------------------------------------------------------------------------
+
+show_player:
+  shot_bop_target_b_hit:
+    flash_then_on:
+      key: bop_target_b_flash
+      show_tokens:
+        led: l_led_073
+        color: ffd700
+  shot_bop_target_o_hit:
+    flash_then_on:
+      key: bop_target_o_flash
+      show_tokens:
+        led: l_led_070
+        color: ffd700
+  shot_bop_target_p_hit:
+    flash_then_on:
+      key: bop_target_p_flash
+      show_tokens:
+        led: l_led_067
+        color: ffd700

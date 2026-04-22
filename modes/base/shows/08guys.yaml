@@ -1,0 +1,161 @@
+#show_version=6
+- time: 0
+  lights:
+    l_ledbg_003: 'FF7E29'
+    l_ledbg_048: 'FF7E29'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FF8529'
+    l_ledbg_048: 'FF8529'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FF8C29'
+    l_ledbg_048: 'FF8C29'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FF9329'
+    l_ledbg_048: 'FF9329'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FF9A29'
+    l_ledbg_048: 'FF9A29'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFA129'
+    l_ledbg_048: 'FFA129'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFA829'
+    l_ledbg_048: 'FFA829'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFAF29'
+    l_ledbg_048: 'FFAF29'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFB629'
+    l_ledbg_048: 'FFB629'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFBD29'
+    l_ledbg_048: 'FFBD29'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFC429'
+    l_ledbg_048: 'FFC429'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFCB29'
+    l_ledbg_048: 'FFCB29'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFD229'
+    l_ledbg_048: 'FFD229'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFD929'
+    l_ledbg_048: 'FFD929'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFE029'
+    l_ledbg_048: 'FFE029'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFE829'
+    l_ledbg_048: 'FFE829'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFE029'
+    l_ledbg_048: 'FFE029'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFD929'
+    l_ledbg_048: 'FFD929'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFD229'
+    l_ledbg_048: 'FFD229'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFCB29'
+    l_ledbg_048: 'FFCB29'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFC429'
+    l_ledbg_048: 'FFC429'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFBD29'
+    l_ledbg_048: 'FFBD29'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFB629'
+    l_ledbg_048: 'FFB629'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFAF29'
+    l_ledbg_048: 'FFAF29'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFA829'
+    l_ledbg_048: 'FFA829'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FFA129'
+    l_ledbg_048: 'FFA129'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FF9A29'
+    l_ledbg_048: 'FF9A29'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FF9329'
+    l_ledbg_048: 'FF9329'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FF8C29'
+    l_ledbg_048: 'FF8C29'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FF8529'
+    l_ledbg_048: 'FF8529'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FF7E29'
+    l_ledbg_048: 'FF7E29'
+    
+- time: '+1'
+  lights:
+    l_ledbg_003: 'FF7729'
+    l_ledbg_048: 'FF7729'
+    

@@ -1,0 +1,342 @@
+#config_version=6
+
+#base mode
+
+mode:
+  start_events: ball_will_start
+  events_when_started: reset_multiball_engaged, reset_tiki_god_combo_active  #basically force reset. ball drain wasn't resetting these. 
+  priority: 100
+
+#-----------------------------------------------------------------------------------------------
+
+slide_player:
+  mode_base_started:
+    base:
+        action: play
+    attract:
+        action: remove
+
+#-----------------------------------------------------------------------------------------------
+
+sound_player:
+  mode_base_started:
+    base_music:
+      bus: music
+      volume: 0.75
+      action: play
+      loops: -1
+  play_base_music_again:
+    base_music:
+      bus: music
+      volume: 0.75
+      action: play
+      loops: -1
+
+#-----------------------------------------------------------------------------------------------
+
+show_player:
+  mode_base_started:       #event calls show created in showcreator and in shows folder
+    captive_blink:            #show name
+      speed: 25                  #show speed (did not adjust in showcreator)
+      loops: -1                        #keeps looping with -1             
+    01girl:
+      speed: 10
+      loops: -1
+    02fire:
+      speed: 15
+      loops: -1
+    03catbirds:
+      speed: 6
+      loops: -1
+    04tikitapu:
+      speed: 2
+      loops: -1
+    05volcano:
+      speed: 3
+      loops: -1
+    06birds:
+      speed: 6
+      loops: -1
+    # 07torches:
+    #   speed: 15
+    #   loops: -1
+    08guys:
+      speed: 5
+      loops: -1
+    pf_gi_yellow:
+      speed: 5
+      loops: -1
+    side_fire_gi:
+      speed: 8
+      loops: -1  
+    apron_water:
+      speed: 6
+      loops: -1
+
+  mode_mode_qualifier_started:
+    captive_blink:
+      speed: 25
+      loops: -1 
+      
+  captive_counter_full:
+    captive_blink:
+      action: stop           #stops show when event triggered
+  mode_mode_qualifier_stopped:
+    captive_blink:
+      action: stop    
+  balldevice_bd_scoop_ball_entered:
+    captive_blink:
+      speed: 25
+      loops: -1
+  ball_save_ball_save_timer_start:
+    ballsave_blink:
+      speed: 25
+      loops: -1
+
+  ball_save_ball_save_disabled:
+    ballsave_blink:
+      action: stop
+
+  sneaki_skillshot_hit:
+    updown_side_skill1:
+      speed: 150
+      loops: 1
+
+  kane_skillshot_hit:
+    updown_side_skillkane:
+      speed: 150
+      loops: 1
+
+  volcano_skillshot_hit:
+    updown_side_skillvolcano:
+      speed: 150
+      loops: 1  
+
+  award_hurry_up_score:
+    hula_spin_ccw:            #hula servo
+      loops: 0                # run once
+
+#-----------------------------------------------------------------------------------------------
+
+ball_saves:
+  ball_save:
+    active_time: 12s
+    hurry_up_time: 3s
+    timer_start_events: balldevice_bd_trough_ball_eject_success
+    balls_to_save: 1
+    early_ball_save_events: s_outer_left_active, s_outer_right_active
+
+#-----------------------------------------------------------------------------------------------
+
+timers:                                              
+  kicker_delay:                                       #linked to bd_kicker in confg
+    start_value: 0
+    end_value: 3
+    tick_interval: 1s
+    control_events:
+      - action: restart
+        event: multiball_sneaki_tiki_mb_started
+      - action: restart
+        event: sneaki_skillshot_hit
+      - action: restart
+        event: kick_the_kicker       
+
+  scoop_delay:                                       #linked to bd_scoop in confg
+    start_value: 0
+    end_value: 2
+    tick_interval: 1s
+    control_events:
+      - action: restart
+        event: scoop_the_scooper
+
+#-----------------------------------------------------------------------------------------------
+
+event_player:
+  balldevice_bd_kicker_ejecting_ball{not device.timers.kicker_delay.running}: kick_the_kicker            #linked to timers - kicker_delay
+  timer_kicker_delay_complete: kick_the_kicker
+
+  sw_bonus_pop_active: pop_hit                    #linked to bonus mode for tracking hits (also bonus_pop is a tags added in the switches.yaml)
+  sw_bonus_target_active: target_hit
+  sw_bonus_switch_active: switch_hit
+
+#-----------------------------------------------------------------------------------------------
+
+widget_player:
+
+  ball_save_ball_save_saving_ball:
+    ball_save:
+      slide: base
+      expire: 3s
+      
+  award_hurry_up_score:
+    bop_volcano_points:
+      slide: base
+      expire: 5s
+
+  sneaki_skillshot_lit_hit:
+    skillsneaki:
+      slide: base
+      expire: 5
+  kane_skillshot_lit_hit:
+    skillkane:
+      slide: base
+      expire: 5
+  volcano_skillshot_lit_hit:
+    skillvolcano:
+      slide: base
+      expire: 5
+
+#-----------------------------------------------------------------------------------------------
+
+variable_player:
+
+  set_multiball_engaged:   #jim added this for MB conditional 212 to 219
+    multiball_engaged:     # all MB need this in the events when started/stopped check other MB code
+      action: set
+      int: 1
+  reset_multiball_engaged:
+    multiball_engaged:
+      action: set
+      int: 0
+
+  set_tiki_god_combo_active:           #all these set and reset are for the guarded_open_trap_door
+    tiki_god_combo_active:             #linked to player var in config and modes
+      action: set
+      int: 1
+  reset_tiki_god_combo_active:
+    tiki_god_combo_active:
+      action: set
+      int: 0
+
+  # set_tiki_tapu_mb_active:
+  #   tiki_tapu_mb_active:
+  #     action: set
+  #     int: 1
+  # reset_tiki_tapu_mb_active:
+  #   tiki_god_combo_active:
+  #     action: set
+  #     int: 0
+
+  # set_sneaki_mb_active:
+  #   sneaki_mb_active:
+  #     action: set
+  #     int: 1
+  # reset_sneaki_mb_active:
+  #   sneaki_mb_active:
+  #     action: set
+  #     int: 0
+
+  ball_started:         #end of ball bonus - this resets all my Godot variables
+    pop_hits:
+      action: set
+      int: 0
+    target_hits:
+      action: set
+      int: 0
+    switch_hits:
+      action: set
+      int: 0
+    pop_bonus_total:
+      action: set
+      int: 0
+    target_bonus_total:
+      action: set
+      int: 0
+    switch_bonus_total:
+      action: set
+      int: 0
+    bonus_total_total:
+      action: set
+      int: 0
+
+  pop_hit:             #end of ball bonus - counts the hits for the Godot variable
+    pop_hits:
+      int: 1
+      action: add
+  target_hit:
+    target_hits:
+      int: 1
+      action: add
+  switch_hit:
+    switch_hits:
+      int: 1
+      action: add
+
+  s_pop_1_active:          
+    score: 2500 * current_player.pf_multiplier     #the current_player variable if for the multiplier targets for the pf
+  s_pop_2_active:          
+    score: 2500 * current_player.pf_multiplier
+  s_pop_3_active:          
+    score: 2500 * current_player.pf_multiplier
+  s_pop_4_active:          
+    score: 2500 * current_player.pf_multiplier
+  s_sling_right_active:    
+    score: 800 * current_player.pf_multiplier
+  s_sling_left_active:     
+    score: 800 * current_player.pf_multiplier
+  s_sling_upright_active:  
+    score: 1500 * current_player.pf_multiplier
+  s_inner_left_active:     
+    score: 600 * current_player.pf_multiplier
+  s_outer_left_active:     
+    score: 600 * current_player.pf_multiplier
+  s_inner_right_active:    
+    score: 600 * current_player.pf_multiplier
+  s_outer_right_active:    
+    score: 600 * current_player.pf_multiplier
+  s_drop_l1_active:        
+    score: 3000 * current_player.pf_multiplier
+  s_drop_l2_active:        
+    score: 3000 * current_player.pf_multiplier
+  s_drop_l3_active:        
+    score: 3000 * current_player.pf_multiplier
+  s_drop_l4_active:        
+    score: 3000 * current_player.pf_multiplier
+  s_drop_r1_active:        
+    score: 3000 * current_player.pf_multiplier
+  s_drop_r2_active:        
+    score: 3000 * current_player.pf_multiplier
+  s_drop_r3_active:        
+    score: 3000 * current_player.pf_multiplier
+  s_drop_r4_active:        
+    score: 3000 * current_player.pf_multiplier
+  s_kicker_active:         
+    score: 5001 * current_player.pf_multiplier
+  s_loop_left_active:      
+    score: 3500 * current_player.pf_multiplier
+  s_left_ramp_active:      
+    score: 5000 * current_player.pf_multiplier
+  s_target_l1_active:      
+    score: 4000 * current_player.pf_multiplier
+  s_loop_top_active:       
+    score: 3000 * current_player.pf_multiplier
+  s_target_r3_active:      
+    score: 1600 * current_player.pf_multiplier
+  s_target_r4_active:      
+    score: 1600 * current_player.pf_multiplier
+  s_target_r5_active:      
+    score: 1600 * current_player.pf_multiplier
+  s_side_right_active:     
+    score: 3000 * current_player.pf_multiplier
+  s_side_left_active:      
+    score: 3500 * current_player.pf_multiplier
+  s_target_cap_active:     
+    score: 1500 * current_player.pf_multiplier
+  s_target_b_active:       
+    score: 1500 * current_player.pf_multiplier
+  s_target_o_active:       
+    score: 1500 * current_player.pf_multiplier
+  s_target_p_active:       
+    score: 1500 * current_player.pf_multiplier
+  s_spinner_mid_active:    
+    score: 2600 * current_player.pf_multiplier
+  s_spinner_pf_active:     
+    score: 1000 * current_player.pf_multiplier
+  s_scoop_active:          
+    score: 500 * current_player.pf_multiplier
+  s_spinner_right_active:  
+    score: 2600 * current_player.pf_multiplier
+  s_ramp_back_active:      
+    score: 5000 * current_player.pf_multiplier
+  s_drain_active:          
+    score: 67 * current_player.pf_multiplier

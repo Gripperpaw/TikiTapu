@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtjxnkno7ptuu"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_kdqmx"]
+[ext_resource type="Texture2D" uid="uid://cm2c88s3qoyho" path="res://modes/images/base.png" id="2_k6t4f"]
+[ext_resource type="VideoStream" path="res://images/ogv/rhythm100k.ogv" id="3_fly0f"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_video_player.gd" id="4_0nmek"]
+
+[node name="Rhythm100k" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kdqmx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_k6t4f")
+centered = false
+
+[node name="MPFVideoPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -220.0
+offset_right = 1919.0
+offset_bottom = 868.0
+stream = ExtResource("3_fly0f")
+autoplay = true
+loop = true
+script = ExtResource("4_0nmek")

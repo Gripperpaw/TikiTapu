@@ -1,0 +1,77 @@
+#show_version=6
+- time: 0
+  lights:
+    l_ledbg_011: 'C37E02'
+    l_ledbg_012: 'C53901'
+    l_ledbg_013: 'C37E02'
+    
+- time: +80ms
+  lights:
+    l_ledbg_011: 'C76A24'
+    l_ledbg_012: 'AB0102'
+    
+- time: +80ms
+  lights:
+    l_ledbg_013: 'C76A24'
+    
+- time: +80ms
+  lights:
+    l_ledbg_011: 'C53901'
+    l_ledbg_012: 'C37E02'
+    
+- time: +80ms
+  lights:
+    l_ledbg_013: 'C53901'
+    
+- time: +80ms
+  lights:
+    l_ledbg_011: 'AF0A02'
+    l_ledbg_012: 'C76A24'
+    
+- time: +80ms
+  lights:
+    l_ledbg_011: 'AB0102'
+    l_ledbg_013: 'AB0102'
+    
+- time: +80ms
+  lights:
+    l_ledbg_011: 'C37E02'
+    l_ledbg_012: 'C53901'
+    
+- time: +80ms
+  lights:
+    l_ledbg_013: 'C37E02'
+    
+- time: +80ms
+  lights:
+    l_ledbg_011: 'C76A24'
+    l_ledbg_012: 'AB0202'
+    
+- time: +80ms
+  lights:
+    l_ledbg_012: 'AB0102'
+    l_ledbg_013: 'C76A24'
+    
+- time: +80ms
+  lights:
+    l_ledbg_011: 'C53901'
+    l_ledbg_012: 'C37E02'
+    
+- time: +80ms
+  lights:
+    l_ledbg_013: 'C53901'
+    
+- time: +80ms
+  lights:
+    l_ledbg_011: 'AB0102'
+    l_ledbg_012: 'C76A24'
+    
+- time: +80ms
+  lights:
+    l_ledbg_013: 'AB0102'
+    
+- time: +80ms
+  lights:
+    l_ledbg_011: 'C37E02'
+    l_ledbg_012: 'C53901'
+    

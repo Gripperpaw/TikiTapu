@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://yx1k01hq2e81"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_2nqet"]
+[ext_resource type="Texture2D" uid="uid://c707qp1wi76ct" path="res://images/eobb_base.png" id="2_ylooa"]
+[ext_resource type="Texture2D" uid="uid://bispfsnamdojg" path="res://images/eobb_total0.png" id="3_15ik1"]
+[ext_resource type="Texture2D" uid="uid://e6buxvweben1" path="res://images/eobb_total1.png" id="4_scy4i"]
+[ext_resource type="Texture2D" uid="uid://dtkh4e8jewyjm" path="res://images/eobb_total2.png" id="5_5uufc"]
+[ext_resource type="Theme" uid="uid://ckj25p27k6t5u" path="res://fonts/200pixlels.tres" id="6_qhmq8"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="7_vi24o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_44s1a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_15ik1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_scy4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5uufc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="eobb_total" type="Control"]
+z_index = 8
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2nqet")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_ylooa")
+centered = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_44s1a")
+autoplay = "default"
+frame_progress = 0.70964
+centered = false
+
+[node name="MPFVariable2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1216.0
+offset_top = 560.0
+offset_right = 1672.0
+offset_bottom = 720.0
+theme = ExtResource("6_qhmq8")
+theme_override_colors/font_color = Color(0.894118, 0.0901961, 0.470588, 1)
+theme_override_colors/font_outline_color = Color(0.541176, 1, 0.835294, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 100
+text = "9999999"
+script = ExtResource("7_vi24o")
+variable_name = "bonus_total_total"
+comma_separate = true

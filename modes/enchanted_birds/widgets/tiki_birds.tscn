@@ -1,0 +1,214 @@
+[gd_scene load_steps=19 format=3 uid="uid://cahtpqnxd5smy"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_1jkdj"]
+[ext_resource type="Texture2D" uid="uid://dhelu04miww2q" path="res://modes/images/tiki birds/enchanted tiki birds.png" id="2_a7uge"]
+[ext_resource type="Texture2D" uid="uid://b36gc837ao07b" path="res://modes/images/tiki birds/etb_pierre.png" id="3_j37bg"]
+[ext_resource type="Texture2D" uid="uid://cp0tv86fh01un" path="res://modes/images/tiki birds/etb_michael.png" id="4_7dspq"]
+[ext_resource type="Texture2D" uid="uid://bo7npys0htvah" path="res://modes/images/tiki birds/etb_jose.png" id="5_ms02a"]
+[ext_resource type="Texture2D" uid="uid://c3n1au71jiobb" path="res://modes/images/tiki birds/etb_fritz.png" id="6_whim3"]
+
+[sub_resource type="Animation" id="Animation_5myv6"]
+length = 0.001
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pierre:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_axotf"]
+resource_name = "pierre"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pierre:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -72)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5beuh"]
+_data = {
+"RESET": SubResource("Animation_5myv6"),
+"pierre": SubResource("Animation_axotf")
+}
+
+[sub_resource type="Animation" id="Animation_fxcvo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jwofw"]
+resource_name = "michael"
+length = 3.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -104)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gncyb"]
+_data = {
+"RESET": SubResource("Animation_fxcvo"),
+"michael": SubResource("Animation_jwofw")
+}
+
+[sub_resource type="Animation" id="Animation_qklfl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m56pr"]
+resource_name = "jose"
+length = 3.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -40)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dbb4e"]
+_data = {
+"RESET": SubResource("Animation_qklfl"),
+"jose": SubResource("Animation_m56pr")
+}
+
+[sub_resource type="Animation" id="Animation_fbyha"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vdggx"]
+resource_name = "fritz"
+length = 3.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -136)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x3lfr"]
+_data = {
+"RESET": SubResource("Animation_fbyha"),
+"fritz": SubResource("Animation_vdggx")
+}
+
+[node name="TikiBirds" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1jkdj")
+
+[node name="etb_base_art" type="Sprite2D" parent="."]
+texture = ExtResource("2_a7uge")
+centered = false
+
+[node name="pierre" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_j37bg")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="pierre"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_5beuh")
+}
+
+[node name="michael" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_7dspq")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="michael"]
+libraries = {
+"": SubResource("AnimationLibrary_gncyb")
+}
+autoplay = "michael"
+
+[node name="jose" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_ms02a")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="jose"]
+libraries = {
+"": SubResource("AnimationLibrary_dbb4e")
+}
+autoplay = "jose"
+
+[node name="fritz" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("6_whim3")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fritz"]
+libraries = {
+"": SubResource("AnimationLibrary_x3lfr")
+}
+autoplay = "fritz"

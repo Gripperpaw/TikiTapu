@@ -1,0 +1,342 @@
+[gd_scene load_steps=19 format=3 uid="uid://bdtbhoec1hyn6"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_ju2ua"]
+[ext_resource type="Texture2D" uid="uid://c1cin2wm85h7u" path="res://images/attract.png" id="2_kc84c"]
+[ext_resource type="Texture2D" uid="uid://cve3ehps0mr8i" path="res://images/attract01.png" id="3_hm8dg"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_carousel.gd" id="3_ugjd2"]
+[ext_resource type="Texture2D" uid="uid://cn6yyqr0x6gig" path="res://images/attract02.png" id="4_jurom"]
+[ext_resource type="FontFile" uid="uid://wnwc8yko3tau" path="res://fonts/TropicalIslandVibes-ARL6L.ttf" id="5_a8vyr"]
+[ext_resource type="Texture2D" uid="uid://cf533cbyi4nbv" path="res://images/attract03.png" id="5_wj75h"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="6_8c5ky"]
+[ext_resource type="Texture2D" uid="uid://ckv5jgv7wmn5k" path="res://images/player1lastscore.png" id="7_w0407"]
+[ext_resource type="Texture2D" uid="uid://cu43fonloh2mo" path="res://images/attractartists.png" id="8_2rocf"]
+[ext_resource type="Texture2D" uid="uid://chomrmb3822y2" path="res://images/attracthardware.png" id="9_0kbqx"]
+[ext_resource type="Texture2D" uid="uid://cqdvee42xmb23" path="res://images/attractdiscord.png" id="10_7uk2l"]
+[ext_resource type="Texture2D" uid="uid://d0a7krjbltitv" path="res://images/player2lastscore.png" id="10_nrv8b"]
+[ext_resource type="Texture2D" uid="uid://crl43sa4ucjx4" path="res://images/attractparts.png" id="11_0rhrr"]
+[ext_resource type="Texture2D" uid="uid://krcykkrgjhq8" path="res://images/attractpinshed-mbp.png" id="11_um6co"]
+[ext_resource type="Texture2D" uid="uid://cotrsmb3qwdnr" path="res://modes/images/high_score.png" id="12_x5q3t"]
+[ext_resource type="Theme" uid="uid://ckj25p27k6t5u" path="res://fonts/200pixlels.tres" id="13_6hujx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_imadr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hm8dg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jurom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wj75h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jurom")
+}],
+"loop": true,
+"name": &"attract",
+"speed": 3.0
+}]
+
+[node name="Attract" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ju2ua")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(961, 541)
+texture = ExtResource("2_kc84c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+sprite_frames = SubResource("SpriteFrames_imadr")
+animation = &"attract"
+autoplay = "attract"
+frame_progress = 0.202354
+
+[node name="MPFCarousel" type="Control" parent="."]
+anchors_preset = 0
+script = ExtResource("3_ugjd2")
+carousel_name = "attract"
+
+[node name="last_scores_1p" type="Node2D" parent="MPFCarousel"]
+
+[node name="PLAYER 1" type="Sprite2D" parent="MPFCarousel/last_scores_1p"]
+position = Vector2(555, 126)
+texture = ExtResource("7_w0407")
+centered = false
+
+[node name="player1_score" type="Label" parent="MPFCarousel/last_scores_1p"]
+offset_left = 531.0
+offset_top = 545.0
+offset_right = 1404.0
+offset_bottom = 840.0
+theme_override_colors/font_color = Color(0.94902, 0.929412, 0.945098, 1)
+theme_override_colors/font_shadow_color = Color(0.129412, 0.588235, 0.666667, 1)
+theme_override_fonts/font = ExtResource("5_a8vyr")
+theme_override_font_sizes/font_size = 120
+text = "999,999,999,999"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_8c5ky")
+variable_type = 2
+variable_name = "player1_score"
+comma_separate = true
+min_digits = 2
+
+[node name="last_scores_2p" type="Node2D" parent="MPFCarousel"]
+
+[node name="PLAYER 1" type="Sprite2D" parent="MPFCarousel/last_scores_2p"]
+position = Vector2(0, 193)
+texture = ExtResource("7_w0407")
+centered = false
+
+[node name="player1_score" type="Label" parent="MPFCarousel/last_scores_2p"]
+offset_left = -26.0
+offset_top = 617.0
+offset_right = 847.0
+offset_bottom = 912.0
+theme_override_colors/font_color = Color(0.96423, 0.98029, 0.998218, 1)
+theme_override_colors/font_shadow_color = Color(0.129139, 0.587562, 0.667251, 1)
+theme_override_fonts/font = ExtResource("5_a8vyr")
+theme_override_font_sizes/font_size = 120
+text = "999,999,999,999"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_8c5ky")
+variable_type = 2
+variable_name = "player1_score"
+comma_separate = true
+min_digits = 2
+
+[node name="PLAYER 2" type="Sprite2D" parent="MPFCarousel/last_scores_2p"]
+position = Vector2(13, 187)
+texture = ExtResource("10_nrv8b")
+centered = false
+
+[node name="player2_score" type="Label" parent="MPFCarousel/last_scores_2p"]
+offset_left = 1090.0
+offset_top = 616.0
+offset_right = 1963.0
+offset_bottom = 911.0
+theme_override_colors/font_color = Color(0.96423, 0.98029, 0.998218, 1)
+theme_override_colors/font_shadow_color = Color(0.129412, 0.588235, 0.666667, 1)
+theme_override_fonts/font = ExtResource("5_a8vyr")
+theme_override_font_sizes/font_size = 120
+text = "999,999,999,999"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_8c5ky")
+variable_type = 2
+variable_name = "player2_score"
+comma_separate = true
+min_digits = 2
+
+[node name="pinshed" type="Sprite2D" parent="MPFCarousel"]
+texture = ExtResource("11_um6co")
+centered = false
+
+[node name="artists" type="Sprite2D" parent="MPFCarousel"]
+texture = ExtResource("8_2rocf")
+centered = false
+
+[node name="hardware" type="Sprite2D" parent="MPFCarousel"]
+texture = ExtResource("9_0kbqx")
+centered = false
+
+[node name="discord" type="Sprite2D" parent="MPFCarousel"]
+texture = ExtResource("10_7uk2l")
+centered = false
+
+[node name="retail" type="Sprite2D" parent="MPFCarousel"]
+texture = ExtResource("11_0rhrr")
+centered = false
+
+[node name="high_score" type="Node2D" parent="MPFCarousel"]
+
+[node name="background" type="Sprite2D" parent="MPFCarousel/high_score"]
+texture = ExtResource("12_x5q3t")
+centered = false
+
+[node name="label1" type="Label" parent="MPFCarousel/high_score"]
+offset_left = 30.0
+offset_top = 78.0
+offset_right = 475.0
+offset_bottom = 159.0
+theme = ExtResource("13_6hujx")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 66
+text = "TIKI TAPU CHAMPION"
+horizontal_alignment = 1
+script = ExtResource("6_8c5ky")
+variable_type = 2
+variable_name = "score1_label"
+
+[node name="name1" type="Label" parent="MPFCarousel/high_score"]
+offset_left = 30.0
+offset_top = 187.0
+offset_right = 475.0
+offset_bottom = 395.0
+theme = ExtResource("13_6hujx")
+theme_override_colors/font_outline_color = Color(0.100177, 0.00792026, 0.00935556, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 181
+text = "MBP"
+horizontal_alignment = 1
+script = ExtResource("6_8c5ky")
+variable_type = 2
+variable_name = "score1_name"
+
+[node name="value1" type="Label" parent="MPFCarousel/high_score"]
+offset_left = 30.0
+offset_top = 140.0
+offset_right = 475.0
+offset_bottom = 221.0
+theme = ExtResource("13_6hujx")
+theme_override_colors/font_outline_color = Color(0.103586, 0.00532055, 0.0560413, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 66
+text = "999,999,999,999"
+horizontal_alignment = 1
+script = ExtResource("6_8c5ky")
+variable_type = 2
+variable_name = "score1_value"
+comma_separate = true
+
+[node name="label2" type="Label" parent="MPFCarousel/high_score"]
+offset_left = 500.0
+offset_top = 215.0
+offset_right = 945.0
+offset_bottom = 296.0
+theme = ExtResource("13_6hujx")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 66
+text = "TIKI TAPU CHAMPION"
+horizontal_alignment = 1
+script = ExtResource("6_8c5ky")
+variable_type = 2
+variable_name = "score2_label"
+
+[node name="name2" type="Label" parent="MPFCarousel/high_score"]
+offset_left = 500.0
+offset_top = 324.0
+offset_right = 945.0
+offset_bottom = 532.0
+theme = ExtResource("13_6hujx")
+theme_override_colors/font_outline_color = Color(0.100177, 0.00792026, 0.00935556, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 181
+text = "MBP"
+horizontal_alignment = 1
+script = ExtResource("6_8c5ky")
+variable_type = 2
+variable_name = "score2_name"
+
+[node name="value2" type="Label" parent="MPFCarousel/high_score"]
+offset_left = 500.0
+offset_top = 277.0
+offset_right = 945.0
+offset_bottom = 358.0
+theme = ExtResource("13_6hujx")
+theme_override_colors/font_outline_color = Color(0.103586, 0.00532055, 0.0560413, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 66
+text = "999,999,999,999"
+horizontal_alignment = 1
+script = ExtResource("6_8c5ky")
+variable_type = 2
+variable_name = "score2_value"
+comma_separate = true
+
+[node name="label3" type="Label" parent="MPFCarousel/high_score"]
+offset_left = 971.0
+offset_top = 328.0
+offset_right = 1416.0
+offset_bottom = 409.0
+theme = ExtResource("13_6hujx")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 66
+text = "TIKI TAPU CHAMPION"
+horizontal_alignment = 1
+script = ExtResource("6_8c5ky")
+variable_type = 2
+variable_name = "score3_label"
+
+[node name="name3" type="Label" parent="MPFCarousel/high_score"]
+offset_left = 971.0
+offset_top = 437.0
+offset_right = 1416.0
+offset_bottom = 645.0
+theme = ExtResource("13_6hujx")
+theme_override_colors/font_outline_color = Color(0.100177, 0.00792026, 0.00935556, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 181
+text = "MBP"
+horizontal_alignment = 1
+script = ExtResource("6_8c5ky")
+variable_type = 2
+variable_name = "score3_name"
+
+[node name="value3" type="Label" parent="MPFCarousel/high_score"]
+offset_left = 971.0
+offset_top = 390.0
+offset_right = 1416.0
+offset_bottom = 471.0
+theme = ExtResource("13_6hujx")
+theme_override_colors/font_outline_color = Color(0.103586, 0.00532055, 0.0560413, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 66
+text = "999,999,999,999"
+horizontal_alignment = 1
+script = ExtResource("6_8c5ky")
+variable_type = 2
+variable_name = "score3_value"
+comma_separate = true
+
+[node name="label4" type="Label" parent="MPFCarousel/high_score"]
+offset_left = 1443.0
+offset_top = 477.0
+offset_right = 1888.0
+offset_bottom = 558.0
+theme = ExtResource("13_6hujx")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 66
+text = "TIKI TAPU CHAMPION"
+horizontal_alignment = 1
+script = ExtResource("6_8c5ky")
+variable_type = 2
+variable_name = "score4_label"
+
+[node name="name4" type="Label" parent="MPFCarousel/high_score"]
+offset_left = 1443.0
+offset_top = 586.0
+offset_right = 1888.0
+offset_bottom = 794.0
+theme = ExtResource("13_6hujx")
+theme_override_colors/font_outline_color = Color(0.100177, 0.00792026, 0.00935556, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 181
+text = "MBP"
+horizontal_alignment = 1
+script = ExtResource("6_8c5ky")
+variable_type = 2
+variable_name = "score4_name"
+
+[node name="value4" type="Label" parent="MPFCarousel/high_score"]
+offset_left = 1443.0
+offset_top = 539.0
+offset_right = 1888.0
+offset_bottom = 620.0
+theme = ExtResource("13_6hujx")
+theme_override_colors/font_outline_color = Color(0.103586, 0.00532055, 0.0560413, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 66
+text = "999,999,999,999"
+horizontal_alignment = 1
+script = ExtResource("6_8c5ky")
+variable_type = 2
+variable_name = "score4_value"
+comma_separate = true

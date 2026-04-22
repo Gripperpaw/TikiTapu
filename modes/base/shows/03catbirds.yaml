@@ -1,0 +1,225 @@
+#show_version=6
+- time: 0
+  lights:
+    l_ledbg_016: 'EEFDFD'
+    l_ledbg_017: 'EEFDFD'
+    l_ledbg_018: 'EEFDFD'
+    l_ledbg_019: 'EEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: 'DEFDFD'
+    l_ledbg_017: 'DEFDFD'
+    l_ledbg_018: 'DEFDFD'
+    l_ledbg_019: 'DEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: 'CEFDFD'
+    l_ledbg_017: 'CEFDFD'
+    l_ledbg_018: 'CEFDFD'
+    l_ledbg_019: 'CEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: 'BEFDFD'
+    l_ledbg_017: 'BEFDFD'
+    l_ledbg_018: 'BEFDFD'
+    l_ledbg_019: 'BEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: 'AEFDFD'
+    l_ledbg_017: 'AEFDFD'
+    l_ledbg_018: 'AEFDFD'
+    l_ledbg_019: 'AEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '9EFDFD'
+    l_ledbg_017: '9EFDFD'
+    l_ledbg_018: '9EFDFD'
+    l_ledbg_019: '9EFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '8EFDFD'
+    l_ledbg_017: '8EFDFD'
+    l_ledbg_018: '8EFDFD'
+    l_ledbg_019: '8EFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '7FFDFD'
+    l_ledbg_017: '7FFDFD'
+    l_ledbg_018: '7FFDFD'
+    l_ledbg_019: '7FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '6FFDFD'
+    l_ledbg_017: '6FFDFD'
+    l_ledbg_018: '6FFDFD'
+    l_ledbg_019: '6FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '5FFDFD'
+    l_ledbg_017: '5FFDFD'
+    l_ledbg_018: '5FFDFD'
+    l_ledbg_019: '5FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '4FFDFD'
+    l_ledbg_017: '4FFDFD'
+    l_ledbg_018: '4FFDFD'
+    l_ledbg_019: '4FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '3FFDFD'
+    l_ledbg_017: '3FFDFD'
+    l_ledbg_018: '3FFDFD'
+    l_ledbg_019: '3FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '2FFDFD'
+    l_ledbg_017: '2FFDFD'
+    l_ledbg_018: '2FFDFD'
+    l_ledbg_019: '2FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '1FFDFD'
+    l_ledbg_017: '1FFDFD'
+    l_ledbg_018: '1FFDFD'
+    l_ledbg_019: '1FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '0FFDFD'
+    l_ledbg_017: '0FFDFD'
+    l_ledbg_018: '0FFDFD'
+    l_ledbg_019: '0FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '00FDFD'
+    l_ledbg_017: '00FDFD'
+    l_ledbg_018: '00FDFD'
+    l_ledbg_019: '00FDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '0FFDFD'
+    l_ledbg_017: '0FFDFD'
+    l_ledbg_018: '0FFDFD'
+    l_ledbg_019: '0FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '1FFDFD'
+    l_ledbg_017: '1FFDFD'
+    l_ledbg_018: '1FFDFD'
+    l_ledbg_019: '1FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '2FFDFD'
+    l_ledbg_017: '2FFDFD'
+    l_ledbg_018: '2FFDFD'
+    l_ledbg_019: '2FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '3FFDFD'
+    l_ledbg_017: '3FFDFD'
+    l_ledbg_018: '3FFDFD'
+    l_ledbg_019: '3FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '4FFDFD'
+    l_ledbg_017: '4FFDFD'
+    l_ledbg_018: '4FFDFD'
+    l_ledbg_019: '4FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '5FFDFD'
+    l_ledbg_017: '5FFDFD'
+    l_ledbg_018: '5FFDFD'
+    l_ledbg_019: '5FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '6FFDFD'
+    l_ledbg_017: '6FFDFD'
+    l_ledbg_018: '6FFDFD'
+    l_ledbg_019: '6FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '7FFDFD'
+    l_ledbg_017: '7FFDFD'
+    l_ledbg_018: '7FFDFD'
+    l_ledbg_019: '7FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '8EFDFD'
+    l_ledbg_017: '8EFDFD'
+    l_ledbg_018: '8EFDFD'
+    l_ledbg_019: '8EFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: '9EFDFD'
+    l_ledbg_017: '9EFDFD'
+    l_ledbg_018: '9EFDFD'
+    l_ledbg_019: '9EFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: 'AEFDFD'
+    l_ledbg_017: 'AEFDFD'
+    l_ledbg_018: 'AEFDFD'
+    l_ledbg_019: 'AEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: 'BEFDFD'
+    l_ledbg_017: 'BEFDFD'
+    l_ledbg_018: 'BEFDFD'
+    l_ledbg_019: 'BEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: 'CEFDFD'
+    l_ledbg_017: 'CEFDFD'
+    l_ledbg_018: 'CEFDFD'
+    l_ledbg_019: 'CEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: 'DEFDFD'
+    l_ledbg_017: 'DEFDFD'
+    l_ledbg_018: 'DEFDFD'
+    l_ledbg_019: 'DEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: 'EEFDFD'
+    l_ledbg_017: 'EEFDFD'
+    l_ledbg_018: 'EEFDFD'
+    l_ledbg_019: 'EEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_016: 'FEFDFD'
+    l_ledbg_017: 'FEFDFD'
+    l_ledbg_018: 'FEFDFD'
+    l_ledbg_019: 'FEFDFD'
+    

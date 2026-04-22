@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://coybq15cq5t1a"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_bvsf1"]
+[ext_resource type="Texture2D" uid="uid://cm2c88s3qoyho" path="res://modes/images/base.png" id="2_ychln"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_video_player.gd" id="3_8pa7l"]
+[ext_resource type="VideoStream" path="res://images/ogv/kakamors100k.ogv" id="3_qryuy"]
+
+[node name="Kakamora100k" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bvsf1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_ychln")
+centered = false
+
+[node name="MPFVideoPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_top = -219.0
+offset_right = 1920.0
+offset_bottom = 869.0
+stream = ExtResource("3_qryuy")
+autoplay = true
+loop = true
+script = ExtResource("3_8pa7l")

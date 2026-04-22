@@ -1,0 +1,105 @@
+#config_version=6
+
+#achievments
+
+mode:
+  start_events: ball_started
+  stop_events: game_ended
+  priority: 125
+
+#---------------------------------------------------------------------------------------------
+
+achievements:
+  sillyfaceguys_achieved:
+    start_enabled: true
+    start_events: mode_achievements_started
+    complete_events: finished_sillyfaceguys_complete
+    show_when_started:
+    show_when_completed: led_color
+    show_tokens:
+      led: l_led_031, l_led_034
+      color: 00bfff
+
+  torches_achieved:
+    start_enabled: true
+    start_events: mode_achievements_started
+    complete_events: finished_torches_complete
+    show_when_started:
+    show_when_completed: led_color
+    show_tokens:
+      led: l_led_043, l_led_046
+      color: 00bfff
+
+  bird_pops_achieved:
+    start_enabled: true
+    start_events: mode_achievements_started
+    complete_events: finished_bird_pops_complete
+    show_when_started:
+    show_when_completed: led_color
+    show_tokens:
+      led: l_led_025, l_led_028
+      color: 00bfff
+
+  tiki_gods_achieved:
+    start_enabled: true
+    start_events: mode_achievements_started
+    complete_events: finished_tiki_gods_complete
+    show_when_started:
+    show_when_completed: led_color
+    show_tokens:
+      led: l_led_037,l_led_040
+      color: 00bfff
+
+  tribal_rhythm_achieved:
+    start_enabled: true
+    start_events: mode_achievements_started
+    complete_events: timer_rhythm_timer_complete
+    show_when_started:
+    show_when_completed: led_color
+    show_tokens:
+      led: l_led_049, l_led_052
+      color: 00bfff
+
+#---------------------------------------------------------------------------------------------
+
+widget_player:
+  finished_torches_complete:
+    lighttorches100k:
+      slide: base
+      expire: 5s
+  finished_bird_pops_complete:
+    tikibirds100k:
+      slide: base
+      expire: 5s
+  finished_tiki_gods_complete:
+    tikigods100k:
+      slide: base
+      expire: 5s  
+  finished_sillyfaceguys_complete:
+    kakamora100k:
+      slide: base
+      expire: 5s  
+  tribal_rhythm_complete:
+    rhythm100k:
+      slide: base
+      expire: 5s  
+
+#---------------------------------------------------------------------------------------------
+
+show_player:              
+  finished_torches_complete:  
+    hula_spin_ccw:                       #hula girls servo
+      loops: 0                           # run once
+  finished_bird_pops_complete:
+    hula_spin_ccw:
+      loops: 0                           # run once
+  finished_sillyfaceguys_complete:
+    hula_spin_ccw:
+      loops: 0                           # run once
+  finished_tiki_gods_complete:
+    hula_spin_ccw:
+      loops: 0                           # run once
+  timer_rhythm_timer_complete:
+    hula_spin_ccw:
+      loops: 0                           # run once
+

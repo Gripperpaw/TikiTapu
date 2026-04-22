@@ -1,0 +1,32 @@
+#config_version=6
+
+#ball_save
+
+mode:
+  start_events: ball_started
+  stop_events: ball_ending
+
+#---------------------------------------------------------------------------------------------
+
+ball_saves:
+  ball_save:
+    active_time: 8s
+    hurry_up_time: 5s
+    # enable_evens: mode_base_starting, ball_starting
+    timer_start_events: balldevice_bd_trough_ball_eject_success
+    balls_to_save: 1
+    early_ball_save_events: s_outer_left_active, s_outer_right_active
+
+#---------------------------------------------------------------------------------------------
+
+widget_player:
+  mode_ball_saves_active:
+    ball_save:
+      slide: ball_save
+      expire: 3s
+  
+
+
+        
+
+    

@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://dq0ghfy828ty8"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_qtm2n"]
+[ext_resource type="Texture2D" uid="uid://dfd1nstmtmt8u" path="res://modes/images/blank.png" id="2_pfkga"]
+[ext_resource type="Script" path="res://modes/base/widgets/bop_points.gd" id="3_0q1t7"]
+[ext_resource type="Texture2D" uid="uid://srltexidcr1f" path="res://modes/images/modes/bop1.png" id="4_p4bjf"]
+[ext_resource type="Texture2D" uid="uid://cpqf45a260b2o" path="res://modes/images/modes/bop2.png" id="5_rybsa"]
+[ext_resource type="Texture2D" uid="uid://bja5ay24vif3x" path="res://modes/images/modes/bop3.png" id="6_xr86p"]
+[ext_resource type="Texture2D" uid="uid://ckwimh3bo2gtb" path="res://modes/images/modes/bop4.png" id="7_isknw"]
+[ext_resource type="Texture2D" uid="uid://bv40xlr4qgye" path="res://modes/images/modes/bop5.png" id="8_7lgi1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flepf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_p4bjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rybsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xr86p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_isknw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7lgi1")
+}],
+"loop": true,
+"name": &"bop_volcano",
+"speed": 5.0
+}]
+
+[node name="BopPoints" type="Control"]
+z_index = 4
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qtm2n")
+
+[node name="bop_points" type="Sprite2D" parent="."]
+texture = ExtResource("2_pfkga")
+centered = false
+script = ExtResource("3_0q1t7")
+
+[node name="AnimateBOP" type="AnimatedSprite2D" parent="bop_points"]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_flepf")
+animation = &"bop_volcano"
+frame_progress = 0.75541
+centered = false

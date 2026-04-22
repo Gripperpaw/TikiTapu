@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bws4f1x7lql75"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_ytmvp"]
+[ext_resource type="Texture2D" uid="uid://c707qp1wi76ct" path="res://images/eobb_base.png" id="2_kgoi8"]
+
+[node name="eobb_base" type="Control"]
+z_index = 7
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ytmvp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kgoi8")
+centered = false

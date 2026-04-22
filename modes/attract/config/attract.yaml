@@ -1,0 +1,85 @@
+#config_version=6
+
+#attract
+
+mode_settings:
+  selectable_items:
+    - pinshed
+    - artists
+    - hardware
+    - discord
+    - retail
+    - high_score
+    - last_scores_1p{machine.player1_score and not machine.player2_score}
+    - last_scores_2p{machine.player2_score}
+  next_item_events: timer_attract_carousel_timer_complete, s_flipper_right_active
+  previous_items_events: s_flipper_left_active
+
+#---------------------------------------------------------------------------------------------
+
+slide_player:
+  mode_attract_started: attract
+
+#---------------------------------------------------------------------------------------------
+
+show_player:
+  mode_attract_started:                   #this is the event
+    attract_blue_lave_rainbow:            #this is the name of the show
+      speed: 35
+      loops: -1  
+    attract_backglass:
+      speed: 7
+      loops: -1
+    attract_side_fire:
+      speed: 7
+      loops: -1             
+    attract_gi_slowpulse:
+      speed: 7
+      loops: -1
+    spin_bird1:
+      speed: 70
+      loops: -1
+    spin_bird2:
+      speed: 70
+      loops: -1
+    spin_bird3:
+      speed: 70
+      loops: -1
+    spin_bird4:
+      speed: 70
+      loops: -1
+
+#---------------------------------------------------------------------------------------------
+
+sound_player:
+  mode_attract_started:
+    attract_music:
+      bus: music
+      action: play
+      loops: -1
+  s_coin_left_active:
+    monkey1:
+  s_coin_right_active:
+    monkey2:
+
+#---------------------------------------------------------------------------------------------
+
+timers:
+  attract_carousel_timer:
+    end_value: 6
+    tick_interval: 3s
+    start_running: true
+
+    control_events:
+      - action: start
+        event: mode_attract_started
+      - action: restart
+        event: timer_attract_carousel_timer_complete
+
+#---------------------------------------------------------------------------------------------
+
+coil_player:
+  mode_attract_started:
+    c_trap_release:
+      action: pulse
+      pulse_power: .5

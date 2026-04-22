@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cue56u3omuk17"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_mo816"]
+[ext_resource type="Texture2D" uid="uid://cm2c88s3qoyho" path="res://modes/images/base.png" id="2_fi0lm"]
+[ext_resource type="VideoStream" path="res://images/ogv/tikigods100k.ogv" id="3_2gyll"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_video_player.gd" id="4_4gdyw"]
+
+[node name="Tikigods100k" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_mo816")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_fi0lm")
+centered = false
+
+[node name="MPFVideoPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_top = -216.0
+offset_right = 1920.0
+offset_bottom = 872.0
+stream = ExtResource("3_2gyll")
+autoplay = true
+loop = true
+script = ExtResource("4_4gdyw")

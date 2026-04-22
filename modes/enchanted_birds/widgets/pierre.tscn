@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://di5pfu4mmfy54"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_4eocp"]
+[ext_resource type="Texture2D" uid="uid://dhelu04miww2q" path="res://modes/images/tiki birds/enchanted tiki birds.png" id="2_cab71"]
+[ext_resource type="Texture2D" uid="uid://b36gc837ao07b" path="res://modes/images/tiki birds/etb_pierre.png" id="2_m75vw"]
+
+[sub_resource type="Animation" id="Animation_u4ria"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pierre:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ayohw"]
+resource_name = "pierre"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pierre:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -64)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5i5aa"]
+_data = {
+"RESET": SubResource("Animation_u4ria"),
+"pierre": SubResource("Animation_ayohw")
+}
+
+[node name="Pierre" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4eocp")
+
+[node name="bird template" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_cab71")
+centered = false
+
+[node name="pierre" type="Sprite2D" parent="."]
+texture = ExtResource("2_m75vw")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5i5aa")
+}
+autoplay = "pierre"

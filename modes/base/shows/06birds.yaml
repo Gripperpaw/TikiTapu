@@ -1,0 +1,193 @@
+#show_version=6
+- time: 0
+  lights:
+    l_ledbg_004: 'EEFDFD'
+    l_ledbg_005: 'EEFDFD'
+    l_ledbg_006: 'EEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: 'DEFDFD'
+    l_ledbg_005: 'DEFDFD'
+    l_ledbg_006: 'DEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: 'CEFDFD'
+    l_ledbg_005: 'CEFDFD'
+    l_ledbg_006: 'CEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: 'BEFDFD'
+    l_ledbg_005: 'BEFDFD'
+    l_ledbg_006: 'BEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: 'AEFDFD'
+    l_ledbg_005: 'AEFDFD'
+    l_ledbg_006: 'AEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '9EFDFD'
+    l_ledbg_005: '9EFDFD'
+    l_ledbg_006: '9EFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '8EFDFD'
+    l_ledbg_005: '8EFDFD'
+    l_ledbg_006: '8EFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '7FFDFD'
+    l_ledbg_005: '7FFDFD'
+    l_ledbg_006: '7FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '6FFDFD'
+    l_ledbg_005: '6FFDFD'
+    l_ledbg_006: '6FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '5FFDFD'
+    l_ledbg_005: '5FFDFD'
+    l_ledbg_006: '5FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '4FFDFD'
+    l_ledbg_005: '4FFDFD'
+    l_ledbg_006: '4FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '3FFDFD'
+    l_ledbg_005: '3FFDFD'
+    l_ledbg_006: '3FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '2FFDFD'
+    l_ledbg_005: '2FFDFD'
+    l_ledbg_006: '2FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '1FFDFD'
+    l_ledbg_005: '1FFDFD'
+    l_ledbg_006: '1FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '0FFDFD'
+    l_ledbg_005: '0FFDFD'
+    l_ledbg_006: '0FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '00FDFD'
+    l_ledbg_005: '00FDFD'
+    l_ledbg_006: '00FDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '0FFDFD'
+    l_ledbg_005: '0FFDFD'
+    l_ledbg_006: '0FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '1FFDFD'
+    l_ledbg_005: '1FFDFD'
+    l_ledbg_006: '1FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '2FFDFD'
+    l_ledbg_005: '2FFDFD'
+    l_ledbg_006: '2FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '3FFDFD'
+    l_ledbg_005: '3FFDFD'
+    l_ledbg_006: '3FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '4FFDFD'
+    l_ledbg_005: '4FFDFD'
+    l_ledbg_006: '4FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '5FFDFD'
+    l_ledbg_005: '5FFDFD'
+    l_ledbg_006: '5FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '6FFDFD'
+    l_ledbg_005: '6FFDFD'
+    l_ledbg_006: '6FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '7FFDFD'
+    l_ledbg_005: '7FFDFD'
+    l_ledbg_006: '7FFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '8EFDFD'
+    l_ledbg_005: '8EFDFD'
+    l_ledbg_006: '8EFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: '9EFDFD'
+    l_ledbg_005: '9EFDFD'
+    l_ledbg_006: '9EFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: 'AEFDFD'
+    l_ledbg_005: 'AEFDFD'
+    l_ledbg_006: 'AEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: 'BEFDFD'
+    l_ledbg_005: 'BEFDFD'
+    l_ledbg_006: 'BEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: 'CEFDFD'
+    l_ledbg_005: 'CEFDFD'
+    l_ledbg_006: 'CEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: 'DEFDFD'
+    l_ledbg_005: 'DEFDFD'
+    l_ledbg_006: 'DEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: 'EEFDFD'
+    l_ledbg_005: 'EEFDFD'
+    l_ledbg_006: 'EEFDFD'
+    
+- time: '+1'
+  lights:
+    l_ledbg_004: 'FEFDFD'
+    l_ledbg_005: 'FEFDFD'
+    l_ledbg_006: 'FEFDFD'
+    

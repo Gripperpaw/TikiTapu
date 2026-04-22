@@ -1,0 +1,68 @@
+#config_version=6
+
+#bonus - end of ball
+
+mode:
+  priority: 8008                                   #BOOB
+
+#---------------------------------------------------------------------------------------------
+
+mode_settings:
+  display_delay_ms: 800                            #how long the bonus pause is before next ball
+  hurry_up_delay_ms: 100ms                         #after hurry-up event, switch to 0.3s delays
+  hurry_up_event: flipper_cancel
+  bonus_entries:
+  - entry: bonus_pops
+    score: 1500 * current_player.pop_hits
+  - entry: bonus_targets                           #switch tags
+    score: 1000 * current_player.target_hits
+  - entry: bonus_switches
+    score: 500 * current_player.switch_hits
+
+#---------------------------------------------------------------------------------------------
+
+variable_player:
+  mode_bonus_started:
+    pop_bonus_total: 1500 * current_player.pop_hits
+    target_bonus_total: 1000 * current_player.target_hits
+    switch_bonus_total: 500 * current_player.switch_hits
+    bonus_total_total: >
+      current_player.pop_bonus_total +
+      current_player.target_bonus_total +
+      current_player.switch_bonus_total
+
+#---------------------------------------------------------------------------------------------
+
+widget_player:
+  mode_bonus_started:
+    eobb_base:
+      slide: base
+  player_pop_bonus_total:
+    eobb_pop:
+      slide: base
+  player_target_bonus_total:
+    eobb_target:
+      slide: base
+  player_switch_bonus_total:
+    eobb_switch:
+      slide: base
+  player_bonus_total_total:
+    eobb_total:
+      slide: base    
+
+#---------------------------------------------------------------------------------------------
+
+sound_player:
+  mode_bonus_started:
+    bonus_thank_you:
+      bus: music
+      action: play
+      loops: 1
+
+#---------------------------------------------------------------------------------------------
+
+show_player:
+  mode_bonus_started:
+    bonus_spiral:
+      speed: 20
+      loops: 3

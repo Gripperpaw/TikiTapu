@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvqs642s785m"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_aob7d"]
+[ext_resource type="Texture2D" uid="uid://cm2c88s3qoyho" path="res://modes/images/base.png" id="2_tp6cj"]
+[ext_resource type="Texture2D" uid="uid://byqile02f43l2" path="res://modes/images/tawhiri_counter.png" id="3_vxnxs"]
+[ext_resource type="FontFile" uid="uid://wnwc8yko3tau" path="res://fonts/TropicalIslandVibes-ARL6L.ttf" id="4_y5dg3"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="5_jgoif"]
+
+[sub_resource type="Theme" id="Theme_wwpag"]
+default_font = ExtResource("4_y5dg3")
+default_font_size = 110
+
+[node name="tawhiri_count" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_aob7d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_tp6cj")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1742, 746)
+scale = Vector2(1.58726, 1.58726)
+texture = ExtResource("3_vxnxs")
+
+[node name="MPFVariable" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1576.0
+offset_top = 696.0
+offset_right = 1672.0
+offset_bottom = 824.0
+theme = SubResource("Theme_wwpag")
+theme_override_colors/font_color = Color(0.917647, 0.929412, 0, 1)
+theme_override_colors/font_outline_color = Color(2.05759e-06, 0.44434, 0.0366475, 1)
+theme_override_constants/outline_size = 10
+text = "30"
+script = ExtResource("5_jgoif")
+variable_name = "tawhiri_count"
+update_event = "tawhiri_jackpot_collected"
