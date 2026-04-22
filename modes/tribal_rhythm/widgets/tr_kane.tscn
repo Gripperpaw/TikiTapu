@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjjxexlkfti88"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_sh7yh"]
+[ext_resource type="Texture2D" uid="uid://brbggcc3221eh" path="res://images/tr_kane.png" id="2_fq23g"]
+
+[node name="tr_kane" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_sh7yh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fq23g")
+centered = false

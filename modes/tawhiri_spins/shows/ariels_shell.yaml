@@ -1,0 +1,169 @@
+#show_version=6
+- time: 0
+  lights:
+    l_led_100: 'E6FE0B'
+    
+- time: '+1'
+  lights:
+    l_led_100: 'DBFD17'
+    
+- time: '+1'
+  lights:
+    l_led_100: 'D0FD23'
+    
+- time: '+1'
+  lights:
+    l_led_100: 'C5FC2F'
+    
+- time: '+1'
+  lights:
+    l_led_100: 'B9FC3B'
+    
+- time: '+1'
+  lights:
+    l_led_100: 'AEFB46'
+    
+- time: '+1'
+  lights:
+    l_led_100: 'A3FB52'
+    
+- time: '+1'
+  lights:
+    l_led_100: '98FA5E'
+    
+- time: '+1'
+  lights:
+    l_led_100: '8CFA6A'
+    
+- time: '+1'
+  lights:
+    l_led_100: '74E06A'
+    
+- time: '+1'
+  lights:
+    l_led_100: '6AE074'
+    
+- time: '+1'
+  lights:
+    l_led_100: '000100'
+    
+- time: '+1'
+  lights:
+    l_led_100: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_led_100: '10F4EC'
+    
+- time: '+1'
+  lights:
+    l_led_100: '1CF4E0'
+    
+- time: '+1'
+  lights:
+    l_led_100: '28F5D4'
+    
+- time: '+1'
+  lights:
+    l_led_100: '34F5C8'
+    
+- time: '+1'
+  lights:
+    l_led_100: '40F6BC'
+    
+- time: '+1'
+  lights:
+    l_led_100: '4CF6B1'
+    
+- time: '+1'
+  lights:
+    l_led_100: '58F7A5'
+    
+- time: '+1'
+  lights:
+    l_led_100: '64F799'
+    
+- time: '+1'
+  lights:
+    l_led_100: '70F88D'
+    
+- time: '+1'
+  lights:
+    l_led_100: '7CF881'
+    
+- time: '+1'
+  lights:
+    l_led_100: '87F976'
+    
+- time: '+1'
+  lights:
+    l_led_100: '93F96A'
+    
+- time: '+1'
+  lights:
+    l_led_100: '9FFA5E'
+    
+- time: '+1'
+  lights:
+    l_led_100: 'AAF952'
+    
+- time: '+1'
+  lights:
+    l_led_100: '040602'
+    
+- time: '+1'
+  lights:
+    l_led_100: '050601'
+    
+- time: '+1'
+  lights:
+    l_led_100: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    

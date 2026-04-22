@@ -1,0 +1,11 @@
+#show_version=6
+
+- duration: 1
+  lights:
+    l_led_172: green
+    l_led_208: green
+
+- duration: 1
+  lights:
+    l_led_172: off
+    l_led_208: off

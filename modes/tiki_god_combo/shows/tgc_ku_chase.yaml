@@ -1,0 +1,199 @@
+#show_version=6
+- time: 0
+  lights:
+    l_led_142: 'FB000B'
+    
+- time: '+1'
+  lights:
+    l_led_142: 'F70016'
+    
+- time: '+1'
+  lights:
+    l_led_142: 'F30021'
+    
+- time: '+1'
+  lights:
+    l_led_142: 'EF002C'
+    
+- time: '+1'
+  lights:
+    l_led_142: 'EB0037'
+    l_led_145: '910022'
+    
+- time: '+1'
+  lights:
+    l_led_142: 'E40041'
+    l_led_145: 'E80042'
+    
+- time: '+1'
+  lights:
+    l_led_142: '000000'
+    l_led_145: 'E4004D'
+    
+- time: '+1'
+  lights:
+    l_led_145: 'E00058'
+    
+- time: '+1'
+  lights:
+    l_led_145: 'DC0063'
+    
+- time: '+1'
+  lights:
+    l_led_145: 'D8006E'
+    
+- time: '+1'
+  lights:
+    l_led_145: 'D40079'
+    
+- time: '+1'
+  lights:
+    l_led_145: 'D10085'
+    
+- time: '+1'
+  lights:
+    l_led_145: 'CD0090'
+    
+- time: '+1'
+  lights:
+    l_led_145: 'C9009B'
+    
+- time: '+1'
+  lights:
+    l_led_145: 'C500A6'
+    
+- time: '+1'
+  lights:
+    l_led_145: 'C100B1'
+    
+- time: '+1'
+  lights:
+    l_led_145: '7B007A'
+    l_led_148: '810080'
+    
+- time: '+1'
+  lights:
+    l_led_145: '010001'
+    l_led_148: 'BA00C7'
+    
+- time: '+1'
+  lights:
+    l_led_145: '000000'
+    l_led_148: 'B600D2'
+    
+- time: '+1'
+  lights:
+    l_led_148: 'B200DD'
+    
+- time: '+1'
+  lights:
+    l_led_148: 'AE00E8'
+    
+- time: '+1'
+  lights:
+    l_led_148: 'AA00F3'
+    
+- time: '+1'
+  lights:
+    l_led_148: 'A700FF'
+    
+- time: '+1'
+  lights:
+    l_led_148: 'AA00F3'
+    
+- time: '+1'
+  lights:
+    l_led_148: 'AE00E8'
+    
+- time: '+1'
+  lights:
+    l_led_148: 'B200DD'
+    
+- time: '+1'
+  lights:
+    l_led_148: 'B600D2'
+    
+- time: '+1'
+  lights:
+    l_led_148: 'BA00C7'
+    
+- time: '+1'
+  lights:
+    l_led_148: '160016'
+    l_led_154: '980097'
+    
+- time: '+1'
+  lights:
+    l_led_148: '000000'
+    l_led_154: 'C100B1'
+    
+- time: '+1'
+  lights:
+    l_led_154: 'C500A6'
+    
+- time: '+1'
+  lights:
+    l_led_154: 'C9009B'
+    
+- time: '+1'
+  lights:
+    l_led_154: 'CD0090'
+    
+- time: '+1'
+  lights:
+    l_led_154: 'D10085'
+    
+- time: '+1'
+  lights:
+    l_led_154: 'D40079'
+    
+- time: '+1'
+  lights:
+    l_led_154: 'D8006E'
+    
+- time: '+1'
+  lights:
+    l_led_154: 'DC0063'
+    
+- time: '+1'
+  lights:
+    l_led_151: '0E0005'
+    l_led_154: 'E00058'
+    
+- time: '+1'
+  lights:
+    l_led_151: 'B7003E'
+    l_led_154: 'E4004D'
+    
+- time: '+1'
+  lights:
+    l_led_151: 'E80042'
+    l_led_154: 'E80042'
+    
+- time: '+1'
+  lights:
+    l_led_151: 'EB0037'
+    l_led_154: 'E80036'
+    
+- time: '+1'
+  lights:
+    l_led_151: 'EF002C'
+    l_led_154: '050001'
+    
+- time: '+1'
+  lights:
+    l_led_151: 'F30021'
+    l_led_154: '000000'
+    
+- time: '+1'
+  lights:
+    l_led_151: 'F70016'
+    
+- time: '+1'
+  lights:
+    l_led_151: 'FB000B'
+    
+- time: '+1'
+  lights:
+    l_led_151: 'FE0000'
+    

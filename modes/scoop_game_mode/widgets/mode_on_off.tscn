@@ -1,0 +1,70 @@
+[gd_scene load_steps=15 format=3 uid="uid://nc5hfk1aaeky"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_qg6u6"]
+[ext_resource type="Texture2D" uid="uid://bjcv7cywshmck" path="res://modes/images/modes/mode_scoop.png" id="2_vwa4r"]
+[ext_resource type="Script" path="res://modes/scoop_game_mode/widgets/shoot_scoop.gd" id="3_2jgo1"]
+[ext_resource type="Texture2D" uid="uid://dfslp6i7lrr61" path="res://modes/images/modes/mode0.png" id="3_dj6ye"]
+[ext_resource type="Texture2D" uid="uid://bqk8fljqrl2ne" path="res://modes/images/modes/mode1.png" id="4_rb2tt"]
+[ext_resource type="Texture2D" uid="uid://dp581eomeon0j" path="res://modes/images/modes/mode2.png" id="5_8ncgo"]
+[ext_resource type="Texture2D" uid="uid://c311tp1krospq" path="res://modes/images/modes/mode3.png" id="6_v3tp3"]
+[ext_resource type="Texture2D" uid="uid://c6pnpxsilq5ml" path="res://modes/images/modes/mode4.png" id="7_r3j3w"]
+[ext_resource type="Texture2D" uid="uid://brhj4cx5q8fhm" path="res://modes/images/modes/mode5.png" id="8_fsk2u"]
+[ext_resource type="Texture2D" uid="uid://dxuyp80lwdjhh" path="res://modes/images/modes/mode6.png" id="9_e5iv4"]
+[ext_resource type="Texture2D" uid="uid://bfhww46d8ftud" path="res://modes/images/modes/mode7.png" id="10_qkec2"]
+[ext_resource type="Texture2D" uid="uid://dd7b5wbe82n62" path="res://modes/images/modes/mode8.png" id="11_r1km1"]
+[ext_resource type="Texture2D" uid="uid://du03v6b0durek" path="res://modes/images/modes/mode9.png" id="12_sil6k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7j05a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dj6ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rb2tt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8ncgo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v3tp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r3j3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fsk2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e5iv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qkec2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_r1km1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_sil6k")
+}],
+"loop": true,
+"name": &"modescoop",
+"speed": 8.0
+}]
+
+[node name="mode_on_off" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qg6u6")
+
+[node name="shoot_scoop" type="Sprite2D" parent="."]
+texture = ExtResource("2_vwa4r")
+centered = false
+script = ExtResource("3_2jgo1")
+
+[node name="AnimateMode" type="AnimatedSprite2D" parent="shoot_scoop"]
+position = Vector2(-3, 38)
+sprite_frames = SubResource("SpriteFrames_7j05a")
+animation = &"modescoop"
+frame_progress = 0.52373
+centered = false

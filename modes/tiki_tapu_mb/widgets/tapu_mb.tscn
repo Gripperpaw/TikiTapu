@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://23kpnag4tee2"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_b62rs"]
+[ext_resource type="Texture2D" uid="uid://cye5374jc84au" path="res://images/tiki_tapu_mb_base.png" id="2_43edb"]
+
+[node name="tapu_mb" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_b62rs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_43edb")
+centered = false

@@ -1,0 +1,52 @@
+#config_version=6
+#skill shot config file
+
+#skillshot
+
+mode:
+  start_events: ball_starting
+  stop_events: stop_mode_skillshot, ball_ending, skill_shot_hit, kane_skillshot_hit, volcano_skillshot_hit, timer_skill_shot_timeout_complete
+  priority: 450
+
+#---------------------------------------------------------------------------------------------
+
+shots:
+  sneaki_skillshot:
+    switch: s_kicker
+    advance_events: mode_skillshot_started    
+  volcano_skillshot:
+    switch: s_volsound
+    advance_events: mode_skillshot_started  
+  kane_skillshot:
+    switch: s_loop_left
+    advance_events: mode_skillshot_started  
+
+#---------------------------------------------------------------------------------------------
+
+event_player:
+  sneaki_skillshot_hit: stop_mode_skillshot
+  kane_skillshot_hit: stop_mode_skillshot
+  volcano_skillshot_hit: stop_mode_skillshot
+
+#---------------------------------------------------------------------------------------------
+
+variable_player:
+  sneaki_skillshot_hit:
+    score: 25_000
+  kane_skillshot_hit:
+    score: 35_000
+  volcano_skillshot_hit:
+    score: 25_000
+
+#---------------------------------------------------------------------------------------------
+
+timers:
+  skill_shot_timeout:
+    start_value: 0
+    end_value: 4     
+    direction: up
+    tick_interval: 1s
+    start_running: false
+    control_events:
+      - action: start
+        event: balldevice_bd_plunger_ball_eject_success  

@@ -1,0 +1,135 @@
+#config_version=6
+
+#mb_volcano_qualifier
+
+mode:
+  start_events: ball_started
+  stop_events: multiball_volcano_mb_started, game_ended
+  priority: 350
+  restart_on_next_ball: false 
+
+#-----------------------------------------------------------------------------------------------
+
+counters:
+  volcano_mb_lock1_counter:
+    count_events: s_ramp_back_active
+    count_complete_value: 1
+    events_when_complete: guarded_open_trap_door
+    restart_events: guarded_open_trap_door
+  volcano_mb_lock2_counter:
+    count_events: s_spinner_mid_active
+    count_complete_value: 15
+    events_when_complete: guarded_open_trap_door
+    restart_events: guarded_open_trap_door
+  volcano_mb_lock3_counter:
+    count_events: s_left_ramp_active
+    count_complete_value: 1
+    events_when_complete: guarded_open_trap_door              #this calls to the diverter in the main machine config.yaml
+    restart_events: guarded_open_trap_door
+  volcano_mb_lock_counter:
+    count_events: balldevice_bd_vuk_ball_entered
+    count_complete_value: 3
+    events_when_complete: start_volcano_mb
+    persist_state: true
+    debug: true
+
+#-----------------------------------------------------------------------------------------------
+
+multiball_locks:
+  volcano_lock:
+    balls_to_lock: 3
+    lock_devices: bd_vuk
+    balls_to_replace: 2 
+    enable_events: mode_mb_volcano_qualifier_started, ball_started
+    locked_ball_counting_strategy: virtual_only 
+
+#-----------------------------------------------------------------------------------------------
+
+coil_player:
+  s_vuk_3_active: c_trap_release
+
+#-----------------------------------------------------------------------------------------------
+
+event_player:
+  start_volcano_mb{current_player.multiball_engaged == 0}: multiball_volcano_mb_started
+  guarded_open_trap_door{current_player.multiball_engaged == 0}: open_trap_door                    # "if there is no mb started, we will open_trap_door"
+
+#-----------------------------------------------------------------------------------------------
+   
+show_player:
+  open_trap_door:     #event calls shows
+    ball3_blink:
+      action: play
+      priority: 500
+      
+  ball_one1_locked:    #linked to timed_switches: in switch.yaml
+    ball3_blink:
+      action: stop
+    ball1_lock:
+      action: play
+  ball_two2_locked:
+    ball3_blink:
+      action: stop
+    ball2_lock:
+      action: play
+  ball_three3_locked:
+    ball3_blink:
+      action: stop
+    ball3_lock:
+      action: play
+  # AI Gave me this code #
+  # Stop the blinking arrow permanently once all 3 are locked (multiball started)
+  mode_mb_volcano_qualifier_started{device.counters.volcano_mb_lock_counter.value >= 3}:
+    ball3_blink: stop
+
+#-----------------------------------------------------------------------------------------------
+
+shows:
+  ball3_blink:
+    - time: 0
+      lights:
+        l_led_241: green
+    - time: +250ms
+      lights:
+        l_led_241: 000000
+    - time: +250ms
+      lights:
+        l_led_241: green
+
+  ball1_lock:
+    - time: 0
+      lights:
+        l_led_235: green
+ 
+  ball2_lock:
+    - time: 0
+      lights:
+        l_led_238: green
+
+  ball3_lock:
+    - time: 0
+      lights:
+        l_led_241: green
+ 
+#-----------------------------------------------------------------------------------------------
+       
+light_player:            # AI Gave me this code #
+  # Restore lock lights when the qualifier mode starts (on every new ball)
+  mode_mb_volcano_qualifier_started{device.counters.volcano_mb_lock_counter.value >= 1}:
+    l_led_235: green
+
+  mode_mb_volcano_qualifier_started{device.counters.volcano_mb_lock_counter.value >= 2}:
+    l_led_238: green
+
+  mode_mb_volcano_qualifier_started{device.counters.volcano_mb_lock_counter.value >= 3}:
+    l_led_241: green
+
+  # Turn them off again only if we somehow lost progress (should never happen)
+  mode_mb_volcano_qualifier_started{device.counters.volcano_mb_lock_counter.value < 1}:
+    l_led_235: off
+
+  mode_mb_volcano_qualifier_started{device.counters.volcano_mb_lock_counter.value < 2}:
+    l_led_238: off
+
+  mode_mb_volcano_qualifier_started{device.counters.volcano_mb_lock_counter.value < 3}:
+    l_led_241: off

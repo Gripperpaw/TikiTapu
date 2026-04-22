@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://6ys7kiwnk6in"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_pp781"]
+[ext_resource type="Texture2D" uid="uid://b4u1q6n3elxjn" path="res://modes/images/skillvolcano.png" id="2_7qjol"]
+[ext_resource type="FontFile" uid="uid://wnwc8yko3tau" path="res://fonts/TropicalIslandVibes-ARL6L.ttf" id="3_lkcia"]
+
+[node name="skillvolcano" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1079.0
+script = ExtResource("1_pp781")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7qjol")
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Sprite2D"]
+z_index = 1
+offset_left = 440.0
+offset_top = 216.0
+offset_right = 891.0
+offset_bottom = 637.0
+theme_override_colors/default_color = Color(0.356863, 0.690196, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.270222, 0.270222, 0.270222, 1)
+theme_override_fonts/normal_font = ExtResource("3_lkcia")
+theme_override_font_sizes/normal_font_size = 140
+bbcode_enabled = true
+text = "[center][color=f3690b]
+[pulse freq=3.5 color=#5bb000 ease=-2.0]25,000[/pulse]
+[/color][/center]"

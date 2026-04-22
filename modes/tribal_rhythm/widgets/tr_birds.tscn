@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ui7lajf1opn8"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_iiadf"]
+[ext_resource type="Texture2D" uid="uid://cwdu11exl0fjy" path="res://images/tr_bird.png" id="2_elib6"]
+
+[node name="tr_birds" type="Control"]
+z_index = 4
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_iiadf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_elib6")
+centered = false

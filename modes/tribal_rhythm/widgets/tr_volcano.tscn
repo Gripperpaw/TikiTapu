@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://2s7ieysl0hpf"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_4xhux"]
+[ext_resource type="Texture2D" uid="uid://c7r47afr7s3gi" path="res://images/tr_volcano.png" id="2_sjm6e"]
+
+[node name="tr_volcano" type="Control"]
+z_index = 4
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4xhux")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sjm6e")
+centered = false

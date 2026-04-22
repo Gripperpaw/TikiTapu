@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://dm7climgd58su"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_o80py"]
+[ext_resource type="Texture2D" uid="uid://83lwewrev5ym" path="res://images/tribal_rhythm.png" id="2_sybod"]
+[ext_resource type="Theme" uid="uid://ckj25p27k6t5u" path="res://fonts/200pixlels.tres" id="3_cxnqo"]
+[ext_resource type="Texture2D" uid="uid://buhgjonwb5ac7" path="res://images/timer_skulls.png" id="3_k4ag5"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="4_8j2gn"]
+
+[node name="tr_mid_timer" type="Control"]
+z_index = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_o80py")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_sybod")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("3_k4ag5")
+centered = false
+
+[node name="MPFVariable" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0.690196)
+z_index = 3
+layout_mode = 0
+offset_left = 1682.0
+offset_top = 664.0
+offset_right = 1797.0
+offset_bottom = 808.0
+theme = ExtResource("3_cxnqo")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 126
+text = "99"
+script = ExtResource("4_8j2gn")
+variable_name = "tribal_rhythm_tr_mode_mid_timer_tick"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.690196)
+clip_contents = false
+layout_mode = 0
+offset_left = 1488.0
+offset_top = 662.0
+offset_right = 1604.0
+offset_bottom = 741.0
+theme = ExtResource("3_cxnqo")
+theme_override_colors/font_outline_color = Color(0, 1, 0.921569, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 66
+text = "TIME
+"
+autowrap_mode = 0
+tab_size = 3
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.690196)
+clip_contents = false
+layout_mode = 0
+offset_left = 1423.0
+offset_top = 726.0
+offset_right = 1670.0
+offset_bottom = 805.0
+theme = ExtResource("3_cxnqo")
+theme_override_colors/font_outline_color = Color(0, 1, 0.921569, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 66
+text = "REMAINING
+"
+autowrap_mode = 0
+tab_size = 3

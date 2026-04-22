@@ -1,0 +1,81 @@
+#config_version=6
+
+#tawhiri_spins
+
+mode:
+  start_events: ball_started
+  priority: 750
+
+#-----------------------------------------------------------------------------------------------
+
+counters:
+  spinning_winds:
+    count_events: s_spinner_pf_active
+    starting_count: 0
+    count_complete_value: 20
+    direction: up
+    events_when_complete: tawhiri_winds  
+    restart_events: tawhiri_jackpot_collected     #restarts the spinner count
+
+#-----------------------------------------------------------------------------------------------
+
+shots:
+  tawhiri_jackpot_shot:
+    switch: s_target_l1
+    enable_events: tawhiri_winds 
+    disable_events: tawhiri_jackpot_collected, mode_tawhiri_spins_stopped
+
+#-----------------------------------------------------------------------------------------------
+
+sound_player:
+  tawhiri_winds:
+    ariels_voice:
+
+#-----------------------------------------------------------------------------------------------
+
+show_player:
+  tawhiri_winds:
+    ariels_shell:          #starts light show when event triggers
+      speed: 10
+      loops: -1   
+  tawhiri_jackpot_collected:
+    ariels_shell:
+      action: stop          #stops light show when event triggers
+
+#-----------------------------------------------------------------------------------------------
+
+widget_player:
+  tawhiri_jackpot_collected:
+    tawhiri_jackpot:
+      slide: base
+      expire: 4.5s
+  player_tawhiri_count:
+    player_tawhiri_count:
+      slide: base
+
+#-----------------------------------------------------------------------------------------------
+
+event_player:
+  tawhiri_jackpot_shot_hit:
+    - tawhiri_jackpot_collected         # custom event for scoring/shows/etc.
+
+#-----------------------------------------------------------------------------------------------
+
+variable_player:
+  tawhiri_jackpot_collected:
+    score: 75000 * current_player.pf_multiplier 
+    tawhiri_count:
+      int: 0
+      action: set
+  mode_tawhiri_spins_started:
+    tawhiri_count:
+      int: 0
+      action: set
+  ball_starting:
+    tawhiri_count:
+      int: 0
+      action: set
+  spinner_spinner_pf_hit:                
+    tawhiri_count:
+      int: 1
+      action: add          

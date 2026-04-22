@@ -1,0 +1,93 @@
+#config_version=6
+
+#target_multiplier
+
+mode:
+  start_events: ball_started
+  priority: 120
+
+#---------------------------------------------------------------------------------------------
+
+counters:
+  multiplier_complete_count:
+    count_events: multitarget_complete
+    events_when_hit: multitarget_done
+    starting_count: 0
+    direction: up
+    persist_state: false
+
+#---------------------------------------------------------------------------------------------
+    
+shots:
+  top_target_3:            #right (multiplier targets)
+    switch: s_target_r3
+  top_target_4:            #mid (multiplier targets)
+    switch: s_target_r4
+  top_target_5:            #left(multiplier targets)
+    switch: s_target_r5
+
+#---------------------------------------------------------------------------------------------
+
+shot_groups:
+  multitarget:
+    shots: top_target_3, top_target_4, top_target_5
+    reset_events: multitarget_lit_complete
+
+#---------------------------------------------------------------------------------------------
+    
+variable_player:
+  mode_target_multiplier_started:
+    pf_multiplier:
+      int: 1
+      action: set
+
+  multitarget_done{count==2}:
+    pf_multiplier:
+      int: 2
+      action: set
+
+  multitarget_done{count==3}:
+    pf_multiplier:
+      int: 3
+      action: set
+
+  multitarget_done{count==5}:
+    pf_multiplier:
+      int: 4
+      action: set
+
+  multitarget_complete:
+    score: 2500 * current_player.pf_multiplier
+
+#---------------------------------------------------------------------------------------------
+
+light_player:
+  mode_target_multiplier_started:
+    l_led_244: off   # 2X
+    l_led_247: off   # 3X
+    l_led_250: off   # 4X
+
+  multitarget_done{count==2}:
+    l_led_244: 8a2be2
+
+  multitarget_done{count==3}:
+    l_led_247: 8a2be2
+
+  multitarget_done{count==5}:
+    l_led_250: 8a2be2
+
+#---------------------------------------------------------------------------------------------
+
+show_player:
+  multitarget_lit_complete:
+    multiply_pf:
+      speed: 55
+      loops: 0
+
+#---------------------------------------------------------------------------------------------
+
+sound_player:
+   multitarget_lit_complete:
+     bongoquick:
+      bus: effects
+      volume: 1.75   

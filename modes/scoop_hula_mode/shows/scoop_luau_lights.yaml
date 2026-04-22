@@ -1,0 +1,11 @@
+#show_version=6
+
+- duration: 1
+  lights:
+    l_led_208: purple
+    l_led_175: purple
+
+- duration: 1
+  lights:
+    l_led_208: off
+    l_led_175: off

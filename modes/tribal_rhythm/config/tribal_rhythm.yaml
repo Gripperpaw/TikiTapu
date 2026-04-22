@@ -1,0 +1,349 @@
+#config_version=6
+
+#tribal rhythm
+
+mode:
+  start_events: scoop_tribal_rhythm
+  stop_events: timer_rhythm_timer_complete, timer_tr_mode_start_timer_complete, timer_tr_mode_mid_timer_complete
+  events_when_stopped: play_base_music_again
+  priority: 825
+
+#---------------------------------------------------------------------------------------------
+
+counters:
+  hinas_spinning:
+    count_events: s_spinner_right_active
+    events_when_hit: hina_rhythm_hit
+    starting_count: 0
+    count_complete_value: 3
+    direction: up
+    events_when_complete: hinas_have_spun 
+
+  volcano_flipping:
+    count_events: s_spinner_mid_active
+    events_when_hit: volcano_rhythm_hit
+    starting_count: 0
+    count_complete_value: 8
+    direction: up
+    events_when_complete: volcano_flipped
+
+  #spinners need to finished before the rollovers can engage
+
+  birds_boopin:
+    count_events: s_pop_1_active, s_pop_2_active, s_pop_3_active, s_pop_4_active, s_sling_upright_active
+    events_when_hit: bird_rhythm_hit
+    starting_count: 0
+    count_complete_value: 6
+    direction: up
+    events_when_complete: birds_have_booped  
+  
+  #pop bumpers are always available
+
+  kanaloa_loop:
+    enable_events: spinning_done
+    count_events: s_loop_top_active
+    events_when_hit: kanaloa_rhythm_hit
+    starting_count: 0
+    count_complete_value: 1
+    direction: up
+    events_when_complete: kanaloa_looped        #you can name this what ever you want
+
+  kane_pathway:
+    enable_events: spinning_done
+    count_events: s_loop_left_active
+    events_when_hit: kane_rhythm_hit
+    starting_count: 0
+    count_complete_value: 1
+    direction: up
+    events_when_complete: kane_pathed
+
+  toucan_tunnel:
+    enable_events: spinning_done
+    count_events: s_side_left_active
+    events_when_hit: toucan_rhythm_hit
+    starting_count: 0
+    count_complete_value: 1
+    direction: up
+    events_when_complete: toucans_tunneled
+  
+  #rollovers are active after the spinners are done
+
+#---------------------------------------------------------------------------------------------
+
+accruals:
+  spinner_accruals:
+    events:
+      - hinas_have_spun
+      - volcano_flipped
+      - birds_have_booped
+    events_when_complete: spinning_done   #you can name this what ever you want
+  
+  rollover_accruals:
+    events:
+      - kanaloa_looped
+      - kane_pathed
+      - toucans_tunneled
+    events_when_complete: rollovers_done
+
+  all_things_accruals:
+    events:
+      - spinning_done
+      - rollovers_done
+    events_when_complete: tribal_rhythm_complete
+
+#---------------------------------------------------------------------------------------------
+
+widget_player:
+  mode_tribal_rhythm_started:
+    tribal_rhythm_base:
+      slide: base
+    tr_start_timer:
+      slide: base
+    
+  spinning_done:
+    tr_rollover:
+      slide: base  
+
+  s_spinner_right_active:
+    tr_hina:
+      slide: base
+      expire: 800ms
+  s_spinner_mid_active:
+    tr_volcano:
+      slide: base
+      expire: 800ms
+  s_pop_1_active:
+    tr_birds:
+      slide: base
+      expire: 800ms
+  s_pop_2_active:
+    tr_birds:
+      slide: base
+      expire: 800ms
+  s_pop_3_active:
+    tr_birds:
+      slide: base
+      expire: 800ms
+  s_pop_4_active:
+    tr_birds:
+      slide: base
+      expire: 800ms
+  s_loop_top_active:
+    tr_kanaloa:
+      slide: base
+      expire: 800ms
+  s_loop_left_active:
+    tr_kane:
+      slide: base
+      expire: 800ms
+  s_side_left_active:
+    tr_toucan:
+      slide: base
+      expire: 800ms          
+
+  player_spinner_count:                   #part of counters linked to Godot
+    spinner_count:
+      slide: base
+  player_popbumper_count:
+    popbumper_count:
+      slide: base
+  player_roller_count:
+    roller_count:
+      slide: base
+
+  timer_tr_mode_mid_timer_started:         #timer mpfvariable linked to Godot
+    tr_mid_timer:
+      slide: base
+
+  timer_tr_mode_start_timer_stopped:
+    tr_start_timer:
+      action: remove
+  tribal_rhythm_complete:
+    tr_mid_timer:
+      action: remove
+
+#---------------------------------------------------------------------------------------------
+
+sound_player:
+  mode_tribal_rhythm_started:
+    tr_main_drum:
+      bus: music
+      action: play
+      loops: 1
+  spinning_done:
+    tr_ukulele:
+      bus: music
+      action: play
+      loops: 1
+    tr_main_drum:
+      action: stop
+      
+  tribal_rhythm_complete:
+    tr_rollover_fade:
+      bus: music
+      action: play
+      loops: 0                              #10 seconds of music
+    tr_main_drum:
+      action: stop
+
+#----------------------------------------------------------------------------------------------
+
+event_player:                               #events to trigger counter in Godot
+  bird_rhythm_hit: bumper_counting
+  hina_rhythm_hit: spinners_counting
+  volcano_rhythm_hit: spinners_counting
+  kanaloa_rhythm_hit: roller_counting
+  kane_rhythm_hit: roller_counting
+  toucan_rhythm_hit: roller_counting
+
+#---------------------------------------------------------------------------------------------
+
+variable_player:
+  hinas_have_spun:
+    score: 2500 * current_player.pf_multiplier
+  volcano_flipped:
+    score: 2500 * current_player.pf_multiplier
+  birds_have_booped:      
+    score: 2500 * current_player.pf_multiplier
+  kanaloa_looped:      
+    score: 2500 * current_player.pf_multiplier
+  kane_pathed:      
+    score: 2500 * current_player.pf_multiplier
+  toucans_tunneled:      
+    score: 2500 * current_player.pf_multiplier
+
+  tribal_rhythm_complete:
+    score: 100000 * current_player.pf_multiplier
+
+  mode_tribal_rhythm_started:       #from here down is for the counter linked to Godot
+    spinner_count:
+      int: 0
+      action: set
+    popbumper_count:
+      int: 0
+      action: set
+    roller_count:
+      int: 0
+      action: set
+
+  spinners_counting:              
+    spinner_count:
+      int: 1
+      action: add 
+  bumper_counting:
+    popbumper_count:
+      int: 1
+      action: add
+  roller_counting:
+    roller_count:
+      int: 1
+      action: add
+  
+  ball_starting:
+    spinner_count:
+      int: 0
+      action: set
+    popbumper_count:
+      int: 0
+      action: set
+    roller_count:
+      int: 0
+      action: set
+      
+#----------------------------------------------------------------------------------------------
+
+ball_saves:
+  rhythm_save:
+    active_time: 8s
+    timer_start_events: mode_tribal_rhythm_started
+    balls_to_save: 1
+    early_ball_save_events: s_outer_left_active, s_outer_right_active
+
+#-----------------------------------------------------------------------------------------------
+
+timers:
+  rhythm_timer:        #complete events, then once timer is out, create a new event to stop mode
+    start_value: 10
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: start
+        event: tribal_rhythm_complete
+
+  tr_mode_start_timer:         #75s to complete the spinners and pops
+    start_value: 75
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: start
+        event: mode_tribal_rhythm_started
+      - action: stop
+        event: spinning_done
+
+  tr_mode_mid_timer:           #75s to complete the rollovers
+    start_value: 75
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: start
+        event: spinning_done
+
+#-----------------------------------------------------------------------------------------------
+
+show_player:
+  mode_tribal_rhythm_started:
+    tr_bird1:
+      speed: 80
+      loops: -1
+    tr_bird2:
+      speed: 80
+      loops: -1
+    tr_bird3:
+      speed: 80
+      loops: -1
+    tr_bird4:
+      speed: 80
+      loops: -1
+    tr_spinvol:
+      speed: 80
+      loops: -1
+    tr_spinhina:
+      speed: 80
+      loops: -1
+    tribal_sides:
+      speed: 5
+      loops: -1   
+
+  birds_have_booped:
+    tr_bird1:
+      action: stop
+    tr_bird2:
+      action: stop
+    tr_bird3:
+      action: stop
+    tr_bird4:
+      action: stop
+  volcano_flipped:
+    tr_spinvol:
+      action: stop
+  hinas_have_spun:    
+    tr_spinhina:
+      action: stop
+
+  spinning_done:
+    tr_rollkane:
+      speed: 80
+      loops: -1   
+    tr_rollkanaloa:
+      speed: 80
+      loops: -1  
+
+  kanaloa_looped:
+    tr_rollkanaloa:
+      action: stop
+  kane_pathed:
+    tr_rollkane:
+      action: stop

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk1ta2h3edpjq"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_ijy4n"]
+[ext_resource type="Texture2D" uid="uid://vvf3l3kld07p" path="res://images/spincount.png" id="2_my3fa"]
+[ext_resource type="FontFile" uid="uid://wnwc8yko3tau" path="res://fonts/TropicalIslandVibes-ARL6L.ttf" id="3_sjshh"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="4_ufwhs"]
+
+[node name="spinner_count" type="Control"]
+z_index = 4
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ijy4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_my3fa")
+centered = false
+
+[node name="MPFVariable" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1496.0
+offset_top = 176.0
+offset_right = 1592.0
+offset_bottom = 291.0
+theme_override_colors/font_outline_color = Color(0.0980392, 0.388235, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_sjshh")
+theme_override_font_sizes/font_size = 80
+text = "16"
+script = ExtResource("4_ufwhs")
+variable_name = "spinner_count"
+update_event = "timer_rhythm_timer_complete,timer_tr_mode_timer_complete"

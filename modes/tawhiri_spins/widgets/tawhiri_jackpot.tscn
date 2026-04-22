@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://c53n35mchrywe"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_12n84"]
+[ext_resource type="Texture2D" uid="uid://cfw6rn6qwfkgp" path="res://modes/images/tawhiri/01.png" id="2_lnaai"]
+[ext_resource type="Texture2D" uid="uid://cxb1cvhim3qic" path="res://modes/images/tawhiri/02.png" id="3_a0htg"]
+[ext_resource type="Texture2D" uid="uid://bgkwdlyf6l12e" path="res://modes/images/tawhiri/03.png" id="4_26vt1"]
+[ext_resource type="Texture2D" uid="uid://cfptdh0vki0n" path="res://modes/images/tawhiri/04.png" id="5_10naw"]
+[ext_resource type="Texture2D" uid="uid://dtla02nspvm7n" path="res://modes/images/tawhiri/05.png" id="6_ngjd3"]
+[ext_resource type="Texture2D" uid="uid://dbsf0amuditnu" path="res://modes/images/tawhiri/06.png" id="7_ehx52"]
+[ext_resource type="Texture2D" uid="uid://c0mtvj4fhi3de" path="res://modes/images/tawhiri/07.png" id="8_aemcq"]
+[ext_resource type="Texture2D" uid="uid://7udgubdwlbv8" path="res://modes/images/tawhiri/08.png" id="9_krg7a"]
+[ext_resource type="Texture2D" uid="uid://bjjd4pnb4ab6g" path="res://modes/images/tawhiri/09.png" id="10_85gqb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjvm1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lnaai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a0htg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_26vt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_10naw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ngjd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ehx52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_aemcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_krg7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_85gqb")
+}],
+"loop": true,
+"name": &"tawhiri_spin_jp",
+"speed": 8.0
+}]
+
+[node name="tawhiri_jackpot" type="Control"]
+z_index = 4
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_12n84")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+sprite_frames = SubResource("SpriteFrames_xjvm1")
+animation = &"tawhiri_spin_jp"
+autoplay = "tawhiri_spin_jp"
+frame_progress = 0.0635302
+centered = false

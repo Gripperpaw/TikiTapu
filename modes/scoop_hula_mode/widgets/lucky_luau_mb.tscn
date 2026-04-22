@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmd2vjxnugkrh"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_ox6ma"]
+[ext_resource type="Texture2D" uid="uid://bwvycqevhxa70" path="res://modes/images/lucky_luau_mb.png" id="2_pxicq"]
+
+[node name="lucky_luau_mb" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ox6ma")
+
+[node name="luau_mb" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("2_pxicq")
+centered = false
+metadata/_edit_lock_ = true

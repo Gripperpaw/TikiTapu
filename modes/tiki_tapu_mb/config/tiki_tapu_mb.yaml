@@ -1,0 +1,100 @@
+#config_version=6
+
+#tiki_tapu_mb
+
+mode:
+  start_events: tiki_tapu_started
+  stop_events: game_ended, ball_will_end, ball_ended, player_turn_ended, timer_tapu_timer_complete
+  events_when_stopped: play_base_music_again, reset_multiball_engaged, reset_tiki_tapu_mb_active           #jim added this for MB conditional
+  events_when_started: set_multiball_engaged, set_tiki_tapu_mb_active                                    #jim added this for MB conditional    ***** linked to base line 184 ***** 
+  priority: 800
+
+#---------------------------------------------------------------------------------------------
+
+multiballs:
+  tiki_tapu_multiball:
+    ball_count_type: total
+    ball_count: 3
+    shoot_again: 60s
+    start_events: mode_tiki_tapu_mb_started
+
+#---------------------------------------------------------------------------------------------
+
+widget_player:
+  mode_tiki_tapu_mb_started:
+    tapu_mb:
+      slide: base
+    shoot_tiki_jp:
+      slide: base
+    tapu_timer:
+      slide: base
+    tapu_pulse:
+      slide: base
+
+#----------------------------------------------------------------------------------------------
+
+timers:                               #95s song, once timer is out, create a new event to stop mode  
+  tapu_timer:                         #tiki_tapu_mb_tapu_timer_tick - mpfvariable name
+    start_value: 60
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: start
+        event: mode_tiki_tapu_mb_started 
+
+#-----------------------------------------------------------------------------------------------
+
+shows:
+  tapu_jp:
+    - time: 0
+      lights:
+        l_led_079: ffffff   #white  
+    - time: +250ms
+      lights:
+        l_led_079: 000000
+    - time: +250ms
+      lights:
+        l_led_079: ff00ff    #magenta 
+    - time: +250ms
+      lights:
+        l_led_151: ffffff   #white  
+    - time: +250ms
+      lights:
+        l_led_151: 000000
+    - time: +250ms
+      lights:
+        l_led_151: ff00ff    #magenta   
+    - time: +250ms
+      lights:
+        l_led_154: ffffff   #white  
+    - time: +250ms
+      lights:
+        l_led_154: 000000
+    - time: +250ms
+      lights:
+        l_led_154: ff00ff    #magenta  
+    - time: +250ms  
+    
+#-----------------------------------------------------------------------------------------------
+
+show_player:
+  mode_tiki_tapu_mb_started:
+    tapu_jp:
+      action: play
+
+#-----------------------------------------------------------------------------------------------
+
+variable_player:
+  s_side_right_active:
+    score: 75000 * current_player.pf_multiplier
+  s_ramp_back_active:
+    score: 75000 * current_player.pf_multiplier 
+
+#---------------------------------------------------------------------------------------------
+
+coil_player:
+  mode_tiki_tapu_mb_started:
+    c_trap_release:
+      action: pulse
+      pulse_power: .5

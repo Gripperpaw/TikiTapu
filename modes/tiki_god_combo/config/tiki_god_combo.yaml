@@ -1,0 +1,441 @@
+#config_version=6
+
+#tiki_god_combo
+
+mode:
+  start_events: scoop_tiki_god_combo 
+  stop_events: finished_tiki_gods_complete, timer_tgc_timer_complete, mode_tiki_god_combo_stopped, ball_ending #, mode_bonus_started
+  priority: 775                                                                 #has to be higher than the god_afm modes for light shows to work
+  events_when_stopped: play_base_music_again, reset_multiball_engaged, reset_tiki_god_combo_active      #added both reser to base, ball drain wasn't resetting these.    
+  events_when_started: set_multiball_engaged, set_tiki_god_combo_active                                   
+
+#-----------------------------------------------------------------------------------------------
+
+state_machines:
+  hina_ku_kanaloa:
+    states:
+      start:
+        label: Start state #hina shot
+      step1:
+        label: #ramp back shot
+        events_when_started: ramp_back_blinking_show
+        events_when_stopped: ramp_back_blinking_show_stop
+      step2:
+        label: #loop top shot
+        events_when_started: loop_top_blinking_show
+        events_when_stopped: loop_top_blinking_show_stop
+
+    transitions:
+      - events: s_hina_active
+        source: start
+        target: step1
+        events_when_transitioning: reset_combo_timer
+      - source: step1
+        target: step2
+        events: s_ramp_back_active
+      - source: step2
+        target: start
+        events: s_loop_top_active, state_machine_reset
+        events_when_transitioning: hina_ku_kanaloa_complete
+      - source: step1, step2 #timer block
+        target: start
+        events: timer_combo_timer_complete
+
+  ku_kane_hina:
+    states:
+      start:
+        label: Start state #ku ramp back shot
+      step1:
+        label: #loop left shot
+        # show_when_active:                       not needed for show_player
+        #   show: on #loop_left_blinking_show
+        events_when_started: loop_left_blinking_show
+        events_when_stopped: loop_left_blinking_show_stop
+
+      step2:
+        label: #hina shot
+        # show_when_active:                       not needed for show_player
+        #   show: on #hina_blinking_show
+        events_when_started: hina_blinking_show
+        events_when_stopped: hina_blinking_show_stop
+
+    transitions:
+      - events: s_ramp_back_active
+        source: start
+        target: step1
+        events_when_transitioning: reset_combo_timer
+      - source: step1
+        target: step2
+        events: s_loop_left_active
+      - source: step2
+        target: start
+        events: s_hina_active, state_machine_reset
+        events_when_transitioning: ku_kane_hina_complete
+      - source: step1, step2 #timer block
+        target: start
+        events: timer_combo_timer_complete
+
+  lano_x3:
+    states:
+      start:
+        label: Start state #lano shot left ramp
+      step1:
+        label: #left ramp shot
+        events_when_started: left_ramp_blinking_show
+        events_when_stopped: left_ramp_blinking_show_stop
+      step2:
+        label: #left ramp shot
+        events_when_started: left_ramp_blinking_show
+        events_when_stopped: left_ramp_blinking_show_stop
+
+    transitions:
+      - events: s_left_ramp_active
+        source: start
+        target: step1
+        events_when_transitioning: reset_combo_timer
+      - source: step1
+        target: step2
+        events: s_left_ramp_active
+      - source: step2
+        target: start
+        events: s_left_ramp_active, state_machine_reset
+        events_when_transitioning: lano_x3_complete
+      - source: step1, step2 #timer block
+        target: start
+        events: timer_combo_timer_complete
+
+  kane_lano:
+    states:
+      start:
+        label: Start state #kane shot
+      step1:
+        label: #left ramp shot
+        events_when_started: left_ramp_blinking_show
+        events_when_stopped: left_ramp_blinking_show_stop
+
+    transitions:
+      - events: s_loop_left_active
+        source: start
+        target: step1
+        events_when_transitioning: reset_combo_timer
+      - source: step1
+        target: start
+        events: s_left_ramp_active, state_machine_reset
+        events_when_transitioning: kane_lano_complete
+      - source: step1 #timer block
+        target: start
+        events: timer_combo_timer_complete
+
+  kanaloa_kane:
+    states:
+      start:
+        label: Start state #kanaloa shot
+      step1:
+        label: #loop left shot
+        events_when_started: loop_left_blinking_show
+        events_when_stopped: loop_left_blinking_show_stop
+
+    transitions:
+      - events: s_loop_top_active
+        source: start
+        target: step1
+        events_when_transitioning: reset_combo_timer
+      - source: step1
+        target: start
+        events: s_loop_left_active, state_machine_reset
+        events_when_transitioning: kanaloa_kane_complete
+      - source: step1 #timer block
+        target: start
+        events: timer_combo_timer_complete
+
+  hina_kane:
+    states:
+      start:
+        label: Start state #hina shot
+      step1:
+        label: #loop left shot
+        events_when_started: loop_left_blinking_show
+        events_when_stopped: loop_left_blinking_show_stop
+
+    transitions:
+      - events: s_hina_active
+        source: start
+        target: step1
+        events_when_transitioning: reset_combo_timer
+      - source: step1
+        target: start
+        events: s_loop_left_active, state_machine_reset
+        events_when_transitioning: hina_kane_complete
+      - source: step1 #timer block
+        target: start
+        events: timer_combo_timer_complete
+
+  lano_hina:
+    states:
+      start:
+        label: Start state #lano shot
+      step1:
+        label: #hina shot
+        events_when_started: hina_blinking_show
+        events_when_stopped: hina_blinking_show_stop
+
+    transitions:
+      - events: s_left_ramp_active
+        source: start
+        target: step1
+        events_when_transitioning: reset_combo_timer
+      - source: step1
+        target: start
+        events: s_hina_active, state_machine_reset
+        events_when_transitioning: lano_hina_complete
+      - source: step1 #timer block
+        target: start
+        events: timer_combo_timer_complete
+
+### for reference show (bottom of mode) vs show_player (used in above states)
+
+  # lano_hina:
+  #   states:
+  #     start:
+  #       label: Start state #lano shot
+  #     step1:
+  #       label: #hina shot
+  #       show_when_active:
+  #         show: hina_blinking_show
+  #         loops: -1
+
+  #   transitions:
+  #     - events: s_left_ramp_active
+  #       source: start
+  #       target: step1
+  #       events_when_transitioning: reset_combo_timer
+  #     - source: step1
+  #       target: start
+  #       events: s_hina_active, state_machine_reset
+  #       events_when_transitioning: lano_hina_complete
+  #     - source: step1 #timer block
+  #       target: start
+  #       events: timer_combo_timer_complete
+
+#-----------------------------------------------------------------------------------------------
+
+coil_player:
+  mode_tiki_god_combo_started: c_trap_release
+
+#-----------------------------------------------------------------------------------------------
+
+timers:
+  tgc_timer:                                           #tiki_god_combo_tgc_timer_tick
+    start_value: 78                                    #78s to complete 2 different combos            
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: start
+        event: mode_tiki_god_combo_started
+      # - action: reset                                #removed, no reset on the 78 second timer. 
+      #   event: tgc_1_complete
+  combo_timer:                                         #8s allows for a little ball bounce
+    start_value: 10
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: restart
+        event: reset_combo_timer
+    #timer_combo_timer_complete
+
+#-----------------------------------------------------------------------------------------------
+
+sequences:
+  tiki_god_combo_1:
+    events:
+      - hina_ku_kanaloa_complete, ku_kane_hina_complete, lano_x3_complete, hina_kane_complete, lano_hina_complete, kanaloa_kane_complete, kane_lano_complete
+    events_when_complete: tgc_1_complete
+  tiki_god_combo_2:
+    start_enabled: false
+    enable_events: tgc_1_complete
+    events:
+      - hina_ku_kanaloa_complete, ku_kane_hina_complete, lano_x3_complete, hina_kane_complete, lano_hina_complete, kanaloa_kane_complete, kane_lano_complete
+    events_when_complete: finished_tiki_gods_complete
+
+#-----------------------------------------------------------------------------------------------
+
+show_player:
+  mode_tiki_god_combo_started:  
+    god_inserts_blink:   #in show folder
+      speed: 20
+      loops: -1
+    tikigod_sides:
+      speed: 5
+      loops: -1    
+
+  tgc_1_complete:
+    god_inserts_blink:
+      speed: 20
+      loops: -1
+
+  timer_combo_timer_complete:
+    god_inserts_blink:
+      speed: 20
+      loops: -1
+
+  s_hina_active:
+    god_inserts_blink:  
+      action: stop
+  s_ramp_back_active:
+    god_inserts_blink:
+      action: stop
+  s_left_ramp_active:
+    god_inserts_blink:
+      action: stop
+  s_loop_top_active:
+    god_inserts_blink:
+      action: stop
+  s_loop_left_active:
+    god_inserts_blink:
+      action: stop
+  
+# replaced "show" with new showcreator shows 
+
+  ramp_back_blinking_show:     #ku
+    tgc_ku_chase:
+       speed: 120
+       loops: -1   
+  ramp_back_blinking_show_stop:
+    tgc_ku_chase:
+       action: stop
+  loop_top_blinking_show:      #kanaloa
+    tgc_kanaloa_chase:
+       speed: 120
+       loops: -1
+  loop_top_blinking_show_stop:
+    tgc_kanaloa_chase:
+       action: stop
+  loop_left_blinking_show:     #kane
+    tgc_kane_chase:
+       speed: 120
+       loops: -1   
+  loop_left_blinking_show_stop:
+    tgc_kane_chase:
+      action: stop        
+  hina_blinking_show:          #hina
+    tgc_hina_chase:
+       speed: 120
+       loops: -1   
+  hina_blinking_show_stop:
+    tgc_hina_chase:
+      action: stop
+  left_ramp_blinking_show:     #lano           
+    tgc_lano_chase:
+       speed: 120
+       loops: -1      
+  left_ramp_blinking_show_stop:          
+    tgc_lano_chase:
+      action: stop
+
+#-----------------------------------------------------------------------------------------------
+
+widget_player:
+  mode_tiki_god_combo_started:
+    tikigodcombo:
+      slide: base
+    tikigodcombo_show:
+      slide: base
+    tiki_god_timer:
+      slide: base
+
+#-----------------------------------------------------------------------------------------------
+
+sound_player:
+  mode_tiki_god_combo_started:
+    coconut_nut_df:
+      bus: music
+      action: play
+      loops: 0                  #no loop, made the audio track 78s
+
+#-----------------------------------------------------------------------------------------------
+
+variable_player:
+  hina_ku_kanaloa_complete:      
+    score: 15000 * current_player.pf_multiplier
+  ku_kane_hina_complete:      
+    score: 15000 * current_player.pf_multiplier
+  lano_x3_complete:      
+    score: 10000 * current_player.pf_multiplier
+  hina_kane_complete:      
+    score: 10000 * current_player.pf_multiplier
+  lano_hina_complete:      
+    score: 10000 * current_player.pf_multiplier
+  kanaloa_kane_complete:      
+    score: 10000 * current_player.pf_multiplier
+  kane_lano_complete:      
+    score: 10000 * current_player.pf_multiplier
+
+  tgc_2_complete:
+    score: 100000 * current_player.pf_multiplier
+
+#-----------------------------------------------------------------------------------------------
+
+ball_saves:
+  tikigod_save:
+    active_time: 8s
+    timer_start_events: mode_tiki_god_combo_started
+    balls_to_save: 1
+    early_ball_save_events: s_outer_left_active, s_outer_right_active
+
+#-----------------------------------------------------------------------------------------------
+
+### for reference show (linked to line 193) vs show_player (used in above states)
+
+# shows:
+      
+#   ramp_back_blinking_show:     #ku
+#     - duration: 250ms
+#       lights:
+#         l_led_151: ff0000      #ku down
+#         l_led_154: off         #ku up off
+#     - duration: 250ms
+#       lights:
+#         l_led_151: off         #ku down off
+#         l_led_154: ffffff      #ku up on
+      
+#   loop_top_blinking_show:      #kanaloa
+#     - duration: 250ms
+#       lights:
+#         l_led_118: ff0000      #kanaloa down    8b4513 - saddlebrown  
+#         l_led_121: off         #kanaloa up off
+#     - duration: 250ms
+#       lights:
+#         l_led_118: off         #kanaloa down off
+#         l_led_121: ffffff      #kanaloa up on
+      
+#   loop_left_blinking_show:     #kane
+#     - duration: 250ms
+#       lights:
+#         l_led_136: ff0000     #kane down    7cfc00 - lawngreen
+#         l_led_139: off         #kane up off
+#     - duration: 250ms
+#       lights:
+#         l_led_136: off         #kane down off
+#         l_led_139: ffffff      #kane up on
+      
+#   hina_blinking_show:          #hina
+#     - duration: 250ms
+#       lights:
+#         l_led_190: ff0000      #hina down    ff1493 - deeppink
+#         l_led_193: off         #hina up off
+#     - duration: 250ms
+#       lights:
+#         l_led_190: off         #hina down off
+#         l_led_193: ffffff      #hina up on
+      
+#   left_ramp_blinking_show:     #lano
+#     - duration: 250ms
+#       lights:
+#         l_led_166: ff0000      #lano down     ff4500 - orangered
+#         l_led_169: off         #lano up off
+#     - duration: 250ms
+#       lights:
+#         l_led_166: off         #lano down off
+#         l_led_169: ffffff      #lano up on

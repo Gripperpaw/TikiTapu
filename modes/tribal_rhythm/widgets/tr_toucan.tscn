@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqiygmgvb0llf"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_ida4f"]
+[ext_resource type="Texture2D" uid="uid://dcv4t70la1ort" path="res://images/tr_toucan.png" id="2_4d55d"]
+
+[node name="tr_toucan" type="Control"]
+z_index = 4
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ida4f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4d55d")
+centered = false

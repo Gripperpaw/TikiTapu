@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://qjheqmgombqa"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_umqps"]
+[ext_resource type="Texture2D" uid="uid://cye5374jc84au" path="res://images/tiki_tapu_mb_base.png" id="2_eswha"]
+[ext_resource type="Texture2D" uid="uid://buhgjonwb5ac7" path="res://images/timer_skulls.png" id="3_otyj5"]
+[ext_resource type="Theme" uid="uid://ckj25p27k6t5u" path="res://fonts/200pixlels.tres" id="4_f37ep"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="5_vgtan"]
+
+[node name="tapu_timer" type="Control"]
+z_index = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_umqps")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_eswha")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("3_otyj5")
+centered = false
+
+[node name="MPFVariable" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0.690196)
+layout_mode = 0
+offset_left = 1682.0
+offset_top = 664.0
+offset_right = 1797.0
+offset_bottom = 808.0
+theme = ExtResource("4_f37ep")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 126
+text = "99"
+script = ExtResource("5_vgtan")
+variable_name = "tiki_tapu_mb_tapu_timer_tick"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+self_modulate = Color(1, 1, 1, 0.690196)
+clip_contents = false
+layout_mode = 0
+offset_left = 1488.0
+offset_top = 662.0
+offset_right = 1604.0
+offset_bottom = 741.0
+theme = ExtResource("4_f37ep")
+theme_override_colors/font_outline_color = Color(0.996078, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 66
+text = "TIME
+"
+autowrap_mode = 0
+tab_size = 3
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+self_modulate = Color(1, 1, 1, 0.690196)
+clip_contents = false
+layout_mode = 0
+offset_left = 1423.0
+offset_top = 726.0
+offset_right = 1670.0
+offset_bottom = 805.0
+theme = ExtResource("4_f37ep")
+theme_override_colors/font_outline_color = Color(0.996078, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 66
+text = "REMAINING
+"
+autowrap_mode = 0
+tab_size = 3

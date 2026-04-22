@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://6ys7kiwnk6in"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_sk1kg"]
+[ext_resource type="Texture2D" uid="uid://txcu11l15xft" path="res://modes/images/skillsneaki.png" id="2_piraq"]
+[ext_resource type="FontFile" uid="uid://wnwc8yko3tau" path="res://fonts/TropicalIslandVibes-ARL6L.ttf" id="3_45roh"]
+
+[node name="MPFWidget" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1921.0
+offset_bottom = 1080.0
+script = ExtResource("1_sk1kg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_piraq")
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Sprite2D"]
+z_index = 1
+offset_left = 341.0
+offset_top = 208.0
+offset_right = 792.0
+offset_bottom = 629.0
+theme_override_colors/default_color = Color(0.98296, 0.181982, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.270222, 0.270222, 0.270222, 1)
+theme_override_fonts/normal_font = ExtResource("3_45roh")
+theme_override_font_sizes/normal_font_size = 140
+bbcode_enabled = true
+text = "[center][color=fb2eff]
+[pulse freq=3.5 color=#ffffff40 ease=-2.0]25,000[/pulse]
+[/color][/center]"

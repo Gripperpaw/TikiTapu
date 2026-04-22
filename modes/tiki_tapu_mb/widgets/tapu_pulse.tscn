@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtd5jyidjx6n6"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_w4xdb"]
+[ext_resource type="Texture2D" uid="uid://cye5374jc84au" path="res://images/tiki_tapu_mb_base.png" id="2_8wvem"]
+[ext_resource type="Texture2D" uid="uid://wyht1i7qagfq" path="res://images/tiki_tapu_mb_02.png" id="3_gjftc"]
+[ext_resource type="Texture2D" uid="uid://cmd6nwmndpd8g" path="res://images/tiki_tapu_mb_01.png" id="4_jj1ye"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fn810"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gjftc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jj1ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gjftc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="tapu_pulse" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_w4xdb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8wvem")
+centered = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fn810")
+autoplay = "default"
+frame = 2
+frame_progress = 1.0
+centered = false

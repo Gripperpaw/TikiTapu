@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://bhm4e50cli0x8"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_j8lco"]
+[ext_resource type="Texture2D" uid="uid://deb6sv0owc3bu" path="res://modes/images/hl_small_points.png" id="2_cq8kx"]
+[ext_resource type="Texture2D" uid="uid://dfd1nstmtmt8u" path="res://modes/images/blank.png" id="2_visbt"]
+[ext_resource type="Script" path="res://modes/scoop_hula_mode/widgets/small/sprite_2d_2.gd" id="3_11326"]
+[ext_resource type="Texture2D" uid="uid://bgp7mkj5civpc" path="res://modes/images/hula/hls_1.png" id="4_b4aft"]
+[ext_resource type="Texture2D" uid="uid://cmyl22a00mrxm" path="res://modes/images/hula/hls_2.png" id="5_krqeu"]
+[ext_resource type="Texture2D" uid="uid://dfqc4gndiy7ua" path="res://modes/images/hula/hls_3.png" id="6_jvikn"]
+[ext_resource type="Texture2D" uid="uid://cxfjc4nusbwat" path="res://modes/images/hula/hls_4.png" id="7_t13ey"]
+[ext_resource type="Texture2D" uid="uid://cbdkwvfaiip0h" path="res://modes/images/hula/hls_5.png" id="8_58k0x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ns6a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_b4aft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_krqeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jvikn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_t13ey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_58k0x")
+}],
+"loop": true,
+"name": &"smallpoints",
+"speed": 5.0
+}]
+
+[node name="SamllPpoints" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_j8lco")
+
+[node name="SpriteSmall" type="Sprite2D" parent="."]
+texture = ExtResource("2_visbt")
+centered = false
+script = ExtResource("3_11326")
+
+[node name="AnimateSmallPoints" type="AnimatedSprite2D" parent="SpriteSmall"]
+unique_name_in_owner = true
+position = Vector2(967, 543)
+sprite_frames = SubResource("SpriteFrames_7ns6a")
+animation = &"smallpoints"
+frame_progress = 0.700033
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(431, -4)
+scale = Vector2(0.564062, 0.564062)
+texture = ExtResource("2_cq8kx")
+centered = false

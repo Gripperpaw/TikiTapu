@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm7u5s12h0mpa"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_for4e"]
+[ext_resource type="Texture2D" uid="uid://83lwewrev5ym" path="res://images/tribal_rhythm.png" id="2_1gqko"]
+
+[node name="tribal_rhythm_base" type="Control"]
+z_index = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_for4e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1gqko")
+centered = false

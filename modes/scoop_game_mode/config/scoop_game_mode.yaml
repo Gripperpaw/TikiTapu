@@ -1,0 +1,77 @@
+#config_version=6
+
+#scoop_game_mode
+
+mode:
+  start_events: ball_started
+  stop_events: ball_ending
+  priority: 425
+
+#-----------------------------------------------------------------------------------------------
+
+ball_holds:
+  mode_scoop:
+    balls_to_hold: 1
+    hold_devices: bd_scoop
+    enable_events: captive_counter_full
+    disable_events: ball_hold_mode_scoop_balls_released
+    reset_events: mode_light_the_torches_stopped, mode_enchanted_birds_stopped, mode_sillyfaceguys_stopped, mode_tiki_god_combo_stopped, mode_tribal_rhythm_stopped
+    # release_one_events: mode_light_the_torches_started, mode_enchanted_birds_started, mode_sillyfaceguys_started, mode_tiki_god_combo_started
+    release_one_events: mode_scoop_release
+
+#-----------------------------------------------------------------------------------------------
+
+random_event_player:
+  ball_hold_mode_scoop_held_ball:
+    events:
+      - scoop_enchanted_birds  #use these event names to start modes
+      - scoop_light_the_torches
+      - scoop_sillyfaceguys
+      - start_tiki_combo  #start_tiki_combo  #this mode --->  scroll down to even_player for conditional
+      - scoop_tribal_rhythm
+  force_all: true
+
+#-----------------------------------------------------------------------------------------------
+  
+show_player:
+  captive_counter_full:
+    scoop_mode_lights:
+      action: play
+      loops: -1
+  ball_hold_mode_scoop_full:
+    scoop_mode_lights: stop
+    mode_chase:
+      speed: 60
+      loops: 2
+
+#-----------------------------------------------------------------------------------------------
+
+event_player:
+  timer_mode_scoop_hold_timer_complete:
+    mode_scoop_release:   
+
+  start_tiki_combo{current_player.multiball_engaged == 0}: scoop_tiki_god_combo                # "if there is no mb started, we will open_trap_door"               
+  guarded_open_trap_door{current_player.tiki_god_combo_active == 0}: open_trap_door            # "if there tiki_god is not started, we will open_trap_door"
+  
+#-----------------------------------------------------------------------------------------------
+
+widget_player:
+  captive_counter_full:
+    mode_on_off:
+      slide: base
+  ball_hold_mode_scoop_full:
+    mode_on_off:
+      action: remove 
+
+#-----------------------------------------------------------------------------------------------
+
+timers:
+  mode_scoop_hold_timer:
+    start_value: 0
+    end_value: 3
+    tick_interval: 1s
+    control_events:
+      - event: ball_hold_mode_scoop_held_ball
+        action: start
+      - event: ball_hold_mode_scoop_balls_released
+        action: reset

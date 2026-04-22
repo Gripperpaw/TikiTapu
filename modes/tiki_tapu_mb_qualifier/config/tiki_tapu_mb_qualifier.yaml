@@ -1,0 +1,30 @@
+#config_version=6
+
+#tiki_tapu_mb_qualifier
+
+mode:
+  start_events: ball_started
+  stop_events: game_ended 
+  priority: 795
+
+#---------------------------------------------------------------------------------------------
+
+accruals:
+  tiki_tapu_multiball:
+
+    events:
+      - godhina_complete
+      - godkanaloa_complete
+      - godkane_complete
+      - godku_complete
+      - godlano_complete
+
+    events_when_complete:
+      - tiki_tapu_event_conditional   
+      
+#---------------------------------------------------------------------------------------------
+
+event_player:
+  tiki_tapu_event_conditional{current_player.multiball_engaged == 0}: tiki_tapu_started       #jim added this for MB conditional "if there is no mb started, we will start the mb"
+  guarded_open_trap_door{current_player.tiki_tapu_mb_active == 0}: open_trap_door            # "if tiki_tapu_mb is not started, we will open_trap_door" 
+  

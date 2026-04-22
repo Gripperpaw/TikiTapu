@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://corqs20qo151n"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_q32v5"]
+[ext_resource type="Texture2D" uid="uid://c1sf4wh3cmf2u" path="res://modes/images/kakamora_attack.png" id="2_0o43r"]
+
+[node name="KakamoraAttack" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_q32v5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0o43r")
+centered = false

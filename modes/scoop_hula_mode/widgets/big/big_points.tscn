@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://dayv0u01sdlmy"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_0hiti"]
+[ext_resource type="Texture2D" uid="uid://dfd1nstmtmt8u" path="res://modes/images/blank.png" id="2_51fg1"]
+[ext_resource type="Script" path="res://modes/scoop_hula_mode/widgets/big/sprite_2d_2.gd" id="3_jgk3k"]
+[ext_resource type="Texture2D" uid="uid://ds0wlpfte1c40" path="res://modes/images/hula/hlb_1.png" id="4_nkwky"]
+[ext_resource type="Texture2D" uid="uid://1xyca2dvxsy0" path="res://modes/images/hula/hlb_2.png" id="5_7vgsl"]
+[ext_resource type="Texture2D" uid="uid://ov6wgqo04brk" path="res://modes/images/hula/hlb_3.png" id="6_2hixq"]
+[ext_resource type="Texture2D" uid="uid://cx687s4k0qos6" path="res://modes/images/hula/hlb_4.png" id="7_i18vj"]
+[ext_resource type="Texture2D" uid="uid://cgay26my8sgvr" path="res://modes/images/hula/hlb_5.png" id="8_7yxo7"]
+[ext_resource type="Texture2D" uid="uid://dp1a11wr8ky8t" path="res://modes/images/hl_big_points.png" id="9_vrifu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jlxjw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nkwky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7vgsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2hixq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i18vj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7yxo7")
+}],
+"loop": true,
+"name": &"bigpoints",
+"speed": 5.0
+}]
+
+[node name="BigPoints" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0hiti")
+
+[node name="SpriteBig" type="Sprite2D" parent="."]
+texture = ExtResource("2_51fg1")
+script = ExtResource("3_jgk3k")
+
+[node name="AnimateBigPoints" type="AnimatedSprite2D" parent="SpriteBig"]
+unique_name_in_owner = true
+position = Vector2(961, 543)
+sprite_frames = SubResource("SpriteFrames_jlxjw")
+animation = &"bigpoints"
+frame_progress = 0.59986
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(409, 4)
+scale = Vector2(0.559896, 0.559896)
+texture = ExtResource("9_vrifu")
+centered = false

@@ -1,0 +1,139 @@
+#show_version=6
+
+- time: 0
+  lights:
+    l_led_025: '000101'
+    l_led_052: '010908'
+    
+- time: '+1'
+  lights:
+    l_led_025: '1BDEC8'
+    l_led_052: '1BDEC8'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_led_052: '14A696'
+    
+- time: '+1'
+  lights:
+    l_led_025: '000000'
+    l_led_052: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_led_031: '1BDEC8'
+    l_led_046: '1BDBC6'
+    
+- time: '+1'
+  lights:
+    l_led_046: '1BDEC8'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_led_031: '000000'
+    l_led_046: '000000'
+    
+- time: '+1'
+  lights:
+    l_led_040: '000404'
+    
+- time: '+1'
+  lights:
+    l_led_037: '1BDCC6'
+    l_led_040: '1BDEC8'
+    
+- time: '+1'
+  lights:
+    l_led_037: '1BDEC8'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_led_037: '000201'
+    l_led_040: '000000'
+    
+- time: '+1'
+  lights:
+    l_led_037: '000000'
+    
+- time: '+1'
+  lights:
+    l_led_034: '000202'
+    l_led_043: '14A695'
+    
+- time: '+1'
+  lights:
+    l_led_034: '1BDEC8'
+    l_led_043: '1BDEC8'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_led_034: '118E80'
+    l_led_043: '000000'
+    
+- time: '+1'
+  lights:
+    l_led_034: '000000'
+    
+- time: '+1'
+  lights:
+    l_led_049: '18C3AF'
+    
+- time: '+1'
+  lights:
+    l_led_028: '1BDEC8'
+    l_led_049: '1BDEC8'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    
+- time: '+1'
+  lights:
+    l_led_028: '1BDDC7'
+    l_led_049: '1BDCC6'
+    
+- time: '+1'
+  lights:
+    l_led_028: '000000'
+    l_led_049: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: '+1'
+    

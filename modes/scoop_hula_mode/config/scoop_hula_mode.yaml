@@ -1,0 +1,190 @@
+#config_version=6
+
+#scoop_hula_mode
+
+mode:
+  start_events: ball_started
+  stop_events: game_ended
+  priority: 400
+
+#---------------------------------------------------------------------------------------------
+
+event_player:
+  hula_lane_group_lit_complete: enable_lucky_luau
+  luau_reward_mb: set_multiball_engaged                                 #jim added this for MB conditional 10 to 13   ***** linked to base line 184 *****
+  multiball_luau_reward_mb_ended: reset_multiball_engaged               
+  ball_hold_luau_scoop_held_ball{current_player.multiball_engaged == 0}: scoop_reward_with_mb
+  ball_hold_luau_scoop_held_ball{current_player.multiball_engaged == 1}: scoop_reward_without_mb
+
+#---------------------------------------------------------------------------------------------
+
+ball_holds:
+  luau_scoop:
+    balls_to_hold: 1
+    hold_devices: bd_scoop
+    enable_events: enable_lucky_luau
+    disable_events: ball_hold_luau_scoop_balls_released
+    reset_events: big_points, small_points, multiball_luau_reward_mb_ended, nothing_pork 
+    release_one_events: big_points, small_points, luau_reward_mb, nothing_pork
+
+#---------------------------------------------------------------------------------------------
+
+random_event_player:
+  scoop_reward_with_mb:         #jim added this for MB conditional - old event (ball_hold_luau_scoop_held_ball:)
+    events:
+      - big_points
+      - luau_reward_mb
+      - small_points 
+      - nothing_pork
+    force_all: true
+  scoop_reward_without_mb:      #jim added this for MB conditional 32 to 36
+    events:
+      - big_points
+      - small_points 
+      - nothing_pork
+
+#---------------------------------------------------------------------------------------------
+
+variable_player:
+  big_points:
+    score: 54321 * current_player.pf_multiplier 
+  small_points:
+    score: 12345 * current_player.pf_multiplier 
+  multiball_luau_reward_mb_started:
+    score: 5000 * current_player.pf_multiplier 
+
+  s_side_right_active:
+    score: 75000 * current_player.pf_multiplier 
+
+#---------------------------------------------------------------------------------------------
+
+show_player:
+  enable_lucky_luau:
+    scoop_luau_lights:
+      action: play
+      loops: -1
+  ball_hold_luau_scoop_full:
+    scoop_luau_lights: 
+      action: stop
+  big_points:
+    hula_spin_ccw:
+      loops: 0                # run once    
+    red_spiral:
+      speed: 50
+      loops: 1
+  small_points:
+    hula_spin_ccw:
+      loops: 0                # run once 
+    yellow_spiral:
+      speed: 50
+      loops: 1
+  luau_reward_mb:
+    hula_spin_ccw:
+      loops: 0                # run once 
+  nothing_pork:
+    hula_spin_ccw:
+      loops: 0                # run once 
+    green_spiral:
+      speed: 50
+      loops: 1
+  multiball_luau_reward_mb_started:
+    hula_spin_ccw:
+      loops: 0    
+    blue_spiral:
+      speed: 50
+      loops: 1
+   # for kahuna jackpot
+    ll_blink_jp:
+      action: play
+      priority: 500
+  multiball_luau_reward_mb_ended:
+    ll_blink_jp:
+      action: stop
+
+#---------------------------------------------------------------------------------------------
+
+shows:
+  ll_blink_jp:
+    - time: 0
+      lights:
+        l_led_079: ffffff   #white  
+    - time: +250ms
+      lights:
+        l_led_079: 000000
+    - time: +250ms
+      lights:
+        l_led_079: 20b2aa    #lightseagreen
+
+#---------------------------------------------------------------------------------------------
+
+shots:
+  jackpot_ll_shot1:
+    switch: s_side_right
+    profile: luckyjp_success
+    enable_events: multiball_luau_reward_mb_started
+    disable_events: multiball_luau_reward_mb_ended, game_ended, stop_ll_blink_jp
+
+#---------------------------------------------------------------------------------------------
+
+shot_profiles:
+  luckyjp_success:
+    states:
+      - name: unlit
+        show: off
+      - name: lit
+        show: ll_blink_jp
+
+#---------------------------------------------------------------------------------------------
+
+widget_player:
+  big_points:
+    big_points:
+      slide: base
+      expire: 5s
+  small_points:      
+    small_points:
+      slide: base
+      expire: 5s
+  nothing_pork:
+    pork:
+      slide: base
+      expire: 5s
+  luau_reward_mb:
+    lucky_luau_mb:
+      slide:
+      expire: 8s
+  multiball_luau_reward_mb_started:
+    shoot_jp:
+      action: play      
+  multiball_luau_reward_mb_ended:
+    shoot_jp:
+      action: remove
+
+#---------------------------------------------------------------------------------------------
+
+multiball_locks:
+  luau_lock:
+    balls_to_lock: 1
+    lock_devices: bd_scoop
+    enable_events: luau_reward_mb
+    disable_events: multiball_luau_reward_mb_started
+
+#---------------------------------------------------------------------------------------------
+
+multiballs:
+  luau_reward_mb:
+    ball_count: 2
+    ball_count_type: total
+    shoot_again: 20s
+    ball_locks: bd_scoop
+    start_events: luau_reward_mb
+    reset_events: machine_reset_phase_3, ball_started, multiball_luau_reward_mb_ended
+
+#---------------------------------------------------------------------------------------------
+
+coil_player:
+  luau_reward_mb:
+    c_trap_release:
+      action: pulse
+      pulse_power: .5
+

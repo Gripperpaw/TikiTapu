@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://nfed2obmgbi7"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_4gehg"]
+[ext_resource type="Texture2D" uid="uid://bbpsui7pt5q2t" path="res://images/tr_kanaloa.png" id="2_tjxp1"]
+
+[node name="tr_kanaloa" type="Control"]
+z_index = 4
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4gehg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tjxp1")
+centered = false

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ibje85u67c78"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_v7pj7"]
+[ext_resource type="Texture2D" uid="uid://bd47t6rbblcp5" path="res://modes/images/skillkane.png" id="2_r2yus"]
+[ext_resource type="FontFile" uid="uid://wnwc8yko3tau" path="res://fonts/TropicalIslandVibes-ARL6L.ttf" id="3_7riel"]
+
+[node name="skillkane" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1079.0
+script = ExtResource("1_v7pj7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_r2yus")
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Sprite2D"]
+offset_left = 1040.0
+offset_top = 216.0
+offset_right = 1491.0
+offset_bottom = 637.0
+theme_override_colors/default_color = Color(0.952941, 0.411765, 0.0431373, 1)
+theme_override_colors/font_shadow_color = Color(0.270222, 0.270222, 0.270222, 1)
+theme_override_fonts/normal_font = ExtResource("3_7riel")
+theme_override_font_sizes/normal_font_size = 140
+bbcode_enabled = true
+text = "[center][color=f3690b]
+[pulse freq=3.5 color=#ffffff40 ease=-2.0]35,000[/pulse]
+[/color][/center]"

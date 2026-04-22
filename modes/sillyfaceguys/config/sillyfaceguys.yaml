@@ -1,0 +1,171 @@
+#config_version=6
+
+#sillyfaceguys
+
+mode:
+  start_events: scoop_sillyfaceguys
+  stop_events: finished_sillyfaceguys_complete, timer_kakamora_timer_complete #, mode_bonus_started
+  events_when_stopped: play_base_music_again
+      
+#----------------------------------------------------------------------------------------------
+
+accruals:
+  sillyfaceguys_accruals:
+    events:
+      - drop_l1_hit
+      - drop_l2_hit
+      - drop_l3_hit
+      - drop_l4_hit
+      - drop_r1_hit
+      - drop_r2_hit
+      - drop_r3_hit
+      - drop_r4_hit
+    events_when_complete: finished_sillyfaceguys_complete
+      
+#----------------------------------------------------------------------------------------------
+
+shots:
+  drop_l1:
+    switch: s_drop_l1               
+    show_tokens:
+      led: l_led_055     
+      color: ff00ff
+    profile: faceguys_profile 
+  drop_l2:
+    switch: s_drop_l2 
+    show_tokens:
+      led: l_led_058
+      color: ff00ff
+    profile: faceguys_profile 
+  drop_l3:
+    switch: s_drop_l3 
+    show_tokens:
+      led: l_led_061
+      color: ff00ff
+    profile: faceguys_profile  
+  drop_l4:
+    switch: s_drop_l4 
+    show_tokens:
+      led: l_led_064
+      color: ff00ff
+    profile: faceguys_profile  
+  drop_r1:
+    switch: s_drop_r1               
+    show_tokens:
+      led: l_led_187     
+      color: ff00ff
+    profile: faceguys_profile 
+  drop_r2:
+    switch: s_drop_r2 
+    show_tokens:
+      led: l_led_184
+      color: ff00ff
+    profile: faceguys_profile 
+  drop_r3:
+    switch: s_drop_r3 
+    show_tokens:
+      led: l_led_181
+      color: ff00ff
+    profile: faceguys_profile  
+  drop_r4:
+    switch: s_drop_r4 
+    show_tokens:
+      led: l_led_178
+      color: ff00ff
+    profile: faceguys_profile  
+      
+#----------------------------------------------------------------------------------------------
+
+ball_saves:
+  coconut_save:
+    active_time: 8s
+    timer_start_events: mode_sillyfaceguys_started
+    balls_to_save: 1
+    early_ball_save_events: s_outer_left_active, s_outer_right_active
+      
+#----------------------------------------------------------------------------------------------
+
+shot_profiles:
+  faceguys_profile:                     #faceguys_profile is linked to the shots group above
+    states:
+      - name: blinking
+        show: blinking_guy_led
+      - name: lit
+        show: led_color 
+
+#----------------------------------------------------------------------------------------------
+        
+variable_player:
+  drop_l1_hit:
+    score: 2500 * current_player.pf_multiplier 
+  drop_l2_hit:
+    score: 2500 * current_player.pf_multiplier 
+  drop_l3_hit:
+    score: 2500 * current_player.pf_multiplier 
+  drop_l4_hit:
+    score: 2500 * current_player.pf_multiplier 
+  drop_r1_hit:
+    score: 2500 * current_player.pf_multiplier 
+  drop_r2_hit:
+    score: 2500 * current_player.pf_multiplier 
+  drop_r3_hit:
+    score: 2500 * current_player.pf_multiplier 
+  drop_r4_hit:
+    score: 2500 * current_player.pf_multiplier 
+  finished_sillyfaceguys_complete:
+    score: 100000 * current_player.pf_multiplier 
+      
+#----------------------------------------------------------------------------------------------
+
+widget_player:
+  mode_sillyfaceguys_started:
+    kakamora:
+      slide: base
+    arrows:
+      slide: base
+    kakamora_timer:
+      slide: base
+      
+#----------------------------------------------------------------------------------------------
+
+sound_player:
+  mode_sillyfaceguys_started:
+    kakamora_music:
+      bus: music
+      action: play
+      loops: -1
+      
+#----------------------------------------------------------------------------------------------
+
+timers:                               #95s song, once timer is out, create a new event to stop mode  
+  kakamora_timer:                     #sillyfaceguys_kakamora_timer_tick - mpfvariable name
+    start_value: 95
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: start
+        event: mode_sillyfaceguys_started  
+      
+#----------------------------------------------------------------------------------------------
+
+shows:
+  blinking_guy_led:                   #blinking_guy_led ties to shot_profile above
+    - time: 0
+      lights:
+        face_guy: green               #face_guy is a tags: under the lights yaml
+    - time: +250ms
+      lights:
+        face_guy: off
+    - time: +250ms
+      lights:
+        face_guy: green
+      
+#----------------------------------------------------------------------------------------------
+
+show_player:
+  mode_sillyfaceguys_started:
+    kakamora_sides:
+      speed: 5
+      loops: -1      
+

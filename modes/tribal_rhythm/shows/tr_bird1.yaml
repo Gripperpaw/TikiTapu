@@ -1,0 +1,301 @@
+#show_version=6
+- time: 0
+  lights:
+    l_led_318: 'F4F4F4'
+    
+- time: '+1'
+  lights:
+    l_led_318: 'EAEAEA'
+    
+- time: '+1'
+  lights:
+    l_led_318: 'E0E0E0'
+    
+- time: '+1'
+  lights:
+    l_led_318: 'D6D6D6'
+    
+- time: '+1'
+  lights:
+    l_led_318: 'CCCCCC'
+    
+- time: '+1'
+  lights:
+    l_led_318: 'C1C1C1'
+    
+- time: '+1'
+  lights:
+    l_led_318: 'B7B7B7'
+    
+- time: '+1'
+  lights:
+    l_led_318: 'ADADAD'
+    
+- time: '+1'
+  lights:
+    l_led_318: 'A3A3A3'
+    
+- time: '+1'
+  lights:
+    l_led_318: '999999'
+    
+- time: '+1'
+  lights:
+    l_led_318: '8E8E8E'
+    
+- time: '+1'
+  lights:
+    l_led_318: '848484'
+    
+- time: '+1'
+  lights:
+    l_led_318: '7A7A7A'
+    
+- time: '+1'
+  lights:
+    l_led_318: '707070'
+    
+- time: '+1'
+  lights:
+    l_led_318: '666666'
+    
+- time: '+1'
+  lights:
+    l_led_318: '5B5B5B'
+    
+- time: '+1'
+  lights:
+    l_led_318: '515151'
+    
+- time: '+1'
+  lights:
+    l_led_318: '474747'
+    
+- time: '+1'
+  lights:
+    l_led_318: '3D3D3D'
+    
+- time: '+1'
+  lights:
+    l_led_318: '333333'
+    
+- time: '+1'
+  lights:
+    l_led_318: '282828'
+    
+- time: '+1'
+  lights:
+    l_led_318: '1E1E1E'
+    
+- time: '+1'
+  lights:
+    l_led_318: '141414'
+    
+- time: '+1'
+  lights:
+    l_led_318: '0A0A0A'
+    
+- time: '+1'
+  lights:
+    l_led_318: '000000'
+    
+- time: '+1'
+  lights:
+    l_led_322: 'F4F4F4'
+    
+- time: '+1'
+  lights:
+    l_led_322: 'EAEAEA'
+    
+- time: '+1'
+  lights:
+    l_led_322: 'E0E0E0'
+    
+- time: '+1'
+  lights:
+    l_led_322: 'D6D6D6'
+    
+- time: '+1'
+  lights:
+    l_led_322: 'CCCCCC'
+    
+- time: '+1'
+  lights:
+    l_led_322: 'C1C1C1'
+    
+- time: '+1'
+  lights:
+    l_led_322: 'B7B7B7'
+    
+- time: '+1'
+  lights:
+    l_led_322: 'ADADAD'
+    
+- time: '+1'
+  lights:
+    l_led_322: 'A3A3A3'
+    
+- time: '+1'
+  lights:
+    l_led_322: '999999'
+    
+- time: '+1'
+  lights:
+    l_led_322: '8E8E8E'
+    
+- time: '+1'
+  lights:
+    l_led_322: '848484'
+    
+- time: '+1'
+  lights:
+    l_led_322: '7A7A7A'
+    
+- time: '+1'
+  lights:
+    l_led_322: '707070'
+    
+- time: '+1'
+  lights:
+    l_led_322: '666666'
+    
+- time: '+1'
+  lights:
+    l_led_322: '5B5B5B'
+    
+- time: '+1'
+  lights:
+    l_led_322: '515151'
+    
+- time: '+1'
+  lights:
+    l_led_322: '474747'
+    
+- time: '+1'
+  lights:
+    l_led_322: '3D3D3D'
+    
+- time: '+1'
+  lights:
+    l_led_322: '333333'
+    
+- time: '+1'
+  lights:
+    l_led_322: '282828'
+    
+- time: '+1'
+  lights:
+    l_led_322: '1E1E1E'
+    
+- time: '+1'
+  lights:
+    l_led_322: '141414'
+    
+- time: '+1'
+  lights:
+    l_led_322: '0A0A0A'
+    
+- time: '+1'
+  lights:
+    l_led_322: '000000'
+    
+- time: '+1'
+  lights:
+    l_led_320: 'F4F4F4'
+    
+- time: '+1'
+  lights:
+    l_led_320: 'EAEAEA'
+    
+- time: '+1'
+  lights:
+    l_led_320: 'E0E0E0'
+    
+- time: '+1'
+  lights:
+    l_led_320: 'D6D6D6'
+    
+- time: '+1'
+  lights:
+    l_led_320: 'CCCCCC'
+    
+- time: '+1'
+  lights:
+    l_led_320: 'C1C1C1'
+    
+- time: '+1'
+  lights:
+    l_led_320: 'B7B7B7'
+    
+- time: '+1'
+  lights:
+    l_led_320: 'ADADAD'
+    
+- time: '+1'
+  lights:
+    l_led_320: 'A3A3A3'
+    
+- time: '+1'
+  lights:
+    l_led_320: '999999'
+    
+- time: '+1'
+  lights:
+    l_led_320: '8E8E8E'
+    
+- time: '+1'
+  lights:
+    l_led_320: '848484'
+    
+- time: '+1'
+  lights:
+    l_led_320: '7A7A7A'
+    
+- time: '+1'
+  lights:
+    l_led_320: '707070'
+    
+- time: '+1'
+  lights:
+    l_led_320: '666666'
+    
+- time: '+1'
+  lights:
+    l_led_320: '5B5B5B'
+    
+- time: '+1'
+  lights:
+    l_led_320: '515151'
+    
+- time: '+1'
+  lights:
+    l_led_320: '474747'
+    
+- time: '+1'
+  lights:
+    l_led_320: '3D3D3D'
+    
+- time: '+1'
+  lights:
+    l_led_320: '333333'
+    
+- time: '+1'
+  lights:
+    l_led_320: '282828'
+    
+- time: '+1'
+  lights:
+    l_led_320: '1E1E1E'
+    
+- time: '+1'
+  lights:
+    l_led_320: '141414'
+    
+- time: '+1'
+  lights:
+    l_led_320: '0A0A0A'
+    
+- time: '+1'
+  lights:
+    l_led_320: '000000'
+    

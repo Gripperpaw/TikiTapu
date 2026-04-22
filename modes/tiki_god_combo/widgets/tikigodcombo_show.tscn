@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://ck4sjl6duaj4n"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_ulf5s"]
+[ext_resource type="Texture2D" uid="uid://d18gkmgdrwv3n" path="res://images/tiki_god_combo.png" id="2_tu7ug"]
+[ext_resource type="Texture2D" uid="uid://dawgq6qb012yy" path="res://images/tiki_god_combo_0.png" id="3_fl4tr"]
+[ext_resource type="Texture2D" uid="uid://dib4ds5amajpk" path="res://images/tiki_god_combo_2.png" id="4_22p17"]
+[ext_resource type="Texture2D" uid="uid://cb34aa4wtb3p8" path="res://images/tiki_god_combo_3.png" id="5_cxp52"]
+[ext_resource type="Texture2D" uid="uid://bs4dk32wr5db3" path="res://images/tiki_god_combo_4.png" id="6_ncqgf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n0ptb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fl4tr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_22p17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cxp52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ncqgf")
+}],
+"loop": true,
+"name": &"blink",
+"speed": 1.5
+}]
+
+[node name="tikigodcombo_show" type="Control"]
+z_index = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ulf5s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_tu7ug")
+centered = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_n0ptb")
+animation = &"blink"
+autoplay = "blink"
+frame_progress = 0.00154463
+centered = false

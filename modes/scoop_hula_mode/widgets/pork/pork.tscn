@@ -1,0 +1,104 @@
+[gd_scene load_steps=22 format=3 uid="uid://bn4qjmlrm8rs5"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_3ydmy"]
+[ext_resource type="Texture2D" uid="uid://cm2c88s3qoyho" path="res://modes/images/base.png" id="2_44pe8"]
+[ext_resource type="Script" path="res://modes/scoop_hula_mode/widgets/pork/porksprite.gd" id="2_xayn7"]
+[ext_resource type="Texture2D" uid="uid://cym1csirdprdf" path="res://modes/images/pork/pork_01.png" id="4_wd5ld"]
+[ext_resource type="Texture2D" uid="uid://blnxof7k528qx" path="res://modes/images/pork/pork_02.png" id="5_8imy4"]
+[ext_resource type="Texture2D" uid="uid://snu0vejd606y" path="res://modes/images/pork/pork_03.png" id="6_c6lvy"]
+[ext_resource type="Texture2D" uid="uid://dfm6vlj0rksiy" path="res://modes/images/pork/pork_04.png" id="7_ysevl"]
+[ext_resource type="Texture2D" uid="uid://dqd768bhwth5i" path="res://modes/images/pork/pork_05.png" id="8_yrmdl"]
+[ext_resource type="Texture2D" uid="uid://djmdp27nhdcnn" path="res://modes/images/pork/pork_06.png" id="9_ek3if"]
+[ext_resource type="Texture2D" uid="uid://cdvdwicjugdg7" path="res://modes/images/pork/pork_frame.png" id="11_qvt6a"]
+[ext_resource type="Texture2D" uid="uid://38kqxsqflo74" path="res://modes/images/pork/pork_07.png" id="11_s1v60"]
+[ext_resource type="Texture2D" uid="uid://bxxnb2bgi2xlu" path="res://modes/images/pork/pork_08.png" id="12_x7pus"]
+[ext_resource type="Texture2D" uid="uid://ckgdsulquvxd5" path="res://modes/images/pork/pork_09.png" id="13_fhdts"]
+[ext_resource type="Texture2D" uid="uid://cmffrl2qle3ig" path="res://modes/images/pork/pork_10.png" id="14_5q415"]
+[ext_resource type="Texture2D" uid="uid://dgm70agb4oefs" path="res://modes/images/pork/pork_11.png" id="15_j2tew"]
+[ext_resource type="Texture2D" uid="uid://bmfw3mg0rhsjf" path="res://modes/images/pork/pork_12.png" id="16_syu1p"]
+[ext_resource type="Texture2D" uid="uid://dijxl2y68ac0j" path="res://modes/images/pork/pork_13.png" id="17_7capf"]
+[ext_resource type="Texture2D" uid="uid://c1b6s83r6kndr" path="res://modes/images/pork/pork_14.png" id="17_wt4k4"]
+[ext_resource type="Texture2D" uid="uid://blc1d8d735a5p" path="res://modes/images/pork/pork_15.png" id="18_a0u6h"]
+[ext_resource type="Texture2D" uid="uid://d2i5a0g73y7ee" path="res://modes/images/pork/pork_16.png" id="19_wstk1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ylr3f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wd5ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8imy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c6lvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ysevl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yrmdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ek3if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_s1v60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_x7pus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fhdts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5q415")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_j2tew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_syu1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7capf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wt4k4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_a0u6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_wstk1")
+}],
+"loop": true,
+"name": &"pork",
+"speed": 8.5
+}]
+
+[node name="pork" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3ydmy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_44pe8")
+centered = false
+
+[node name="porksprite" type="Sprite2D" parent="."]
+centered = false
+script = ExtResource("2_xayn7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="porksprite"]
+sprite_frames = SubResource("SpriteFrames_ylr3f")
+animation = &"pork"
+autoplay = "pork"
+frame_progress = 0.854525
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("11_qvt6a")
+centered = false

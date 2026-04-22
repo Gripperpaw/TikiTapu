@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv8tunqjd3jyy"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_bwpkw"]
+[ext_resource type="Texture2D" uid="uid://cv7rwtbjmngdf" path="res://images/tr_hina.png" id="2_wa8uq"]
+
+[node name="tr_hina" type="Control"]
+z_index = 4
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bwpkw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wa8uq")
+centered = false

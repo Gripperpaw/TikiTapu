@@ -1,0 +1,18 @@
+#config_version=6
+
+#mode_qualifier
+
+mode:
+  start_events: ball_started, mode_light_the_torches_stopped, mode_enchanted_birds_stopped, mode_sillyfaceguys_stopped, mode_tiki_god_combo_stopped, mode_tribal_rhythm_stopped
+  stop_events: game_ended, mode_light_the_torches_started, mode_enchanted_birds_started, mode_sillyfaceguys_started, mode_tiki_god_combo_started, mode_tribal_rhythm_started
+  priority: 380
+
+#---------------------------------------------------------------------------------------------
+
+counters:
+  mode_scoop_counter:
+    count_events: s_target_cap_active
+    count_complete_value: 2
+    events_when_complete: captive_counter_full 
+    restart_events: balldevice_bd_scoop_ball_entered
+
