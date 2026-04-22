@@ -1,0 +1,17 @@
+#config_version=6
+
+#servo
+
+servos:                                #****    these are specific to my cheap 360 amazon servo, but might work for others    ****
+  servo_hula:                                   # servo controlling hula mechanism
+    servo_min: 0.275                            # hardware range 0-2550µs, servo min 700µs, 700/2550=~0.275
+    servo_max: 0.902                            # servo max 2300µs, 2300/2550=~0.902
+    speed_limit: 160                            # default speed limit, adjust as needed
+    positions:                                  # percentages along range of 0.275(700µs=0) to 0.902(2300µs=1)
+      0.0: spin_hula_cw                         # 700µs, full speed clockwise
+      0.3825: stop_hula                          # 1500µs, stop position         **not dialed in, still has micro movements***
+      1.0: spin_hula_ccw                        # 2300µs, full speed counterclockwise
+    reset_position: 0.3825                      # 1500µs, stops servo on reset
+    reset_events: ball_ending, machine_reset_phase_3, game_starting
+    number: 252-0-8
+

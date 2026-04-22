@@ -1,0 +1,583 @@
+#config_version=6
+
+#lights
+
+# J11: NEO 0 Neopixel  -  output (all these lights have MPF numbers with the
+#                        format 0-0-##. The first LED in the chain is 0-0-0)
+# J12: NEO 1 Neopixel  -  output (all these lights have MPF numbers with the
+#                        format 1-0-##. The first LED in the chain is 1-0-0)
+# Sweet: NEO 252 Neopixel output (all these lights have MPF numbers with the
+#                    format 252-0-##. The first LED in the chain is 252-0-0)
+
+lights:
+
+#################################################
+#######          lower third pf          ########
+#################################################
+
+  l_ledapron_001:          #just apron front 60mm amazon leds
+    start_channel: 1-0-0
+    type: grb
+  l_ledapron_002:
+    previous: l_ledapron_001
+    type: grb
+  l_ledapron_003:
+    previous: l_ledapron_002
+    type: grb
+  l_ledapron_004:
+    previous: l_ledapron_003
+    type: grb
+  l_ledapron_005:
+    previous: l_ledapron_004
+    type: grb
+  l_ledapron_006:
+    previous: l_ledapron_005
+    type: grb
+  l_ledapron_007:
+    previous: l_ledapron_006
+    type: grb
+  l_ledapron_008:
+    previous: l_ledapron_007
+    type: grb
+  l_ledapron_009:
+    previous: l_ledapron_008
+    type: grb
+  l_ledapron_010:
+    previous: l_ledapron_009
+    type: grb
+  l_ledapron_011:
+    previous: l_ledapron_010
+    type: grb
+  l_ledapron_012:
+    previous: l_ledapron_011
+    type: grb
+  l_ledapron_013:
+    previous: l_ledapron_012
+    type: grb
+  l_ledapron_014:
+    previous: l_ledapron_013
+    type: grb
+  l_ledapron_015:
+    previous: l_ledapron_014
+    type: grb
+  l_ledapron_016:
+    previous: l_ledapron_015
+    type: grb
+
+#---------------------------------------------------------------------------------------------
+
+  l_led_004:               #apron plunge
+    previous: l_ledapron_016
+    subtype: led
+    type: grbw
+  l_led_007:               #apron plunge
+    previous: l_led_004
+    subtype: led
+    type: grbw
+  l_led_010:               #shell shoot again
+    previous: l_led_007
+    subtype: led
+    type: grbw
+  l_led_013:               #hula h
+    previous: l_led_010
+    subtype: led
+    type: grbw
+  l_led_016:               #hula u
+    previous: l_led_013
+    subtype: led
+    type: grbw
+  l_led_019:               #hula l
+    previous: l_led_049
+    subtype: led
+    type: grbw
+  l_led_022:               #hula a
+    previous: l_led_019  
+    subtype: led
+    type: grbw
+  l_led_025:               #enchanted tiki birds down
+    previous: l_led_016  
+    subtype: led
+    type: grbw
+  l_led_028:               #enchanted tiki birds up
+    previous: l_led_025
+    subtype: led
+    type: grbw
+  l_led_031:               #kakamora attack down
+    previous: l_led_028
+    subtype: led
+    type: grbw
+  l_led_034:               #kakamora attack up
+    previous: l_led_031
+    subtype: led
+    type: grbw
+  l_led_037:               #tiki god combo down
+    previous: l_led_034
+    subtype: led
+    type: grbw
+  l_led_040:               #tiki got combo up
+    previous: l_led_037
+    subtype: led
+    type: grbw
+  l_led_043:               #light the torches down
+    previous: l_led_040
+    subtype: led
+    type: grbw
+  l_led_046:               #light the torches up
+    previous: l_led_043
+    subtype: led
+    type: grbw
+  l_led_049:               #tribal rhythm down
+    previous: l_led_052
+    subtype: led
+    type: grbw
+  l_led_052:               #tribal rhythm up
+    previous: l_led_046
+    subtype: led
+    type: grbw
+
+#################################################
+#######            mid third pf          ########
+#################################################
+
+  l_led_055:               #kaka k low
+    previous: l_led_058
+    subtype: led
+    type: grbw
+    tags: face_guy
+  l_led_058:               #kaka a low
+    previous: l_led_061
+    subtype: led
+    type: grbw
+    tags: face_guy
+  l_led_061:               #kaka k
+    previous: l_led_064
+    subtype: led
+    type: grbw
+    tags: face_guy
+  l_led_064:               #kaka a
+    previous: l_led_094
+    subtype: led
+    type: grbw
+    tags: face_guy
+  l_led_065:               #torch 7 - match 082
+    previous: l_led_022
+    subtype: led
+    type: grbw
+    tags: pf_torch
+  l_led_067:               #bop p
+    previous: l_led_065
+    subtype: led
+    type: grbw
+  l_led_070:               #bop o
+    previous: l_led_067
+    subtype: led
+    type: grbw
+  l_led_073:               #bop b
+    previous: l_led_070
+    subtype: led
+    type: grbw
+  l_led_076:               #torch 8 insert - match 189
+    previous: l_led_079
+    subtype: led
+    type: grbw
+    tags: pf_torch
+  l_led_079:               #kahuna jackpot
+    previous: l_led_073
+    subtype: led
+    type: grbw
+  l_led_082:               #torch 7 insert - match 065
+    previous: l_led_076
+    subtype: led
+    type: grbw
+    tags: pf_torch
+  l_led_085:               #torch 6 insert - match 205
+    previous: l_led_082
+    subtype: led
+    type: grbw
+    tags: pf_torch
+  l_led_088:               #torch 5 insert - match 253
+    previous: l_led_085
+    subtype: led
+    type: grbw
+    tags: pf_torch
+  l_led_091:               #torch 4 insert - match 214
+    previous: l_led_088
+    subtype: led
+    type: grbw
+    tags: pf_torch
+  l_led_094:               #torch 3 insert - match 232
+    previous: l_led_091
+    subtype: led
+    type: grbw
+    tags: pf_torch
+  l_led_097:               #torch 2 insert - match 229
+    previous: l_led_102
+    subtype: led
+    type: grbw
+    tags: pf_torch
+  l_led_100:               #kakamora shell jackpot
+    previous: l_led_055
+    subtype: led
+    type: grbw
+  l_led_102:               #torch 1 insert - match 106
+    previous: l_led_100
+    subtype: led
+    type: grbw
+    tags: pf_torch
+  l_led_106:               #torch 1 insert - match 103
+    previous: l_led_097
+    subtype: led
+    type: grbw
+    tags: pf_torch
+  l_led_109:               #kanaloa 1
+    previous: l_led_106
+    subtype: led
+    type: grbw
+  l_led_112:               #kanaloa 2
+    previous: l_led_109
+    subtype: led
+    type: grbw
+  l_led_115:               #kanaloa 3
+    previous: l_led_112
+    subtype: led
+    type: grbw
+  l_led_118:               #kanaloa down
+    previous: l_led_115
+    subtype: led
+    type: grbw
+  l_led_121:               #kanaloa up
+    previous: l_led_118
+    subtype: led
+    type: grbw
+  l_led_124:               #captive
+    previous: l_led_121
+    subtype: led
+    type: grbw
+  l_led_127:               #kane 1
+    previous: l_led_130
+    subtype: led
+    type: grbw
+  l_led_130:               #kane 2
+    previous: l_led_133
+    subtype: led
+    type: grbw
+  l_led_133:               #kane 3
+    previous: l_led_136
+    subtype: led
+    type: grbw
+  l_led_136:               #kane down
+    previous: l_led_139
+    subtype: led
+    type: grbw
+  l_led_139:               #kane up
+    previous: l_led_124
+    subtype: led
+    type: grbw
+  l_led_142:               #ku 1
+    previous: l_led_163
+    subtype: led
+    type: grbw
+  l_led_145:               #ku 2
+    previous: l_led_142
+    subtype: led
+    type: grbw
+  l_led_148:               #ku 3
+    previous: l_led_154
+    subtype: led
+    type: grbw
+  l_led_151:               #ku down
+    previous: l_led_145
+    subtype: led
+    type: grbw
+  l_led_154:               #ku up
+    previous: l_led_211
+    subtype: led
+    type: grbw
+  l_led_157:               #lano 1
+    previous: l_led_127
+    subtype: led
+    type: grbw
+  l_led_160:               #lano 2
+    previous: l_led_157
+    subtype: led
+    type: grbw
+  l_led_163:               #lano 3
+    previous: l_led_160
+    subtype: led
+    type: grbw
+  l_led_166:               #lano down
+    previous: l_led_169
+    subtype: led
+    type: grbw
+  l_led_169:               #lano up
+    previous: l_led_148
+    subtype: led
+    type: grbw
+  l_led_172:               #start mode
+    previous: l_led_175
+    subtype: led
+    type: grbw
+  l_led_175:               #lucky luau
+    previous: l_led_208
+    subtype: led
+    type: grbw
+  l_led_178:               #mora a
+    previous: l_led_172
+    subtype: led
+    type: grbw
+    tags: face_guy
+  l_led_181:               #mora r
+    previous: l_led_178
+    subtype: led
+    type: grbw
+    tags: face_guy
+  l_led_184:               #mora o
+    previous: l_led_181
+    subtype: led
+    type: grbw
+    tags: face_guy
+  l_led_187:               #mora m
+    previous: l_led_184
+    subtype: led
+    type: grbw
+    tags: face_guy
+  l_led_189:               #torch 8 - match 076
+    previous: l_led_187
+    subtype: led
+    type: grbw
+    tags: pf_torch
+  l_led_190:               #hina down
+    previous: l_led_189
+    subtype: led
+    type: grbw
+  l_led_193:               #hina up
+    previous: l_led_190
+    subtype: led
+    type: grbw
+  l_led_196:               #hina 1
+    previous: l_led_193
+    subtype: led
+    type: grbw
+  l_led_199:               #hina 2
+    previous: l_led_196
+    subtype: led
+    type: grbw
+  l_led_202:               #hina 3
+    previous: l_led_199
+    subtype: led
+    type: grbw
+  l_led_205:               #torch 6 - match 085
+    previous: l_led_202
+    subtype: led
+    type: grbw
+    tags: pf_torch
+  l_led_208:               #scoop inside
+    previous: l_led_166
+    subtype: led
+    type: grbw
+
+#################################################
+#######          upper third pf          ########
+#################################################
+
+  l_led_211:               #volcano path
+    previous: l_led_151
+    subtype: led
+    type: grbw
+  l_led_214:               #torch 4 - match 091
+    previous: l_led_205
+    subtype: led
+    type: grbw
+    tags: pf_torch
+  l_led_217:               #inside volcano under pf (jumper)
+    previous: l_led_214
+    subtype: led
+    type: grbw
+  l_led_218:               #inside volcano
+    previous: l_led_217
+    subtype: led
+    type: grbw
+  l_led_220:               #inside volcano
+    previous: l_led_218
+    subtype: led
+    type: grbw
+  l_led_221:               #inside volcano
+    previous: l_led_220
+    subtype: led
+    type: grbw
+  l_led_223:               #inside volcano
+    previous: l_led_221
+    subtype: led
+    type: grbw
+  l_led_224:               #inside volcano
+    previous: l_led_223
+    subtype: led
+    type: grbw
+  l_led_226:               #inside volcano
+    previous: l_led_224
+    subtype: led
+    type: grbw
+  l_led_227:               #inside volcano
+    previous: l_led_226
+    subtype: led
+    type: grbw
+  l_led_228:               #inside volcano
+    previous: l_led_227
+    subtype: led
+    type: grbw
+  l_led_229:               #torch 2 - match 097
+    previous: l_led_228
+    subtype: led
+    type: grbw
+    tags: pf_torch
+  l_led_232:               #torch 3 - match 094
+    previous: l_led_229
+    subtype: led
+    type: grbw
+    tags: pf_torch
+  l_led_235:               #ball lock left
+    previous: l_led_232
+    subtype: led
+    type: grbw
+  l_led_238:               #ball lock mid
+    previous: l_led_235
+    subtype: led
+    type: grbw
+  l_led_241:               #ball lock right
+    previous: l_led_238
+    subtype: led
+    type: grbw
+  l_led_244:               #multiply x2
+    previous: l_led_241
+    subtype: led
+    type: grbw
+  l_led_247:               #multiply x3
+    previous: l_led_244
+    subtype: led
+    type: grbw
+  l_led_250:               #multiply x4
+    previous: l_led_247
+    subtype: led
+    type: grbw
+  l_led_253:               #torch 5 - match 088
+    previous: l_led_250
+    subtype: led
+    type: grbw
+    tags: pf_torch
+
+#################################################
+#######           GI rgb leds            ########
+#################################################
+
+  l_led_300:               #sling left
+    previous: l_led_253
+    subtype: led
+    type: rgb                                             #rgb are the cobrapin self solder leds
+  l_led_305:               #sling right
+    previous: l_led_300
+    subtype: led
+    type: rgb
+  l_led_310:               #right mid bops
+    previous: l_led_305
+    subtype: led
+    type: rgb
+  l_led_312:               #pf spinner bottom right
+    previous: l_led_310
+    subtype: led
+    type: rgb
+  l_led_314:               #pf spinner bottom left
+    previous: l_led_312
+    subtype: led
+    type: rgb
+  l_led_316:               #jumper under pf
+    previous: l_led_314
+    subtype: led
+    type: grbw
+  l_led_318:               #left pop 1
+    previous: l_led_316
+    subtype: led
+    type: grb                                             #mini 3 led disc from aliexpress on pops
+  l_led_320:               #left pop 2
+    previous: l_led_318
+    subtype: led
+    type: grb
+  l_led_322:               #left pop 3
+    previous: l_led_320
+    subtype: led
+    type: grb
+  l_led_324:               #jumper under pf
+    previous: l_led_322
+    subtype: led
+    type: grbw
+  l_led_326:               #pf spinner up left
+    previous: l_led_324
+    subtype: led
+    type: rgb
+  l_led_328:               #pf spinner up right
+    previous: l_led_326
+    subtype: led
+    type: rgb
+  l_led_330:               #right mid by flipper
+    previous: l_led_328
+    subtype: led
+    type: rgb
+  l_led_332:               #mora target zone
+    previous: l_led_330
+    subtype: led
+    type: rgb
+  l_led_334:               #rpop low 1
+    previous: l_led_332
+    subtype: led
+    type: grb
+  l_led_336:               #rpop low 2
+    previous: l_led_334
+    subtype: led
+    type: grb
+  l_led_338:               #rpop low 3
+    previous: l_led_336
+    subtype: led
+    type: grb
+  l_led_340:               #jumper under pf (jumper)
+    previous: l_led_338
+    subtype: led
+    type: grbw
+  l_led_342:               #rpop lmid 1
+    previous: l_led_340
+    subtype: led
+    type: grb
+  l_led_344:               #rpop lmid 2
+    previous: l_led_342
+    subtype: led
+    type: grb
+  l_led_346:               #rpop lmid 3
+    previous: l_led_344
+    subtype: led
+    type: grb
+  l_led_348:               #jumper under pf (jumper)
+    previous: l_led_346
+    subtype: led
+    type: grbw
+  l_led_350:               #rpop up 1
+    previous: l_led_348
+    subtype: led
+    type: grb
+  l_led_352:               #rpop up 2
+    previous: l_led_350
+    subtype: led
+    type: grb
+  l_led_354:               #rpop up 3
+    previous: l_led_352
+    subtype: led
+    type: grb
+  l_led_356:               #top right corner
+    previous: l_led_354
+    subtype: led
+    type: rgb
+  l_led_358:               #top left curve
+    previous: l_led_356
+    subtype: led
+    type: rgb
+  l_led_360:               #top left corner
+    previous: l_led_358
+    subtype: led
+    type: rgb

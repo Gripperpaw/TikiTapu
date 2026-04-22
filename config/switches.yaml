@@ -1,0 +1,293 @@
+#config_version=6
+
+#switches
+
+#Can name these to match left, right, center, or however you want. The switch name defined here
+#Will be used in any modes where the switches are activated, etc. 
+
+timed_switches:                                      #adds a pause before it registers since it's triggered by the ball rolling by
+  ball_one_locked:                                   #used this for ball lock lights
+    switch_tags: subway01
+    time: 2s
+    events_when_active: ball_one1_locked
+  ball_two_locked:
+    switch_tags: subway02
+    time: 2s
+    events_when_active: ball_two2_locked
+  ball_three_locked:
+    switch_tags: subway03
+    time: 1s
+    events_when_active: ball_three3_locked
+
+#---------------------------------------------------------------------------------------------
+
+switches:
+  
+  # J1                                                #separated by controller jst plug
+
+  s_start:
+    number: 0-0-1
+    tags: start
+    ignore_window_ms: 500
+
+  s_flipper_right:
+    number: 0-0-2
+    tags: right_flipper
+
+  s_flipper_left:
+    number: 0-0-3
+    tags: left_flipper
+    
+  s_pop_1:            #R1 right lower
+    number: 0-0-8
+    tags: enchanted, bonus_pop
+
+  s_pop_2:            #R2 right upper
+    number: 0-0-9
+    tags: enchanted, bonus_pop
+ 
+  s_pop_3:            #R3 mid upper
+    number: 0-0-10
+    tags: enchanted, bonus_pop
+ 
+  s_pop_4:            #R4 mid pf left
+    number: 0-0-11
+    tags: enchanted, bonus_pop
+ 
+#---------------------------------------------------------------------------------------------
+
+  # J2
+
+  s_sling_right:
+    number: 0-0-27
+    tags: bonus_switch
+
+  s_sling_upright:
+    number: 0-0-26
+    tags: enchanted, bonus_pop
+
+  s_sling_left:
+    number: 0-0-25
+    tags: bonus_switch
+
+  s_inner_left:        #hula u
+    number: 0-0-24
+    tags: hulabottom, bonus_switch
+ 
+  s_drop_l1:           #kakamora k
+    number: 0-0-19
+    tags: bonus_target
+
+  s_drop_l2:           #kakamora a
+    number: 0-0-18
+    tags: bonus_target
+
+  s_drop_l3:           #kakamora k
+    number: 0-0-17
+    tags: bonus_target
+
+  s_drop_l4:           #kakamora a
+    number: 0-0-16
+    tags: bonus_target
+
+#---------------------------------------------------------------------------------------------
+
+  # J3
+
+  s_trough_b1:         #eject hole
+    number: 1-0-1
+    type: "NC"
+    tags: trough
+
+  s_trough_b2:
+    number: 1-0-2
+    tags: trough
+
+  s_trough_b3:
+    number: 1-0-3
+    tags: trough
+
+  s_trough_b4:
+    number: 1-0-8
+    tags: trough
+
+  s_findingnemo:       #drain
+    number: 1-0-9
+    type: "NO"
+
+  s_target_l1:         #kakamora standup (aku aku)
+    number: 1-0-10
+    ignore_window_ms: 500
+
+  s_vuk_1:             #front eject hole
+    number: 1-0-11
+    type: "NC"
+    tags: subway01
+
+#---------------------------------------------------------------------------------------------
+
+  # J4
+
+  s_vuk_2:             #mid
+    number: 1-0-31
+    type: "NC"
+    tags: subway02
+
+  s_vuk_3:             #back
+    number: 1-0-30
+    type: "NC"
+    tags: subway03
+
+  s_target_o:          #bop o
+    number: 1-0-29
+    tags: bonus_target
+
+  s_target_b:          #bop b
+    number: 1-0-28
+    tags: bonus_target
+    
+  s_outer_left:        #hula h
+    number: 1-0-27
+    tags: hulabottom, bonus_switch
+ 
+  s_plunger:           #plunger lane
+    number: 1-0-26
+    type: "NO"
+    ignore_window_ms: 400                             #adds a small pause so it doesn't double trigger
+
+  s_scoop:             #lucky luau mystery / mode start
+    number: 1-0-25
+    type: "NC"
+    ignore_window_ms: 200
+
+  s_ramp_back:         #ku
+    number: 1-0-24
+    type: "NO"
+    tags: bonus_switch
+   
+#---------------------------------------------------------------------------------------------
+
+  # J5
+
+  s_drop_r4:           #kakamora m
+    number: 1-0-23
+    tags: drop_r4, bonus_target
+
+  s_drop_r3:           #kakamora o
+    number: 1-0-22
+    tags: drop_r3, bonus_target
+
+  s_drop_r2:           #kakamora r
+    number: 1-0-21
+    tags: drop_r2, bonus_target
+
+  s_drop_r1:           #kakamora a
+    number: 1-0-20
+    tags: drop_r1, bonus_target
+
+  s_spinner_pf:         #playfield spinner
+    number: 1-0-19
+    type: "NC"
+    tags: bonus_switch
+
+  s_kicker:             #sneaki tiki
+    number: 1-0-18
+
+  s_target_cap:         #captive ball
+    number: 1-0-17
+    ignore_window_ms: 200
+    tags: bonus_target
+
+  s_loop_left:          #kane rollover
+    number: 1-0-16
+    tags: bonus_switch
+ 
+#---------------------------------------------------------------------------------------------
+
+  # J2 sweet
+
+  s_spinner_right:      #hina
+    number: 252-0-1
+    tags: bonus_switch
+
+  s_spinner_mid:        #volcano
+    number: 252-0-3
+    tags: bonus_switch
+
+  s_side_left:          #toucan
+    number: 252-0-5
+    tags: bonus_switch
+
+  s_outer_right:        #hula a
+    number: 252-0-6
+    tags: hulabottom, bonus_switch
+ 
+  s_inner_right:        #hula l
+    number: 252-0-7
+    tags: hulabottom, bonus_switch
+  
+#---------------------------------------------------------------------------------------------
+
+  # J3 sweet
+
+  #s_servo:             #hula girls
+   # number: 252-0-8
+  
+  s_side_right:         #kahuna
+    number: 252-0-9
+    tags: bonus_switch
+  
+  s_left_ramp:          #lano
+    number: 252-0-10
+    type: "NO"
+    tags: bonus_switch
+
+  s_loop_top:           #kanaloa
+    number: 252-0-11
+    tags: bonus_switch
+  
+  # s_ramp:
+  #   number: 252-0-12
+  
+  s_target_r3:          #right (multiplier targets)
+    number: 252-0-13
+    ignore_window_ms: 200
+    tags: bonus_target
+
+  s_target_r4:          #mid (multiplier targets)
+    number: 252-0-14
+    ignore_window_ms: 200
+    tags: bonus_target
+
+  s_target_r5:          #left (multiplier targets)
+    number: 252-0-15
+    ignore_window_ms: 200
+    tags: bonus_target
+
+  # J4 sweet
+
+  s_volsound:           #volcano opto sound
+    number: 252-0-17
+    type: "NO"
+    tags: bonus_switch
+
+  s_hina:               #hina opto after spinner
+    number: 252-0-16
+    type: "NO"
+    tags: bonus_switch
+
+  # s_:
+  #   number: 252-0-22
+  
+  # s_:
+  #   number: 252-0-21
+  
+  s_coin_left:           #in game trap door and attract monkey sound
+    number: 252-0-20
+  
+  s_coin_right:          # attract monkey sound
+    number: 252-0-19
+
+  s_target_p:            #bop p
+    number: 252-0-18
+    tags: bonus_target

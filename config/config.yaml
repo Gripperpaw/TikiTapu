@@ -1,0 +1,255 @@
+#config_version=6
+
+#machine config
+
+hardware:
+    platform: opp
+    driverboards: gen2
+
+#-----------------------------------------------------------------------------------------------
+
+opp:
+    ports: COM4, COM5, COM3
+    baud: 115200
+    #debug: true
+    # COM4 = 0, COM5 = 1, COM3 ? = 2 (sweet)
+
+#-----------------------------------------------------------------------------------------------
+
+psus:
+  default:
+    #Gives the capacitors extra time to recharge after firing a coil
+    #  and eases the load on the power supply. Doesn't affect autofire
+    #  devices like flippers, pops, slings.
+    release_wait_ms: 50
+
+#-----------------------------------------------------------------------------------------------
+
+config:                                  #main machine config in root folder
+  - coils.yaml
+  - lights.yaml
+  - lights_backbox.yaml
+  - lights_siderails.yaml
+  - servo.yaml
+  - switches.yaml
+
+#-----------------------------------------------------------------------------------------------
+
+modes:                                   #all the modes in the mode folder
+  - achievements
+  - attract
+  - base
+  - bonus
+  - bop_targets
+  - bop_qualifier
+  - enchanted_birds
+  - high_score
+  - hula_lanes
+  - god_hina_afm
+  - god_lano_afm
+  - god_kanaloa_afm
+  - god_kane_afm
+  - god_ku_afm
+  - kakamora_coconuts
+  - light_the_torches
+  - mb_sneakitiki
+  - mb_sneakitiki_qualifier
+  - mb_volcano
+  - mb_volcano_qualifier
+  - mode_qualifier
+  - scoop_game_mode
+  - scoop_hula_mode
+  - sillyfaceguys
+  - skillshot
+  - switch_sounds
+  - target_multiplier
+  - tawhiri_spins
+  - tiki_god_combo
+  - tiki_tapu_mb
+  - tiki_tapu_mb_qualifier
+  - tribal_rhythm
+
+#-----------------------------------------------------------------------------------------------
+
+timed_switches:
+  game_cancel:
+    switch_tags: start
+    time: 5s
+    events_when_active: end_game
+
+#-----------------------------------------------------------------------------------------------
+
+machine:
+    balls_installed: 4
+
+#-----------------------------------------------------------------------------------------------
+
+game:
+    balls_per_game: 3
+    max_players: 2
+  
+#-----------------------------------------------------------------------------------------------
+  
+ball_devices:
+  bd_trough:
+    ball_switches: s_trough_b1, s_trough_b2, s_trough_b3, s_trough_b4
+    eject_coil: c_trough
+    tags: trough, home, drain
+    eject_timeouts: 500ms
+    eject_targets: bd_plunger
+    confirm_eject_switch: s_plunger
+
+  bd_plunger:
+    ball_switches: s_plunger
+    mechanical_eject: true
+
+  bd_kicker:
+    ball_switches: s_kicker
+    auto_fire_on_unexpected_ball: false
+    player_controlled_eject_event: kick_the_kicker
+    eject_coil: c_kicker
+    eject_timeouts: 2s
+
+  bd_scoop:
+    ball_switches: s_scoop
+    eject_coil: c_scoop
+    eject_timeouts: 2s
+    
+
+  bd_vuk:
+    ball_switches: s_vuk_1, s_vuk_2, s_vuk_3
+    eject_coil: c_vuk
+    eject_timeouts: 2s
+    max_eject_attempts: 3
+    debug: true
+ 
+#-----------------------------------------------------------------------------------------------
+   
+playfields:
+  playfield:
+    default_source_device: bd_plunger
+    tags: default
+
+#-----------------------------------------------------------------------------------------------
+
+diverters:
+  trap_diverter:
+    activation_coil: c_trap_door      
+    type: pulse
+    enable_events: ball_started
+    disable_events: game_ended, ball_ending
+    activate_events: open_trap_door
+    deactivation_switches: s_vuk_3
+    targets_when_active: bd_vuk
+
+#-----------------------------------------------------------------------------------------------
+    
+flippers:
+  left_flipper:
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_flipper_left
+    disable_events: shutdown, ball_will_end, service_mode_entered
+
+  right_flipper:
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_flipper_right
+    disable_events: shutdown, ball_will_end, service_mode_entered
+
+  upright_flipper:
+    main_coil: c_flipper_upright_main
+    hold_coil: c_flipper_upright_hold
+    activation_switch: s_flipper_right
+    disable_events: shutdown, ball_will_end, service_mode_entered
+
+#-----------------------------------------------------------------------------------------------
+
+drop_targets:
+    drop_l1:
+      switch: s_drop_l1
+      reset_coil: c_drop_left
+
+    drop_l2:
+      switch: s_drop_l2
+      reset_coil: c_drop_left
+
+    drop_l3:
+      switch: s_drop_l3
+      reset_coil: c_drop_left
+
+    drop_l4:
+      switch: s_drop_l4
+      reset_coil: c_drop_left
+
+    drop_r1:
+      switch: s_drop_r1
+      reset_coil: c_drop_right
+
+    drop_r2:
+      switch: s_drop_r2
+      reset_coil: c_drop_right
+
+    drop_r3:
+      switch: s_drop_r3
+      reset_coil: c_drop_right
+
+    drop_r4:
+      switch: s_drop_r4
+      reset_coil: c_drop_right
+
+#-----------------------------------------------------------------------------------------------
+
+drop_target_banks:
+  left_bank:
+    drop_targets: drop_l1, drop_l2, drop_l3, drop_l4
+    reset_coils: c_drop_left
+    reset_on_complete: 2s
+    reset_events: mode_sillyfaceguys_started
+
+  right_bank:
+    drop_targets: drop_r1, drop_r2, drop_r3, drop_r4
+    reset_coils: c_drop_right
+    reset_on_complete: 2s
+    reset_events: mode_light_the_torches_started, mode_sillyfaceguys_started
+
+#-----------------------------------------------------------------------------------------------
+
+spinners:
+  spinner_pf:
+    switch: s_spinner_pf
+    active_ms: 1000
+
+  spinner_right:
+    switch: s_spinner_right
+    active_ms: 1200
+
+  spinner_mid:
+    switch: s_spinner_mid
+    active_ms: 1200
+
+#-----------------------------------------------------------------------------------------------
+
+player_vars:                                #jim added this for multilball conditionals in modes
+  multiball_engaged:
+    initial_value: 0
+  tiki_god_combo_active:                    #linked to base variable player
+    initial_value: 0
+  sneaki_mb_active:
+    initial_value: 0
+  tiki_tapu_mb_active:
+    initial_value: 0
+    
+#-----------------------------------------------------------------------------------------------
+
+displays:
+  window:
+   width: 1920
+   height: 1080
+
+#-----------------------------------------------------------------------------------------------
+
+virtual_platform_start_active_switches:
+  - s_trough_b1
+  - s_trough_b2
+  - s_trough_b3

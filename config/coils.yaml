@@ -1,0 +1,159 @@
+#config_version=6
+
+#coils
+
+coils:
+
+  # J6 - A
+
+  c_flipper_left_main:
+    number: 0-0-9
+    default_pulse_ms: 35
+
+  c_flipper_left_hold:
+    number: 0-0-8  
+    allow_enable: true
+    default_hold_power: .5
+
+  c_flipper_right_main:
+    number: 0-0-11
+    default_pulse_ms: 35
+
+  c_flipper_right_hold:
+    number: 0-0-10
+    allow_enable: true
+    default_hold_power: .5
+
+  c_flipper_upright_main:
+    number: 0-0-12
+    default_pulse_ms: 35
+
+  c_flipper_upright_hold:
+    number: 0-0-0
+    allow_enable: true
+    default_hold_power: .9
+
+  c_sling_left:
+    number: 0-0-13
+    default_pulse_ms: 15
+
+  c_sling_right:
+    number: 0-0-14
+    default_pulse_ms: 15
+
+#---------------------------------------------------------------------------------------------
+
+  # J7 - B
+
+  c_sling_upright:
+    number: 0-0-15
+    default_pulse_ms: 25
+
+  c_trough:
+    number: 0-0-7
+    default_pulse_ms: 20
+    default_pulse_power: .65
+
+  c_drop_left:
+    number: 0-0-6
+    allow_enable: true
+    default_pulse_power: .9
+    default_pulse_ms: 60
+  
+  # c_empty:
+  #   number: 0-0-5
+  #   default_pulse_ms: 30
+
+  c_pop_4:
+    number: 0-0-4
+    default_pulse_ms: 35
+
+  c_pop_3:
+    number: 0-0-3
+    default_pulse_ms: 35
+
+  c_pop_2:
+    number: 0-0-2
+    default_pulse_ms: 35
+
+  c_pop_1:
+    number: 0-0-1
+    default_pulse_ms: 35
+
+#---------------------------------------------------------------------------------------------
+
+  # J8 - C
+
+  c_scoop:
+    number: 1-0-0
+    default_pulse_ms: 12
+    default_pulse_power: .8
+
+  c_vuk:
+    number: 1-0-7
+    default_pulse_ms: 40
+    default_pulse_power: .7
+
+  c_kicker:
+    number: 1-0-6
+    default_pulse_ms: 20
+
+  c_trap_door:
+    number: 1-0-5
+    default_pulse_ms: 80
+    allow_enable: true
+    default_hold_power: .3
+
+  c_drop_right:
+    number: 1-0-4
+    allow_enable: true
+    default_pulse_power: .9
+    default_pulse_ms: 60
+
+  c_trap_release:
+    number: 1-0-3
+    default_pulse_ms: 20
+    allow_enable: true
+    default_hold_power: .2
+    default_pulse_power: .5
+
+#---------------------------------------------------------------------------------------------
+
+#Autofire devices are defined here by switch and what coil is cycled when that switch is active. 
+
+autofire_coils:
+
+  sling_left:
+    coil: c_sling_left
+    switch: s_sling_left
+    disable_events: shutdown, ball_will_end, service_mode_entered
+
+  sling_right:
+    coil: c_sling_right
+    switch: s_sling_right
+    disable_events: shutdown, ball_will_end, service_mode_entered
+
+  sling_upright:
+    coil: c_sling_upright
+    switch: s_sling_upright
+    disable_events: shutdown, ball_will_end, service_mode_entered
+
+  pop_4:
+    coil: c_pop_4
+    switch: s_pop_4
+    disable_events: shutdown, ball_will_end, service_mode_entered
+
+  pop_3:
+    coil: c_pop_3
+    switch: s_pop_3
+    disable_events: shutdown, ball_will_end, service_mode_entered
+
+  pop_2:
+    coil: c_pop_2
+    switch: s_pop_2
+    disable_events: shutdown, ball_will_end, service_mode_entered
+
+  pop_1:
+    coil: c_pop_1
+    switch: s_pop_1
+    disable_events: shutdown, ball_will_end, service_mode_entered

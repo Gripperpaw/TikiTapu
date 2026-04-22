@@ -1,0 +1,170 @@
+#config_version=6
+
+#lights_backbox
+
+# J11: NEO 0 Neopixel  -  output (all these lights have MPF numbers with the
+#                        format 0-0-##. The first LED in the chain is 0-0-0)
+# J12: NEO 1 Neopixel  -  output (all these lights have MPF numbers with the
+#                        format 1-0-##. The first LED in the chain is 1-0-0)
+# Sweet: NEO 252 Neopixel output (all these lights have MPF numbers with the
+#                    format 252-0-##. The first LED in the chain is 252-0-0)
+
+#################################################
+#######        sweet board - 252         ########
+#################################################
+
+lights:
+
+  # l_ledbg_001:    
+  #   start_channel: 252-0-0	
+  #   type: rgb
+  l_ledbg_002:    
+    start_channel: 252-0-0
+    type: rgb
+  l_ledbg_003:    
+    previous: l_ledbg_002	
+    type: rgb
+  l_ledbg_004:    
+    previous: l_ledbg_003
+    type: rgb
+  l_ledbg_005:    
+    previous: l_ledbg_004	
+    type: rgb
+  l_ledbg_006:    
+    previous: l_ledbg_005	
+    type: rgb
+  l_ledbg_007:    
+    previous: l_ledbg_006	
+    type: rgb
+  l_ledbg_008:    
+    previous: l_ledbg_007	
+    type: rgb
+  l_ledbg_009:    
+    previous: l_ledbg_008	
+    type: rgb
+  l_ledbg_010:    
+    previous: l_ledbg_009	
+    type: rgb
+  l_ledbg_011:    
+    previous: l_ledbg_010	
+    type: rgb
+  l_ledbg_012:    
+    previous: l_ledbg_011	
+    type: rgb
+  l_ledbg_013:    
+    previous: l_ledbg_012	
+    type: rgb
+  l_ledbg_014:    
+    previous: l_ledbg_013	
+    type: rgb
+  l_ledbg_015:    
+    previous: l_ledbg_014	
+    type: rgb
+  l_ledbg_016:    
+    previous: l_ledbg_015	
+    type: rgb
+  l_ledbg_017:    
+    previous: l_ledbg_016	
+    type: rgb
+  l_ledbg_018:    
+    previous: l_ledbg_017	
+    type: rgb
+  l_ledbg_019:    
+    previous: l_ledbg_018	
+    type: rgb
+  l_ledbg_020:    
+    previous: l_ledbg_019	
+    type: rgb
+  l_ledbg_021:    
+    previous: l_ledbg_020	
+    type: rgb
+  l_ledbg_022:    
+    previous: l_ledbg_021	
+    type: rgb
+  l_ledbg_023:    
+    previous: l_ledbg_022	
+    type: rgb
+  l_ledbg_024:    
+    previous: l_ledbg_023	
+    type: rgb
+  l_ledbg_025:    
+    previous: l_ledbg_024	
+    type: rgb
+  l_ledbg_026:    
+    previous: l_ledbg_025	
+    type: rgb
+  l_ledbg_027:    
+    previous: l_ledbg_026	
+    type: rgb
+  l_ledbg_028:    
+    previous: l_ledbg_027	
+    type: rgb
+  l_ledbg_029:    
+    previous: l_ledbg_028	
+    type: rgb
+  l_ledbg_030:    
+    previous: l_ledbg_029	
+    type: rgb
+  l_ledbg_031:    
+    previous: l_ledbg_030	
+    type: rgb
+  l_ledbg_032:    
+    previous: l_ledbg_031	
+    type: rgb
+  l_ledbg_033:    
+    previous: l_ledbg_032	
+    type: rgb
+  l_ledbg_034:    
+    previous: l_ledbg_033	
+    type: rgb
+  l_ledbg_035:    
+    previous: l_ledbg_034	
+    type: rgb
+  l_ledbg_036:    
+    previous: l_ledbg_035	
+    type: rgb
+  l_ledbg_037:    
+    previous: l_ledbg_036	
+    type: rgb
+  l_ledbg_038:    
+    previous: l_ledbg_037	
+    type: rgb
+  l_ledbg_039:    
+    previous: l_ledbg_038	
+    type: rgb
+  l_ledbg_040:    
+    previous: l_ledbg_039	
+    type: rgb
+  l_ledbg_041:    
+    previous: l_ledbg_040	
+    type: rgb
+  l_ledbg_042:    
+    previous: l_ledbg_041	
+    type: rgb
+  l_ledbg_043:    
+    previous: l_ledbg_042	
+    type: rgb
+  l_ledbg_044:    
+    previous: l_ledbg_043	
+    type: rgb
+  l_ledbg_045:    
+    previous: l_ledbg_044	
+    type: rgb
+  l_ledbg_046:    
+    previous: l_ledbg_045	
+    type: rgb
+  l_ledbg_047:    
+    previous: l_ledbg_046	
+    type: rgb
+  l_ledbg_048:    
+    previous: l_ledbg_047	
+    type: rgb
+  l_ledbg_049:    
+    previous: l_ledbg_048	
+    type: rgb
+  l_ledbg_050:    
+    previous: l_ledbg_049	
+    type: rgb
+  l_ledbg_051:    
+    previous: l_ledbg_050	
+    type: rgb

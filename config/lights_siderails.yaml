@@ -1,0 +1,178 @@
+#config_version=6
+
+#lights_siderails
+
+# J11: NEO 0 Neopixel  -  output (all these lights have MPF numbers with the
+#                        format 0-0-##. The first LED in the chain is 0-0-0)
+# J12: NEO 1 Neopixel  -  output (all these lights have MPF numbers with the
+#                        format 1-0-##. The first LED in the chain is 1-0-0)
+# Sweet: NEO 252 Neopixel output (all these lights have MPF numbers with the
+#                    format 252-0-##. The first LED in the chain is 252-0-0)
+
+lights:
+
+  l_ledside_002:
+    start_channel: 0-0-0
+    type: grb                          #grd - 60mm led strip from amazon 
+  l_ledside_003:    
+    previous: l_ledside_002	
+    type: grb
+  l_ledside_004:    
+    previous: l_ledside_003	
+    type: grb
+  l_ledside_005:    
+    previous: l_ledside_004	
+    type: grb
+  l_ledside_006:    
+    previous: l_ledside_005	
+    type: grb
+  l_ledside_007:    
+    previous: l_ledside_006	
+    type: grb
+  l_ledside_008:    
+    previous: l_ledside_007	
+    type: grb
+  l_ledside_009:    
+    previous: l_ledside_008	
+    type: grb
+  l_ledside_010:    
+    previous: l_ledside_009	
+    type: grb
+  l_ledside_011:    
+    previous: l_ledside_010	
+    type: grb
+  l_ledside_012:    
+    previous: l_ledside_011	
+    type: grb
+  l_ledside_013:    
+    previous: l_ledside_012	
+    type: grb
+  l_ledside_014:    
+    previous: l_ledside_013	
+    type: grb
+  l_ledside_015:    
+    previous: l_ledside_014	
+    type: grb
+  l_ledside_016:    
+    previous: l_ledside_015	
+    type: grb
+  l_ledside_017:    
+    previous: l_ledside_016	
+    type: grb
+  l_ledside_018:    
+    previous: l_ledside_017	
+    type: grb
+  l_ledside_019:    
+    previous: l_ledside_018	
+    type: grb
+  l_ledside_020:    
+    previous: l_ledside_019	
+    type: grb
+  l_ledside_021:    
+    previous: l_ledside_020	
+    type: grb
+  l_ledside_022:    
+    previous: l_ledside_021	
+    type: grb
+  l_ledside_023:    
+    previous: l_ledside_022	
+    type: grb
+  l_ledside_024:    
+    previous: l_ledside_023	
+    type: grb
+  l_ledside_025:    
+    previous: l_ledside_024	
+    type: grb
+  l_ledside_026:    
+    previous: l_ledside_025	
+    type: grb
+  l_ledside_027:    
+    previous: l_ledside_026	
+    type: grb
+  l_ledside_028:    
+    previous: l_ledside_027	
+    type: grb
+  l_ledside_029:    
+    previous: l_ledside_028	
+    type: grb
+  l_ledside_030:    
+    previous: l_ledside_029	
+    type: grb
+  l_ledside_031:    
+    previous: l_ledside_030	
+    type: grb
+  l_ledside_032:    
+    previous: l_ledside_031	
+    type: grb
+  l_ledside_033:    
+    previous: l_ledside_032	
+    type: grb
+  l_ledside_034:    
+    previous: l_ledside_033	
+    type: grb
+  l_ledside_035:    
+    previous: l_ledside_034	
+    type: grb
+  l_ledside_036:    
+    previous: l_ledside_035	
+    type: grb
+  l_ledside_037:    
+    previous: l_ledside_036	
+    type: grb
+  l_ledside_038:    
+    previous: l_ledside_037	
+    type: grb
+  l_ledside_039:    
+    previous: l_ledside_038	
+    type: grb
+  l_ledside_040:    
+    previous: l_ledside_039	
+    type: grb
+  l_ledside_041:    
+    previous: l_ledside_040	
+    type: grb
+  l_ledside_042:    
+    previous: l_ledside_041	
+    type: grb
+  l_ledside_043:    
+    previous: l_ledside_042	
+    type: grb
+  l_ledside_044:    
+    previous: l_ledside_043	
+    type: grb
+  l_ledside_045:    
+    previous: l_ledside_044	
+    type: grb
+  l_ledside_046:    
+    previous: l_ledside_045	
+    type: grb
+  l_ledside_047:    
+    previous: l_ledside_046	
+    type: grb
+  l_ledside_048:    
+    previous: l_ledside_047	
+    type: grb
+  l_ledside_049:    
+    previous: l_ledside_048	
+    type: grb
+  l_ledside_050:    
+    previous: l_ledside_049	
+    type: grb
+  l_ledside_051:    
+    previous: l_ledside_050	
+    type: grb
+  l_ledside_052:    
+    previous: l_ledside_051	
+    type: grb
+  l_ledside_053:    
+    previous: l_ledside_052	
+    type: grb
+  l_ledside_054:    
+    previous: l_ledside_053	
+    type: grb
+  l_ledside_055:    
+    previous: l_ledside_054	
+    type: grb
+  l_ledside_056:    
+    previous: l_ledside_055	
+    type: grb
