@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccjn6hb4yd8x6"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_vfw0a"]
+[ext_resource type="Texture2D" uid="uid://c1cin2wm85h7u" path="res://modes/images/attract.png" id="2_4qjgx"]
+[ext_resource type="Theme" uid="uid://ckj25p27k6t5u" path="res://fonts/200pixlels.tres" id="3_kb8lj"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="4_jlegw"]
+
+[node name="HighScoreAward" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vfw0a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 2)
+texture = ExtResource("2_4qjgx")
+centered = false
+
+[node name="player_num" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1019.0
+offset_top = 317.0
+offset_right = 1609.0
+offset_bottom = 489.0
+theme = ExtResource("3_kb8lj")
+theme_override_font_sizes/font_size = 80
+text = "PLAYER 1"
+horizontal_alignment = 1
+script = ExtResource("4_jlegw")
+variable_type = 1
+variable_name = "player_num"
+template_string = "PLAYER %d"
+
+[node name="award_names" type="Label" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 334.0
+offset_right = 1910.0
+offset_bottom = 553.0
+theme = ExtResource("3_kb8lj")
+theme_override_colors/font_color = Color(0, 0.952941, 0.886275, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.439216)
+theme_override_colors/font_outline_color = Color(0.101961, 0.0431373, 0.431373, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 191
+text = "TIKI TAPU CHAMPION"
+horizontal_alignment = 1
+script = ExtResource("4_jlegw")
+variable_type = 1
+variable_name = "award"
+
+[node name="player_name" type="Label" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 518.0
+offset_right = 1922.0
+offset_bottom = 737.0
+theme = ExtResource("3_kb8lj")
+theme_override_colors/font_color = Color(0, 0.909804, 0.776471, 1)
+theme_override_colors/font_outline_color = Color(0.101961, 0.0431373, 0.431373, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 191
+text = "MBP"
+horizontal_alignment = 1
+script = ExtResource("4_jlegw")
+variable_type = 1
+variable_name = "player_name"
+comma_separate = true
+
+[node name="value" type="Label" parent="."]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 729.0
+offset_right = 1929.0
+offset_bottom = 948.0
+theme = ExtResource("3_kb8lj")
+theme_override_colors/font_color = Color(0, 0.909804, 0.776471, 1)
+theme_override_colors/font_outline_color = Color(0.101961, 0.0431373, 0.431373, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 191
+text = "999,999,999,999"
+horizontal_alignment = 1
+script = ExtResource("4_jlegw")
+variable_type = 1
+variable_name = "value"
+comma_separate = true

@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://3w76hycc6ja4"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_ns6vf"]
+[ext_resource type="Texture2D" uid="uid://cuvhqtql76eet" path="res://modes/images/torchtemplate.png" id="2_1pabp"]
+[ext_resource type="Texture2D" uid="uid://dojpxe6be1xti" path="res://modes/images/arrows - hit shot/hinaspinnertext.png" id="3_tcthf"]
+[ext_resource type="Texture2D" uid="uid://2btud03j36po" path="res://modes/images/arrows - hit shot/hinaspinner.png" id="4_63ckc"]
+
+[sub_resource type="Animation" id="Animation_k5je6"]
+length = 0.001
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1779, 610)]
+}
+
+[sub_resource type="Animation" id="Animation_d4c0b"]
+resource_name = "marker"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.49687),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1779, 610), Vector2(1787, 593)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f2lpa"]
+_data = {
+"RESET": SubResource("Animation_k5je6"),
+"marker": SubResource("Animation_d4c0b")
+}
+
+[node name="MPFWidget" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1927.0
+offset_bottom = 1080.0
+script = ExtResource("1_ns6vf")
+
+[node name="template" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.42433, 1.41076)
+texture = ExtResource("2_1pabp")
+centered = false
+
+[node name="text" type="Sprite2D" parent="."]
+position = Vector2(1530, 430)
+texture = ExtResource("3_tcthf")
+
+[node name="marker" type="Sprite2D" parent="."]
+position = Vector2(1779, 610)
+texture = ExtResource("4_63ckc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="marker"]
+libraries = {
+"": SubResource("AnimationLibrary_f2lpa")
+}
+autoplay = "marker"

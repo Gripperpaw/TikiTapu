@@ -1,0 +1,32 @@
+#config_version=6
+
+#mb_sneakitiki_qualifier
+
+mode:
+  start_events: ball_save_ball_save_disabled
+  stop_events: ball_ended, player_turn_ended, multiball_sneaki_tiki_mb_started 
+  priority: 323
+
+#---------------------------------------------------------------------------------------------
+
+counters:
+  sneakitiki_mb_lock_counter:
+    count_events: s_kicker_active
+    count_complete_value: 1
+    events_when_complete: start_sneaki_tiki_mb
+    reset_events: ball_ended, player_turn_ended
+
+#---------------------------------------------------------------------------------------------
+
+multiball_locks:
+  sneaki_lock:
+    balls_to_lock: 1
+    lock_devices: bd_kicker
+    enable_events: mode_mb_sneakitiki_started
+    disable_events: multiball_sneaki_tiki_mb_started
+
+#---------------------------------------------------------------------------------------------
+
+event_player:
+  start_sneaki_tiki_mb{current_player.multiball_engaged == 0}: multiball_sneaki_tiki_mb_started       #jim added this for MB conditional "if there is no mb started, we will start the mb"
+  guarded_open_trap_door{current_player.sneaki_mb_active == 0}: open_trap_door                        # "if sneaki_mb is not started, we will open_trap_door" 

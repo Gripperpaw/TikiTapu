@@ -1,0 +1,129 @@
+#config_version=6
+
+#mb_volcano
+
+mode:
+  start_events: multiball_volcano_mb_started
+  stop_events: multiball_release_all_locked_balls_ended, game_ended, ball_will_end, ball_ended, player_turn_ended
+  events_when_stopped: play_base_music_again, reset_multiball_engaged           #jim added this for MB conditional
+  events_when_started: set_multiball_engaged                                    #jim added this for MB conditional    ***** linked to base line 184 *****
+  priority: 375
+
+#-----------------------------------------------------------------------------------------------
+
+multiballs:
+  release_all_locked_balls:
+    ball_count: 3
+    shoot_again: 20s
+    ball_locks: bd_vuk
+    replace_balls_in_play: true
+    start_events: mode_mb_volcano_started
+    source_playfield: playfield
+
+#-----------------------------------------------------------------------------------------------
+
+sound_player:
+  mode_mb_volcano_started:
+    volcanombmusic:
+      bus: music
+      action: play
+      volume: 1.5
+      loops: -1
+
+#-----------------------------------------------------------------------------------------------
+
+shots:
+  jackpot_shot1:
+    switch: s_side_right
+    profile: volcano_jp_success
+    enable_events: multiball_volcano_mb_started
+    disable_events: multiball_volcano_mb_ended, game_ended, stop_blinking_jp
+
+#-----------------------------------------------------------------------------------------------
+
+show_player:
+  mode_mb_volcano_started:     #event calls show created in showcreator and in shows folder
+    blinking_jp:
+      action: play
+      priority: 500
+    lavamb_pf:                  #show name
+      speed: 14                 #show speed (did not adjust in showcreator)
+      loops: -1                 #keeps looping with -1       
+    lavamb_gi:
+      speed: 14
+      loops: -1
+    lavamb_apron:
+      speed: 14
+      loops: -1
+    lavalmb_rails:
+      speed: 14
+      loops: -1
+
+#-----------------------------------------------------------------------------------------------
+
+shows:
+  blinking_jp:
+    - time: 0
+      lights:
+        l_led_079: ffffff   #white  
+    - time: +250ms
+      lights:
+        l_led_079: 000000
+    - time: +250ms
+      lights:
+        l_led_079: ff00ff    #magenta 
+    - time: +250ms
+      lights:
+        l_led_151: ffffff   #white  
+    - time: +250ms
+      lights:
+        l_led_151: 000000
+    - time: +250ms
+      lights:
+        l_led_151: ff00ff    #magenta   
+    - time: +250ms
+      lights:
+        l_led_154: ffffff   #white  
+    - time: +250ms
+      lights:
+        l_led_154: 000000
+    - time: +250ms
+      lights:
+        l_led_154: ff00ff    #magenta  
+    - time: +250ms  
+    
+#-----------------------------------------------------------------------------------------------
+
+shot_profiles:
+  volcano_jp_success:
+    states:
+      - name: unlit
+        show: off
+      - name: lit
+        show: blinking_jp
+
+#-----------------------------------------------------------------------------------------------
+
+variable_player:
+  s_side_right_active:
+    score: 75000 * current_player.pf_multiplier
+  s_ramp_back_active:
+    score: 75000 * current_player.pf_multiplier  
+
+#-----------------------------------------------------------------------------------------------
+
+widget_player:
+  mode_mb_volcano_started:
+    mb_volcano:
+      slide: base
+      expire: 8s
+    shootkukah_jp:
+      action: play
+
+#---------------------------------------------------------------------------------------------
+
+coil_player:
+  mode_mb_volcano_started:
+    c_trap_release:
+      action: pulse
+      pulse_power: .5

@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://v535pi2yfk38"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_egxr2"]
+[ext_resource type="Texture2D" uid="uid://xjxugy78d5t5" path="res://images/kakamora_coconuts/kc_hula01.png" id="2_n0q5y"]
+[ext_resource type="Texture2D" uid="uid://hff0amuft0x" path="res://images/kakamora_coconuts/kc_hula02.png" id="3_h3w8e"]
+[ext_resource type="Texture2D" uid="uid://0l5y6vgco0hl" path="res://images/kakamora_coconuts/kc_hula03.png" id="4_b47an"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sc31i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n0q5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h3w8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b47an")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h3w8e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="kc_hula" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_egxr2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
+sprite_frames = SubResource("SpriteFrames_sc31i")
+autoplay = "default"
+frame_progress = 0.67285
+centered = false

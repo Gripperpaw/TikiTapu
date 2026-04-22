@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c66crmeb5po24"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_qi3si"]
+[ext_resource type="Texture2D" uid="uid://b4ef8o1g2v0p" path="res://modes/images/lighttotch.png" id="2_wpxfh"]
+
+[node name="MPFWidget" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qi3si")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wpxfh")
+centered = false

@@ -1,0 +1,207 @@
+#config_version=6
+
+#god_kane_atf
+
+mode:
+  start_events: ball_starting
+  #stop_events: ball_ending
+  priority: 675
+
+#---------------------------------------------------------------------------------------------
+
+counters:
+  godkane_counter:
+    starting_count: 0
+    direction: up
+    count_complete_value: 4                 # Complete on the 4th hit
+    count_events: s_loop_left_active
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true                # Stop counting after 4
+    events_when_hit: godkane_hit               # Posted after every hit
+    events_when_complete: godkane_complete     # Posted only on 4th hit
+    #reset_events: reset_godkane  
+    enable_events: mode_god_kane_afm_starting
+
+#---------------------------------------------------------------------------------------------
+
+timers:
+  kane_timer:
+    start_value: 15
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - event: start_kane
+        action: start
+      - event: collect_kane
+        action: stop
+
+#---------------------------------------------------------------------------------------------
+
+event_player:
+  # Start hurry-up on 4th hit (counter complete)
+  godkane_complete:
+    - start_kane
+
+  # Jackpot when scoop is hit while timer is running
+  s_scoop_active{device.timers.kane_timer.running}:
+    - collect_kane
+
+#---------------------------------------------------------------------------------------------
+
+variable_player:
+  mode_god_kane_afm_starting:
+    kane_started:
+      int: 0
+      action: set
+  start_kane:
+    kane_started:
+      int: 1
+      action: set
+  collect_kane:
+    score:
+      int: 50000 * current_player.pf_multiplier 
+      action: add
+
+#---------------------------------------------------------------------------------------------
+
+light_player:
+  mode_god_kane_afm_starting:
+    l_led_127: off
+    l_led_130: off
+    l_led_133: off
+    l_led_136: off
+    l_led_139: off
+
+  godkane_hit{device.counters.godkane_counter.value==1}:   #  7cfc00  lawngreen
+    l_led_127: 7cfc00
+  godkane_hit{device.counters.godkane_counter.value==2}:
+    l_led_130: 7cfc00
+  godkane_hit{device.counters.godkane_counter.value==3}:
+    l_led_133: 7cfc00
+
+  start_kane:
+    l_led_136: 7cfc00
+    l_led_139: 7cfc00
+
+  # AI Gave me this code #
+  ## ──────────────────────────────
+  ## Restore God kane lights when mode starts on a new ball
+  ## ──────────────────────────────
+
+  # 1st hit light – stays on forever once earned
+  mode_god_kane_afm_started{device.counters.godkane_counter.value >= 1}:
+    l_led_127: 7cfc00
+
+  mode_god_kane_afm_started{device.counters.godkane_counter.value < 1}:
+    l_led_127: off
+
+  # 2nd hit light
+  mode_god_kane_afm_started{device.counters.godkane_counter.value >= 2}:
+    l_led_130: 7cfc00
+
+  mode_god_kane_afm_started{device.counters.godkane_counter.value < 2}:
+    l_led_130: off
+
+  # 3rd hit light
+  mode_god_kane_afm_started{device.counters.godkane_counter.value >= 3}:
+    l_led_133: 7cfc00
+
+  mode_god_kane_afm_started{device.counters.godkane_counter.value < 3}:
+    l_led_133: off
+
+  # Scoop arrows solid pink when hurry-up is active or already collected this ball
+  mode_god_kane_afm_started{current_player.kane_started == 1 or device.timers.kane_timer.running}:
+    l_led_136: 7cfc00
+    l_led_139: 7cfc00
+
+  # Scoop arrows off when we haven't reached the hurry-up yet
+  mode_god_kane_afm_started{current_player.kane_started == 0 and not device.timers.kane_timer.running}:
+    l_led_136: off
+    l_led_139: off
+
+#---------------------------------------------------------------------------------------------
+
+show_player:
+  # Start blinking arrowkane after 3rd hit
+  godkane_hit{device.counters.godkane_counter.value==3}:
+    arrowkane_blink:
+      loops: -1
+
+  # Stop blinking (solid) when hurry-up starts
+  start_kane:
+    arrowkane_blink: stop
+    scoopkane_blink:
+      loops: 14
+  # Flash allkane lights on jackpot
+  collect_kane:
+    allkane_blink:
+      loops: 0
+    scoopkane_blink: stop
+
+    kane_award:
+      speed: 50
+      loops: 0
+
+  # AI Gave me this code #
+  # ← keep everything you already have in show_player →
+
+  # NEW: Restore blinking state when mode starts on a new ball
+  mode_god_kane_afm_started{device.counters.godkane_counter.value == 3 and current_player.kane_started == 0}:
+    arrowkane_blink:
+      loops: -1
+
+  # Always stop the scoop blink on mode start (no condition needed — it's safe to always run)
+  mode_god_kane_afm_started:
+    scoopkane_blink: stop
+
+#---------------------------------------------------------------------------------------------
+
+shows:
+  arrowkane_blink:
+    - duration: 0.5
+      lights:
+        l_led_136: 7cfc00
+        l_led_139: off
+    - duration: 0.5
+      lights:
+        l_led_136: off
+        l_led_139: 7cfc00
+  scoopkane_blink:
+    - duration: 0.5
+      lights:
+        l_led_208: 7cfc00
+    - duration: 0.5
+      lights:
+        l_led_208: off
+
+  allkane_blink:
+    - duration: 0.25
+      lights:
+        l_led_127: off
+        l_led_130: off
+        l_led_133: off
+        l_led_136: off
+        l_led_139: off
+    - duration: 0.25
+      lights:
+        l_led_127: 7cfc00
+        l_led_130: 7cfc00
+        l_led_133: 7cfc00
+        l_led_136: 7cfc00
+        l_led_139: 7cfc00
+    - duration: 0.25
+      lights:
+        l_led_127: off
+        l_led_130: off
+        l_led_133: off
+        l_led_136: off
+        l_led_139: off
+    - duration: 0.25
+      lights:
+        l_led_127: 7cfc00
+        l_led_130: 7cfc00
+        l_led_133: 7cfc00
+        l_led_136: 7cfc00
+        l_led_139: 7cfc00

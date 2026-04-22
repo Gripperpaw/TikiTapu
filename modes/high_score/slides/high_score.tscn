@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkl22xh7stbqt"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_qlc2d"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_text_input.gd" id="2_ofj01"]
+[ext_resource type="Texture2D" uid="uid://bxxjkpcukaov2" path="res://images/high_score_text.png" id="2_p1ncr"]
+[ext_resource type="FontFile" uid="uid://wnwc8yko3tau" path="res://fonts/TropicalIslandVibes-ARL6L.ttf" id="4_cv1yo"]
+[ext_resource type="Theme" uid="uid://ckj25p27k6t5u" path="res://fonts/200pixlels.tres" id="5_pp3ho"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="6_j0ai3"]
+
+[node name="HighScore" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qlc2d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_p1ncr")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 691.0
+offset_top = 104.0
+offset_right = 1356.0
+offset_bottom = 246.0
+
+[node name="MPFTextInput" type="HFlowContainer" parent="." node_paths=PackedStringArray("display_node")]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 595.0
+offset_right = 948.0
+offset_bottom = 665.0
+scale = Vector2(2.165, 2.165)
+script = ExtResource("2_ofj01")
+grid_width = 30
+max_length = 3
+display_node = NodePath("../RichTextLabel")
+highlight_color = Color(0.176471, 0.172549, 0.690196, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 253.0
+offset_right = 954.0
+offset_bottom = 608.0
+theme_override_fonts/normal_font = ExtResource("4_cv1yo")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+text = "[pulse freq=3.0 color=#2d2cb0ff ease=-1.0]A[/pulse]"
+
+[node name="award_names" type="Label" parent="."]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 104.0
+offset_right = 1548.0
+offset_bottom = 276.0
+theme = ExtResource("5_pp3ho")
+theme_override_font_sizes/font_size = 150
+text = "TIKI TAPU CHAMPION"
+horizontal_alignment = 1
+script = ExtResource("6_j0ai3")
+variable_type = 1
+variable_name = "award"
+
+[node name="player_num" type="Label" parent="."]
+layout_mode = 0
+offset_left = 958.0
+offset_top = 332.0
+offset_right = 1548.0
+offset_bottom = 504.0
+theme = ExtResource("5_pp3ho")
+theme_override_font_sizes/font_size = 150
+text = "PLAYER 1"
+horizontal_alignment = 1
+script = ExtResource("6_j0ai3")
+variable_type = 1
+variable_name = "player_num"
+template_string = "PLAYER %d"
+
+[node name="value" type="Label" parent="."]
+layout_mode = 0
+offset_left = 621.0
+offset_top = 702.0
+offset_right = 1534.0
+offset_bottom = 874.0
+theme = ExtResource("5_pp3ho")
+theme_override_font_sizes/font_size = 150
+text = "999,999,999,999"
+horizontal_alignment = 1
+script = ExtResource("6_j0ai3")
+variable_type = 1
+variable_name = "value"
+comma_separate = true

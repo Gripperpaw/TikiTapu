@@ -1,0 +1,212 @@
+#config_version=6
+
+#light_the_torches
+
+mode:
+  start_events: scoop_light_the_torches
+  stop_events: finished_torches_complete, timer_torch_timer_complete #, mode_bonus_started       #ties to line iten 20 (finished_torches_complete)
+  events_when_stopped: play_base_music_again
+  priority: 300
+
+#---------------------------------------------------------------------------------------------
+
+accruals:
+  tiki_torch_accruals:
+    events:
+      - torch_1_hit
+      - torch_2_hit
+      - torch_3_hit
+      - torch_4_hit
+      - torch_5_hit
+      - torch_6_hit
+      - torch_7_hit
+      - torch_8_hit
+    events_when_complete: finished_torches_complete                #you can name this what ever you want
+
+#---------------------------------------------------------------------------------------------
+
+shots:
+  torch_1:
+    switch: s_drop_r2               #kakamora - mora r
+    show_tokens:
+      led: l_led_082, l_led_065     #torch 7 insert - match 065
+      color: ffffff
+    profile: torches_profile 
+  torch_2:
+    switch: s_loop_left             #kane rollover
+    show_tokens:
+      led: l_led_097, l_led_229     #torch 2 insert - match 229
+      color: ffffff
+    profile: torches_profile
+  torch_3:
+    switch: s_target_o              #bop o - was right (multiplier targets) 
+    show_tokens:
+      led: l_led_088, l_led_253     #torch 5 insert - match 253
+      color: ffffff
+    profile: torches_profile   
+  torch_4:
+    switch: s_spinner_right         #hina spinner
+    show_tokens:
+      led: l_led_076, l_led_189     #torch 8 insert - match 189
+      color: ffffff
+    profile: torches_profile   
+  torch_5:
+    switch: s_spinner_mid           #volcano spinner
+    show_tokens:
+      led: l_led_094, l_led_232     #torch 3 insert - match 232
+      color: ffffff
+    profile: torches_profile  
+  torch_6:
+    switch: s_side_left             #toucan
+    show_tokens:
+      led: l_led_106, l_led_102     #torch 1 insert - match 102
+      color: ffffff
+    profile: torches_profile  
+  torch_7:
+    switch: s_left_ramp             #lano ramp
+    show_tokens:
+      led: l_led_085, l_led_205     #torch 6 insert - match 205
+      color: ffffff
+    profile: torches_profile 
+  torch_8:
+    switch: s_loop_top              #kanaloa rollover
+    show_tokens:
+      led: l_led_091, l_led_214     #torch 4 insert - match 214
+      color: ffffff
+    profile: torches_profile  
+
+#---------------------------------------------------------------------------------------------
+
+ball_saves:
+  torch_save:
+    active_time: 8s
+    timer_start_events: mode_light_the_torches_started
+    balls_to_save: 1
+    early_ball_save_events: s_outer_left_active, s_outer_right_active
+
+#---------------------------------------------------------------------------------------------
+
+shows:
+  blinking_led:
+    - time: 0
+      lights:
+        pf_torch: orange
+    - time: +250ms
+      lights:
+        pf_torch: off
+    - time: +250ms
+      lights:
+        pf_torch: orange
+
+#---------------------------------------------------------------------------------------------
+
+shot_profiles:
+  torches_profile:
+    states:
+      - name: blinking
+        show: blinking_led
+      - name: lit
+        show: led_color
+
+#---------------------------------------------------------------------------------------------
+
+sound_player:
+  mode_light_the_torches_started:
+    lightmusic:
+      bus: music
+      action: play
+      loops: -1
+
+#---------------------------------------------------------------------------------------------
+
+widget_player:
+  mode_light_the_torches_started:
+    lighttorch:
+      slide: base
+    kaneshot:
+      slide: base
+    hinashot:
+      slide: base
+    lanoshot:
+      slide: base
+    kanaloashot:
+      slide: base
+    toucanshot:
+      slide: base
+    volcanoshot:
+      slide: base
+    rmorashot:
+      slide: base
+    uprightshot:
+      slide: base
+
+    torch_timer:
+      slide: base
+
+  torch_1_hit:
+    rmorashot:
+      action: remove
+  torch_2_hit:
+    kaneshot:
+      action: remove
+  torch_3_hit:
+    uprightshot:
+      action: remove
+  torch_4_hit:
+    hinashot:
+      action: remove
+  torch_5_hit:
+    volcanoshot:
+      action: remove
+  torch_6_hit:
+    toucanshot:
+      action: remove
+  torch_7_hit:
+    lanoshot:
+      action: remove
+  torch_8_hit:
+    kanaloashot:
+      action: remove
+
+#---------------------------------------------------------------------------------------------
+
+variable_player:
+  torch_1_hit:
+    score: 2500 * current_player.pf_multiplier
+  torch_2_hit:
+    score: 2500 * current_player.pf_multiplier
+  torch_3_hit:
+    score: 2500 * current_player.pf_multiplier
+  torch_4_hit:
+    score: 2500 * current_player.pf_multiplier
+  torch_5_hit:
+    score: 2500 * current_player.pf_multiplier
+  torch_6_hit:
+    score: 2500 * current_player.pf_multiplier
+  torch_7_hit:
+    score: 2500 * current_player.pf_multiplier
+  torch_8_hit:
+    score: 2500 * current_player.pf_multiplier
+
+  finished_torches_complete:
+    score: 100000 * current_player.pf_multiplier 
+      
+#----------------------------------------------------------------------------------------------
+
+timers:                          #118s song, once timer is out, create a new event to stop mode  
+  torch_timer:                   #light_the_torches_torch_timer_tick in godot
+    start_value: 118
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - action: start
+        event: mode_light_the_torches_started  
+      
+#----------------------------------------------------------------------------------------------
+
+show_player:
+  mode_light_the_torches_started:
+    tourch_sides:
+      speed: 5
+      loops: -1  

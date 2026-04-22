@@ -1,0 +1,64 @@
+[gd_scene load_steps=13 format=3 uid="uid://dgwj4tmyjdyvp"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_0gxa5"]
+[ext_resource type="Texture2D" uid="uid://dfd1nstmtmt8u" path="res://modes/images/blank.png" id="2_dkdj4"]
+[ext_resource type="Texture2D" uid="uid://ldrxm22vpqam" path="res://modes/images/hula/hula_scoop.png" id="2_m7pev"]
+[ext_resource type="Script" path="res://modes/hula_lanes/widgets/sprite_2d.gd" id="3_81is6"]
+[ext_resource type="Texture2D" uid="uid://huc16opamde8" path="res://modes/images/hula/hula_off.png" id="3_mo1w4"]
+[ext_resource type="Texture2D" uid="uid://7bu72rvqrei3" path="res://modes/images/hula/hula_h_on.png" id="4_pmdjx"]
+[ext_resource type="Texture2D" uid="uid://wnm2b66ub4g1" path="res://modes/images/hula/hula_u_on.png" id="5_tbaeq"]
+[ext_resource type="Texture2D" uid="uid://cwa67v40jom47" path="res://modes/images/hula/hula_l_on.png" id="6_nbthw"]
+[ext_resource type="Texture2D" uid="uid://c1oqj2wjdgj3n" path="res://modes/images/hula/hula_a_on.png" id="7_3xccr"]
+[ext_resource type="Texture2D" uid="uid://bkq21ljxqsiqw" path="res://modes/images/hula/hula_off - 2.png" id="8_iajov"]
+[ext_resource type="Texture2D" uid="uid://bg8doiydbqbd0" path="res://modes/images/hula/hula_on.png" id="9_4i0jc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6c3rb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mo1w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pmdjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tbaeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nbthw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3xccr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_iajov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4i0jc")
+}],
+"loop": true,
+"name": &"hula_text",
+"speed": 5.0
+}]
+
+[node name="hula_on_off" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0gxa5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(498, 351)
+scale = Vector2(0.65599, 0.587963)
+texture = ExtResource("2_m7pev")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_dkdj4")
+script = ExtResource("3_81is6")
+
+[node name="AnimateHula" type="AnimatedSprite2D" parent="Sprite2D"]
+z_index = 1
+position = Vector2(292, 753)
+scale = Vector2(0.551312, 0.551312)
+sprite_frames = SubResource("SpriteFrames_6c3rb")
+animation = &"hula_text"
+frame_progress = 0.486359

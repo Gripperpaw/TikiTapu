@@ -1,0 +1,207 @@
+#config_version=6
+
+#god_lano_afm
+
+mode:
+  start_events: ball_starting
+  #stop_events: ball_ending
+  priority: 725
+
+#---------------------------------------------------------------------------------------------
+
+counters:
+  godlano_counter:
+    starting_count: 0
+    direction: up
+    count_complete_value: 4                 # Complete on the 4th hit
+    count_events: s_left_ramp_active
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true                # Stop counting after 4
+    events_when_hit: godlano_hit               # Posted after every hit
+    events_when_complete: godlano_complete     # Posted only on 4th hit
+    #reset_events: reset_godlano    add in then Isle of Power MB ended event
+    enable_events: mode_god_lano_afm_starting
+
+#---------------------------------------------------------------------------------------------
+
+timers:
+  lano_timer:
+    start_value: 15
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - event: start_lano
+        action: start
+      - event: collect_lano
+        action: stop
+
+#---------------------------------------------------------------------------------------------
+
+event_player:
+  # Start hurry-up on 4th hit (counter complete)
+  godlano_complete:
+    - start_lano
+
+  # Jackpot when scoop is hit while timer is running
+  s_scoop_active{device.timers.lano_timer.running}:
+    - collect_lano
+
+#---------------------------------------------------------------------------------------------
+
+variable_player:
+  mode_god_lano_afm_starting:
+    lano_started:
+      int: 0
+      action: set
+  start_lano:
+    lano_started:
+      int: 1
+      action: set
+  collect_lano:
+    score:
+      int: 50000
+      action: add
+
+#---------------------------------------------------------------------------------------------
+
+light_player:
+  mode_god_lano_afm_starting:
+    l_led_157: off
+    l_led_160: off
+    l_led_163: off
+    l_led_166: off
+    l_led_169: off
+
+  godlano_hit{device.counters.godlano_counter.value==1}:   #  ff4500  orangered
+    l_led_157: ff4500
+  godlano_hit{device.counters.godlano_counter.value==2}:
+    l_led_160: ff4500
+  godlano_hit{device.counters.godlano_counter.value==3}:
+    l_led_163: ff4500
+
+  start_lano:
+    l_led_166: ff4500
+    l_led_169: ff4500
+
+  # AI Gave me this code #
+  ## ──────────────────────────────
+  ## Restore God lano lights when mode starts on a new ball
+  ## ──────────────────────────────
+
+  # 1st hit light – stays on forever once earned
+  mode_god_lano_afm_started{device.counters.godlano_counter.value >= 1}:
+    l_led_157: ff4500
+
+  mode_god_lano_afm_started{device.counters.godlano_counter.value < 1}:
+    l_led_157: off
+
+  # 2nd hit light
+  mode_god_lano_afm_started{device.counters.godlano_counter.value >= 2}:
+    l_led_160: ff4500
+
+  mode_god_lano_afm_started{device.counters.godlano_counter.value < 2}:
+    l_led_160: off
+
+  # 3rd hit light
+  mode_god_lano_afm_started{device.counters.godlano_counter.value >= 3}:
+    l_led_163: ff4500
+
+  mode_god_lano_afm_started{device.counters.godlano_counter.value < 3}:
+    l_led_163: off
+
+  # Scoop arrows solid pink when hurry-up is active or already collected this ball
+  mode_god_lano_afm_started{current_player.lano_started == 1 or device.timers.lano_timer.running}:
+    l_led_166: ff4500
+    l_led_169: ff4500
+
+  # Scoop arrows off when we haven't reached the hurry-up yet
+  mode_god_lano_afm_started{current_player.lano_started == 0 and not device.timers.lano_timer.running}:
+    l_led_166: off
+    l_led_169: off
+
+#---------------------------------------------------------------------------------------------
+
+show_player:
+  # Start blinking arrowlano after 3rd hit
+  godlano_hit{device.counters.godlano_counter.value==3}:
+    arrowlano_blink:
+      loops: -1
+
+  # Stop blinking (solid) when hurry-up starts
+  start_lano:
+    arrowlano_blink: stop
+    scooplano_blink:
+      loops: 14
+  # Flash alllano lights on jackpot
+  collect_lano:
+    alllano_blink:
+      loops: 0
+    scooplano_blink: stop
+
+    lano_award:
+      speed: 50
+      loops: 0
+
+  # AI Gave me this code #
+  # ← keep everything you already have in show_player →
+
+  # NEW: Restore blinking state when mode starts on a new ball
+  mode_god_lano_afm_started{device.counters.godlano_counter.value == 3 and current_player.lano_started == 0}:
+    arrowlano_blink:
+      loops: -1
+
+  # Always stop the scoop blink on mode start (no condition needed — it's safe to always run)
+  mode_god_lano_afm_started:
+    scooplano_blink: stop
+
+#---------------------------------------------------------------------------------------------
+
+shows:
+  arrowlano_blink:
+    - duration: 0.5
+      lights:
+        l_led_166: ff4500
+        l_led_169: off
+    - duration: 0.5
+      lights:
+        l_led_166: off
+        l_led_169: ff4500
+  scooplano_blink:
+    - duration: 0.5
+      lights:
+        l_led_208: ff4500
+    - duration: 0.5
+      lights:
+        l_led_208: off
+
+  alllano_blink:
+    - duration: 0.25
+      lights:
+        l_led_157: off
+        l_led_160: off
+        l_led_163: off
+        l_led_166: off
+        l_led_169: off
+    - duration: 0.25
+      lights:
+        l_led_157: ff4500
+        l_led_160: ff4500
+        l_led_163: ff4500
+        l_led_166: ff4500
+        l_led_169: ff4500
+    - duration: 0.25
+      lights:
+        l_led_157: off
+        l_led_160: off
+        l_led_163: off
+        l_led_166: off
+        l_led_169: off
+    - duration: 0.25
+      lights:
+        l_led_157: ff4500
+        l_led_160: ff4500
+        l_led_163: ff4500
+        l_led_166: ff4500
+        l_led_169: ff4500

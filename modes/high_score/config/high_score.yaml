@@ -1,0 +1,59 @@
+#config_version=6
+
+#high_score
+
+high_score:
+  _overwrite: true
+  enter_initials_timeout: 60
+  award_slide_display_time: 6s
+  # define your high score categories and the awards
+  categories:
+    score:
+      - TIKI TAPU CHAMPION
+      - TIKI SCORE 1
+      - TIKI SCORE 2
+      - TIKI SCORE 3
+
+  # set the defaults
+  defaults:
+    score:
+      - MAN: 3000000
+      - BER: 2000000
+      - PIG: 1000000
+      - GUY: 500
+
+#---------------------------------------------------------------------------------------------
+
+event_player:
+  #s_flipper_right_active:
+  s_coin_right_active:
+    text_input:
+      action: right
+  s_flipper_left_active:
+    text_input:
+      action: left
+  s_tikitime_active:
+    text_input:
+      action: select
+
+#---------------------------------------------------------------------------------------------
+
+slide_player:
+  high_score_enter_initials: 
+    high_score:
+      action: play
+    high_score_award:
+      action: remove
+  high_score_award_display:
+    high_score:
+      action: remove
+    high_score_award:
+      action: play
+
+#---------------------------------------------------------------------------------------------
+
+sound_player:
+  mode_high_score_started:
+    enter_your_name:
+      action: play
+      volume: 0.75  

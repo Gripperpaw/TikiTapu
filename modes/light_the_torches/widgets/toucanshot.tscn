@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://cyfngaqpp6fn6"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_bngrm"]
+[ext_resource type="Texture2D" uid="uid://cuvhqtql76eet" path="res://modes/images/torchtemplate.png" id="2_iae2v"]
+[ext_resource type="Texture2D" uid="uid://c2yp71h3wckco" path="res://modes/images/arrows - hit shot/toucanrollovertext.png" id="3_6s5id"]
+[ext_resource type="Texture2D" uid="uid://ds2odsqvabyvx" path="res://modes/images/arrows - hit shot/toucanrollover.png" id="4_gequt"]
+
+[sub_resource type="Animation" id="Animation_parym"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(216, 672)]
+}
+
+[sub_resource type="Animation" id="Animation_ds453"]
+resource_name = "marker"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(216, 672), Vector2(216, 656)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wnv7i"]
+_data = {
+"RESET": SubResource("Animation_parym"),
+"marker": SubResource("Animation_ds453")
+}
+
+[node name="MPFWidget" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1927.0
+offset_bottom = 1080.0
+script = ExtResource("1_bngrm")
+
+[node name="template" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1.52588e-05, -1)
+scale = Vector2(1.42433, 1.41076)
+texture = ExtResource("2_iae2v")
+centered = false
+
+[node name="text" type="Sprite2D" parent="."]
+position = Vector2(256, 640)
+texture = ExtResource("3_6s5id")
+
+[node name="marker" type="Sprite2D" parent="."]
+position = Vector2(216, 672)
+texture = ExtResource("4_gequt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="marker"]
+libraries = {
+"": SubResource("AnimationLibrary_wnv7i")
+}
+autoplay = "marker"

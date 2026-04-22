@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbhagffn4xh5"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_ug7rn"]
+[ext_resource type="Texture2D" uid="uid://bo4t73y8dlji5" path="res://images/kakamora_coconuts/35-01.png" id="2_wcxfg"]
+[ext_resource type="Texture2D" uid="uid://bmnbo7qs5amxu" path="res://images/kakamora_coconuts/35-02.png" id="3_0ecbh"]
+[ext_resource type="Texture2D" uid="uid://dnecgmvt31bw3" path="res://images/kakamora_coconuts/35-03.png" id="4_e8q3h"]
+[ext_resource type="Texture2D" uid="uid://d3e1qh1tw3tb7" path="res://images/kakamora_coconuts/35-04.png" id="5_3vfhp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjpsg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wcxfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0ecbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e8q3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3vfhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e8q3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0ecbh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="Kc35000" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ug7rn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+z_index = 4
+sprite_frames = SubResource("SpriteFrames_bjpsg")
+autoplay = "default"
+frame_progress = 0.770222
+centered = false

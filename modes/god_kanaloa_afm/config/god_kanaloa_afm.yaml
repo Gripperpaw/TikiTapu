@@ -1,0 +1,207 @@
+#config_version=6
+
+#god_kanaloa_afm
+
+mode:
+  start_events: ball_starting
+  #stop_events: ball_ending
+  priority: 650
+
+#---------------------------------------------------------------------------------------------
+
+counters:
+  godkanaloa_counter:
+    starting_count: 0
+    direction: up
+    count_complete_value: 4                 # Complete on the 4th hit
+    count_events: s_loop_top_active
+    persist_state: true
+    reset_on_complete: false
+    disable_on_complete: true                # Stop counting after 4
+    events_when_hit: godkanaloa_hit               # Posted after every hit
+    events_when_complete: godkanaloa_complete     # Posted only on 4th hit
+    #reset_events: reset_godkanaloa   
+    enable_events: mode_god_kanaloa_afm_starting
+
+#---------------------------------------------------------------------------------------------
+
+timers:
+  kanaloa_timer:
+    start_value: 15
+    end_value: 0
+    direction: down
+    tick_interval: 1s
+    control_events:
+      - event: start_kanaloa
+        action: start
+      - event: collect_kanaloa
+        action: stop
+
+#---------------------------------------------------------------------------------------------
+
+event_player:
+  # Start hurry-up on 4th hit (counter complete)
+  godkanaloa_complete:
+    - start_kanaloa
+
+  # Jackpot when scoop is hit while timer is running
+  s_scoop_active{device.timers.kanaloa_timer.running}:
+    - collect_kanaloa
+
+#---------------------------------------------------------------------------------------------
+
+variable_player:
+  mode_god_kanaloa_afm_starting:
+    kanaloa_started:
+      int: 0
+      action: set
+  start_kanaloa:
+    kanaloa_started:
+      int: 1
+      action: set
+  collect_kanaloa:
+    score:
+      int: 50000 * current_player.pf_multiplier 
+      action: add
+
+#---------------------------------------------------------------------------------------------
+
+light_player:
+  mode_god_kanaloa_afm_starting:
+    l_led_109: off
+    l_led_112: off
+    l_led_115: off
+    l_led_118: off
+    l_led_121: off
+
+  godkanaloa_hit{device.counters.godkanaloa_counter.value==1}:   #  8b4513   saddlebrown
+    l_led_109: 8b4513
+  godkanaloa_hit{device.counters.godkanaloa_counter.value==2}:
+    l_led_112: 8b4513
+  godkanaloa_hit{device.counters.godkanaloa_counter.value==3}:
+    l_led_115: 8b4513
+
+  start_kanaloa:
+    l_led_118: 8b4513
+    l_led_121: 8b4513
+
+  # AI Gave me this code #
+  ## ──────────────────────────────
+  ## Restore God Kanaloa lights when mode starts on a new ball
+  ## ──────────────────────────────
+
+  # 1st hit light – stays on forever once earned
+  mode_god_kanaloa_afm_started{device.counters.godkanaloa_counter.value >= 1}:
+    l_led_109: 8b4513
+
+  mode_god_kanaloa_afm_started{device.counters.godkanaloa_counter.value < 1}:
+    l_led_109: off
+
+  # 2nd hit light
+  mode_god_kanaloa_afm_started{device.counters.godkanaloa_counter.value >= 2}:
+    l_led_112: 8b4513
+
+  mode_god_kanaloa_afm_started{device.counters.godkanaloa_counter.value < 2}:
+    l_led_112: off
+
+  # 3rd hit light
+  mode_god_kanaloa_afm_started{device.counters.godkanaloa_counter.value >= 3}:
+    l_led_115: 8b4513
+
+  mode_god_kanaloa_afm_started{device.counters.godkanaloa_counter.value < 3}:
+    l_led_115: off
+
+  # Scoop arrows solid pink when hurry-up is active or already collected this ball
+  mode_god_kanaloa_afm_started{current_player.kanaloa_started == 1 or device.timers.kanaloa_timer.running}:
+    l_led_118: 8b4513
+    l_led_121: 8b4513
+
+  # Scoop arrows off when we haven't reached the hurry-up yet
+  mode_god_kanaloa_afm_started{current_player.kanaloa_started == 0 and not device.timers.kanaloa_timer.running}:
+    l_led_118: off
+    l_led_121: off
+
+#---------------------------------------------------------------------------------------------
+
+show_player:
+  # Start blinking arrowkanaloa after 3rd hit
+  godkanaloa_hit{device.counters.godkanaloa_counter.value==3}:
+    arrowkanaloa_blink:
+      loops: -1
+
+  # Stop blinking (solid) when hurry-up starts
+  start_kanaloa:
+    arrowkanaloa_blink: stop
+    scoopkanaloa_blink:
+      loops: 14
+  # Flash allkanaloa lights on jackpot
+  collect_kanaloa:
+    allkanaloa_blink:
+      loops: 0
+    scoopkanaloa_blink: stop
+    
+    kanaloa_award:
+      speed: 50
+      loops: 0
+
+  # AI Gave me this code #
+  # ← keep everything you already have in show_player →
+
+  # NEW: Restore blinking state when mode starts on a new ball
+  mode_god_kanaloa_afm_started{device.counters.godkanaloa_counter.value == 3 and current_player.kanaloa_started == 0}:
+    arrowkanaloa_blink:
+      loops: -1
+
+  # Always stop the scoop blink on mode start (no condition needed — it's safe to always run)
+  mode_god_kanaloa_afm_started:
+    scoopkanaloa_blink: stop
+
+#---------------------------------------------------------------------------------------------
+
+shows:
+  arrowkanaloa_blink:
+    - duration: 0.5
+      lights:
+        l_led_118: 8b4513
+        l_led_121: off
+    - duration: 0.5
+      lights:
+        l_led_118: off
+        l_led_121: 8b4513
+  scoopkanaloa_blink:
+    - duration: 0.5
+      lights:
+        l_led_208: 8b4513
+    - duration: 0.5
+      lights:
+        l_led_208: off
+
+  allkanaloa_blink:
+    - duration: 0.25
+      lights:
+        l_led_109: off
+        l_led_112: off
+        l_led_115: off
+        l_led_118: off
+        l_led_121: off
+    - duration: 0.25
+      lights:
+        l_led_109: 8b4513
+        l_led_112: 8b4513
+        l_led_115: 8b4513
+        l_led_118: 8b4513
+        l_led_121: 8b4513
+    - duration: 0.25
+      lights:
+        l_led_109: off
+        l_led_112: off
+        l_led_115: off
+        l_led_118: off
+        l_led_121: off
+    - duration: 0.25
+      lights:
+        l_led_109: 8b4513
+        l_led_112: 8b4513
+        l_led_115: 8b4513
+        l_led_118: 8b4513
+        l_led_121: 8b4513

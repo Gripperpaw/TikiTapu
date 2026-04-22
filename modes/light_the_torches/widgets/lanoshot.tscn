@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://dlqfqyy2c5mr5"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_28jwb"]
+[ext_resource type="Texture2D" uid="uid://cuvhqtql76eet" path="res://modes/images/torchtemplate.png" id="2_8whe2"]
+[ext_resource type="Texture2D" uid="uid://j6638t8mjmkj" path="res://modes/images/arrows - hit shot/lanoramptext.png" id="3_0ue8x"]
+[ext_resource type="Texture2D" uid="uid://c0cd1rdlxsf32" path="res://modes/images/arrows - hit shot/lanoramp.png" id="4_ogbf2"]
+
+[sub_resource type="Animation" id="Animation_g3xf2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1100, 431)]
+}
+
+[sub_resource type="Animation" id="Animation_c07kn"]
+resource_name = "marker"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1100, 431), Vector2(1104, 409)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t5qdy"]
+_data = {
+"RESET": SubResource("Animation_g3xf2"),
+"marker": SubResource("Animation_c07kn")
+}
+
+[node name="MPFWidget" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1927.0
+offset_bottom = 1080.0
+script = ExtResource("1_28jwb")
+
+[node name="template" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.42433, 1.41076)
+texture = ExtResource("2_8whe2")
+centered = false
+
+[node name="text" type="Sprite2D" parent="."]
+position = Vector2(1045, 411)
+texture = ExtResource("3_0ue8x")
+
+[node name="marker" type="Sprite2D" parent="."]
+position = Vector2(1100, 431)
+texture = ExtResource("4_ogbf2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="marker"]
+libraries = {
+"": SubResource("AnimationLibrary_t5qdy")
+}
+autoplay = "marker"
+speed_scale = 0.7

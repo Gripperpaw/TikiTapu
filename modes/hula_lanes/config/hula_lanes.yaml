@@ -1,0 +1,91 @@
+#config_version=6
+
+#hula_lanes
+
+mode:
+  start_events: mode_base_started
+  stop_events: machine_reset_phase_3, game_ended
+  events_when_started: start_base_music
+  priority: 250
+
+#---------------------------------------------------------------------------------------------
+
+shots:
+  hula_lane_h:
+    switch: s_outer_left
+    profile: hula_lane_profile
+    show_tokens:
+      led: l_led_013
+      color: blue
+  hula_lane_u:
+    switch: s_inner_left
+    profile: hula_lane_profile
+    show_tokens:
+      led: l_led_016
+      color: blue
+  hula_lane_l:
+    switch: s_inner_right
+    profile: hula_lane_profile
+    show_tokens:
+      led: l_led_019
+      color: blue
+  hula_lane_a:
+    switch:  s_outer_right
+    profile: hula_lane_profile
+    show_tokens:
+      led: l_led_022
+      color: blue
+
+#---------------------------------------------------------------------------------------------
+
+shot_groups:
+  hula_lane_group:
+    shots: hula_lane_h, hula_lane_u, hula_lane_l, hula_lane_a
+    reset_events: big_points, small_points, ball_ending, multiball_luau_reward_mb_ended, nothing_pork
+    rotate_left_events: s_flipper_left_active
+    rotate_right_events: s_flipper_right_active
+
+#---------------------------------------------------------------------------------------------
+
+shot_profiles:
+  hula_lane_profile:
+    states:
+      - name: unlit
+        show: off
+      - name: lit
+        show: led_color
+
+#---------------------------------------------------------------------------------------------
+
+widget_player:
+  hula_lane_group_lit_complete:
+    hula_lanes:
+      slide: base
+      expire: 5s
+    hula_on_off:
+      slide: base
+  ball_hold_luau_scoop_full:
+    hula_on_off:
+      action: remove
+
+#---------------------------------------------------------------------------------------------
+
+sound_player:
+  hula_lane_group_lit_complete:
+    hula_lanes:
+
+#---------------------------------------------------------------------------------------------
+
+shows:
+  hula_spin_ccw:
+    - duration: 5s
+      events: spin_hula_ccw    # spin clockwise for 5 seconds
+    - duration: 0.1s
+      events: stop_hula       # stop the servo
+
+#---------------------------------------------------------------------------------------------
+
+show_player:
+  hula_lane_group_lit_complete:
+    hula_spin_ccw:
+      loops: 0                # run once

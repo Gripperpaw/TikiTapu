@@ -1,0 +1,149 @@
+#config_version=6
+
+#kakamora_coconuts
+
+mode:
+  start_events: ball_started
+  priority: 900
+
+#-----------------------------------------------------------------------------------------------
+
+counters:
+  shell_counter:
+    count_events: s_drop_l1_active, s_drop_l2_active, s_drop_l3_active, s_drop_l4_active, s_drop_r1_active, s_drop_r2_active, s_drop_r3_active, s_drop_r4_active
+    starting_count: 0
+    count_complete_value: 14
+    direction: up
+    events_when_complete: shell_shocked                #to call events
+    reset_events: game_ending       
+    persist_state: true                                #save across ball drains
+
+  coconut_counter:
+    enable_events: shells_cracked 
+    count_events: s_drop_l1_active, s_drop_l2_active, s_drop_l3_active, s_drop_l4_active, s_drop_r1_active, s_drop_r2_active, s_drop_r3_active, s_drop_r4_active
+    starting_count: 0
+    count_complete_value: 14
+    direction: up
+    events_when_complete: coconut_oil 
+    reset_events: game_ending   
+    persist_state: true                                                      
+
+  kakamora_counter:
+    enable_events: coconuts_milked
+    count_events: s_drop_l1_active, s_drop_l2_active, s_drop_l3_active, s_drop_l4_active, s_drop_r1_active, s_drop_r2_active, s_drop_r3_active, s_drop_r4_active
+    starting_count: 0
+    count_complete_value: 14
+    direction: up
+    events_when_complete: kakamora_dropped
+    reset_events: game_ending   
+    persist_state: true                              
+
+#-----------------------------------------------------------------------------------------------
+
+accruals:
+  shell_accruals:
+    events: shell_shocked
+    events_when_complete: shells_cracked               #you can name this what ever you want
+  
+  coconut_accruals:
+    events: coconut_oil
+    events_when_complete: coconuts_milked
+
+  kakamora_accruals:
+    events: kakamora_dropped
+    events_when_complete: kakamora_dudes
+
+  all_coconuts_accruals:
+    events:
+      - shells_cracked                                 #completed accrual events all together make a new event
+      - coconuts_milked
+      - kakamora_dudes
+    events_when_complete: kakamora_krusher
+
+#-----------------------------------------------------------------------------------------------
+
+variable_player:
+  shells_cracked:
+    score: 35000 * current_player.pf_multiplier        #base score of 35000 then add current pf multiplier if one
+  coconuts_milked:
+    score: 55000 * current_player.pf_multiplier
+
+  kakamora_krusher:                                    #complete all counters
+    score: 100000 * current_player.pf_multiplier
+
+#-----------------------------------------------------------------------------------------------
+
+widget_player:
+  shells_cracked:
+    coconut_drop:
+      slide: base
+      expire: 2s
+    kc_35000:
+      slide: base
+      expire: 6s
+    kc_hula_l:
+      slide: base
+      expire: 6s
+  coconuts_milked:
+    coconut_drop:
+      slide: base
+      expire: 2s   
+    kc_55000:
+      slide: base
+      expire: 6s
+    kc_hula_r:
+      slide: base
+      expire: 6s
+  kakamora_krusher:
+    coconut_drop:
+      slide: base
+      expire: 2s
+    kc_100000:
+      slide: base
+      expire: 6s
+    kc_hula:
+      slide: base
+      expire: 6s
+
+#-----------------------------------------------------------------------------------------------
+ 
+sound_player:
+  shell_shocked:
+    using_coconuts_empty:
+      bus: effects
+      ducking:
+        bus: music
+        attack: 100ms
+        attenuation:  .8
+        release_point: 100ms
+        release: 100ms
+  coconut_oil:
+    bunch_of_coconuts:
+      bus: effects
+      ducking:
+        bus: music
+        attack: 100ms
+        attenuation:  .8
+        release_point: 100ms
+        release: 100ms
+  kakamora_krusher:
+    my_coconuts:
+      bus: effects
+      ducking:
+        bus: music
+        attack: 100ms
+        attenuation:  .8
+        release_point: 100ms
+        release: 100ms
+
+#-----------------------------------------------------------------------------------------------
+
+show_player:
+  shell_shocked:
+    kmc_flash:                                           #starts light show when event triggers
+      speed: 10
+      loops: 3                                
+  coconut_oil:
+    kmc_flash:                                
+      speed: 10
+      loops: 3       

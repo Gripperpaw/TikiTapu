@@ -1,0 +1,70 @@
+[gd_scene load_steps=15 format=3 uid="uid://cxtqpmqcije7q"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_qb6hf"]
+[ext_resource type="Texture2D" uid="uid://dfd1nstmtmt8u" path="res://modes/images/blank.png" id="2_825ao"]
+[ext_resource type="Texture2D" uid="uid://dbawgjc8vs6tb" path="res://modes/images/kahuna/mb1.png" id="3_d630r"]
+[ext_resource type="Script" path="res://modes/mb_volcano/widgets/kahuna_jptext.gd" id="3_yps7n"]
+[ext_resource type="Texture2D" uid="uid://cr30cg6r2nwd5" path="res://modes/images/kahuna/mb2.png" id="4_rk31t"]
+[ext_resource type="Texture2D" uid="uid://bhckrvacehyht" path="res://modes/images/kahuna/mb3.png" id="5_ltbgf"]
+[ext_resource type="Texture2D" uid="uid://bblif22mib7t5" path="res://modes/images/kahuna/mb4.png" id="6_um73m"]
+[ext_resource type="Texture2D" uid="uid://bge4jg0nya3k3" path="res://modes/images/kahuna/mb5.png" id="7_7g1pn"]
+[ext_resource type="Texture2D" uid="uid://chyf2an77dsvp" path="res://modes/images/kahuna/mb6.png" id="8_md4fx"]
+[ext_resource type="Texture2D" uid="uid://go6cwhbm1bq7" path="res://modes/images/kahuna/mb7.png" id="9_4cvd8"]
+[ext_resource type="Texture2D" uid="uid://dt3x5ncsmlaws" path="res://modes/images/kahuna/mb8.png" id="10_h4pbx"]
+[ext_resource type="Texture2D" uid="uid://d2y70xw2ppqfr" path="res://modes/images/kahuna/mb9.png" id="11_pngxg"]
+[ext_resource type="Texture2D" uid="uid://dtkma8xar4und" path="res://modes/images/kahuna/mb10.png" id="12_bubiv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h4jri"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_d630r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rk31t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ltbgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_um73m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7g1pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_md4fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4cvd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h4pbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pngxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bubiv")
+}],
+"loop": true,
+"name": &"jpshoot",
+"speed": 5.0
+}]
+
+[node name="shoot_jp" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qb6hf")
+
+[node name="kahuna_jptext" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("2_825ao")
+centered = false
+script = ExtResource("3_yps7n")
+
+[node name="AnimateJPShoot" type="AnimatedSprite2D" parent="kahuna_jptext"]
+sprite_frames = SubResource("SpriteFrames_h4jri")
+animation = &"jpshoot"
+frame_progress = 0.346816
+centered = false

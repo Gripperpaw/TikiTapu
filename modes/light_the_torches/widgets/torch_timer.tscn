@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://l37y1mrv5nv3"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_dgem0"]
+[ext_resource type="Texture2D" uid="uid://b4ef8o1g2v0p" path="res://modes/images/lighttotch.png" id="2_usdm8"]
+[ext_resource type="Texture2D" uid="uid://buhgjonwb5ac7" path="res://images/timer_skulls.png" id="3_tt05v"]
+[ext_resource type="Theme" uid="uid://ckj25p27k6t5u" path="res://fonts/200pixlels.tres" id="4_knonv"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="5_xjale"]
+
+[node name="torch_timer" type="Control"]
+z_index = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dgem0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_usdm8")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-2, 1)
+texture = ExtResource("3_tt05v")
+centered = false
+
+[node name="MPFVariable" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0.690196)
+z_index = 1
+layout_mode = 0
+offset_left = 1675.0
+offset_top = 680.0
+offset_right = 1813.0
+offset_bottom = 824.0
+theme = ExtResource("4_knonv")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.945098, 0.478431, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 101
+text = "999"
+script = ExtResource("5_xjale")
+variable_name = "light_the_torches_torch_timer_tick"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+self_modulate = Color(1, 1, 1, 0.690196)
+clip_contents = false
+layout_mode = 0
+offset_left = 1486.0
+offset_top = 663.0
+offset_right = 1602.0
+offset_bottom = 742.0
+theme = ExtResource("4_knonv")
+theme_override_colors/font_outline_color = Color(0.945098, 0.478431, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 66
+text = "TIME
+"
+autowrap_mode = 0
+tab_size = 3
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+self_modulate = Color(1, 1, 1, 0.690196)
+clip_contents = false
+layout_mode = 0
+offset_left = 1421.0
+offset_top = 727.0
+offset_right = 1668.0
+offset_bottom = 806.0
+theme = ExtResource("4_knonv")
+theme_override_colors/font_outline_color = Color(0.945098, 0.478431, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 66
+text = "REMAINING
+"
+autowrap_mode = 0
+tab_size = 3

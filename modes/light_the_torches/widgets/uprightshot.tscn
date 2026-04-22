@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckvtnhcpbwrpk"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_tnmwj"]
+[ext_resource type="Texture2D" uid="uid://cuvhqtql76eet" path="res://modes/images/torchtemplate.png" id="2_16cde"]
+[ext_resource type="Texture2D" uid="uid://b4swwk8313m1b" path="res://modes/images/arrows - hit shot/bop_o_targettext.png" id="3_ikxhu"]
+[ext_resource type="Texture2D" uid="uid://b2a8h8vbbp1rp" path="res://modes/images/arrows - hit shot/boprighttarget.png" id="4_jbcig"]
+
+[sub_resource type="Animation" id="Animation_sg8u8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1608, 360)]
+}
+
+[sub_resource type="Animation" id="Animation_7fbq8"]
+resource_name = "marker"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1608, 360), Vector2(1616, 344)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hecpl"]
+_data = {
+"RESET": SubResource("Animation_sg8u8"),
+"marker": SubResource("Animation_7fbq8")
+}
+
+[node name="MPFWidget" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1927.0
+offset_bottom = 1080.0
+script = ExtResource("1_tnmwj")
+
+[node name="template" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1.52588e-05, -1)
+scale = Vector2(1.42433, 1.41076)
+texture = ExtResource("2_16cde")
+centered = false
+
+[node name="text" type="Sprite2D" parent="."]
+position = Vector2(1528, 312)
+texture = ExtResource("3_ikxhu")
+
+[node name="marker" type="Sprite2D" parent="."]
+position = Vector2(1608, 360)
+texture = ExtResource("4_jbcig")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="marker"]
+libraries = {
+"": SubResource("AnimationLibrary_hecpl")
+}
+autoplay = "marker"

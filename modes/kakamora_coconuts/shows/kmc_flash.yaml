@@ -1,0 +1,386 @@
+#show_version=6
+- time: 0
+#No change this frame - take another step
+#  lights:
+- time: +80ms
+    
+- time: +80ms
+  lights:
+    l_led_055: '010702'
+    l_led_058: '010B03'
+    l_led_061: '000100'
+    l_led_064: '010501'
+    l_led_178: '010A02'
+    l_led_181: '021405'
+    l_led_184: '031706'
+    l_led_187: '021205'
+    
+- time: +80ms
+  lights:
+    l_led_055: '0B3C0F'
+    l_led_058: '0E4C14'
+    l_led_061: '07270A'
+    l_led_064: '0A360E'
+    l_led_178: '0A3A0F'
+    l_led_181: '0E4D13'
+    l_led_184: '0F5214'
+    l_led_187: '0D4812'
+    
+- time: +80ms
+  lights:
+    l_led_055: '248E23'
+    l_led_058: '289E27'
+    l_led_061: '1E791E'
+    l_led_064: '228821'
+    l_led_178: '196719'
+    l_led_181: '1D781D'
+    l_led_184: '1E7C1E'
+    l_led_187: '1C721B'
+    
+- time: +80ms
+  lights:
+    l_led_055: '43D332'
+    l_led_058: '44D532'
+    l_led_061: '3EC22E'
+    l_led_064: '42CE30'
+    l_led_178: '2E9522'
+    l_led_181: '33A425'
+    l_led_184: '34A726'
+    l_led_187: '319D24'
+    
+- time: +80ms
+  lights:
+    l_led_055: '52D42E'
+    l_led_058: '53D52F'
+    l_led_061: '51D22E'
+    l_led_064: '52D32E'
+    l_led_178: '49BE29'
+    l_led_181: '4AC12A'
+    l_led_184: '4BC22A'
+    l_led_187: '4ABF29'
+    
+- time: +80ms
+  lights:
+    l_led_055: '63D52C'
+    l_led_058: '62D42C'
+    l_led_061: '62D32C'
+    l_led_064: '63D42C'
+    l_led_178: '5AC227'
+    l_led_181: '5BC428'
+    l_led_184: '5BC428'
+    l_led_187: '5AC227'
+    
+- time: +80ms
+  lights:
+    l_led_055: '6DC827'
+    l_led_058: '6DC726'
+    l_led_061: '6ECA27'
+    l_led_064: '6EC927'
+    l_led_178: '6DC826'
+    l_led_181: '6ECA26'
+    l_led_184: '6ECA26'
+    l_led_187: '6CC726'
+    
+- time: +80ms
+  lights:
+    l_led_055: '77BD22'
+    l_led_058: '72B520'
+    l_led_061: '78BF22'
+    l_led_064: '77BE22'
+    l_led_178: '7DC723'
+    l_led_181: '7BC522'
+    l_led_184: '7BC522'
+    l_led_187: '7DC723'
+    
+- time: +80ms
+  lights:
+    l_led_055: '587A14'
+    l_led_058: '4E6C12'
+    l_led_061: '658D17'
+    l_led_064: '5C7F15'
+    l_led_178: '83B71D'
+    l_led_181: '82B51D'
+    l_led_184: '82B51D'
+    l_led_187: '84B81D'
+    
+- time: +80ms
+  lights:
+    l_led_055: '2A3308'
+    l_led_058: '202706'
+    l_led_061: '37440A'
+    l_led_064: '2E3808'
+    l_led_178: '8AAA18'
+    l_led_181: '89A818'
+    l_led_184: '89A818'
+    l_led_187: '8BAB18'
+    
+- time: +80ms
+  lights:
+    l_led_055: '060601'
+    l_led_058: '030300'
+    l_led_061: '0A0B01'
+    l_led_064: '070801'
+    l_led_178: '828E12'
+    l_led_181: '7E8A11'
+    l_led_184: '808B11'
+    l_led_187: '879312'
+    
+- time: +80ms
+  lights:
+    l_led_055: '000000'
+    l_led_058: '000000'
+    l_led_061: '000000'
+    l_led_064: '000000'
+    l_led_178: '6B690B'
+    l_led_181: '65630B'
+    l_led_184: '69660B'
+    l_led_187: '76730C'
+    
+- time: +80ms
+  lights:
+    l_led_178: '4D4406'
+    l_led_181: '483F05'
+    l_led_184: '4B4206'
+    l_led_187: '5B5007'
+    
+- time: +80ms
+  lights:
+    l_led_178: '1B1601'
+    l_led_181: '181301'
+    l_led_184: '1C1601'
+    l_led_187: '2D2402'
+    
+- time: +80ms
+  lights:
+    l_led_178: '000000'
+    l_led_181: '000000'
+    l_led_184: '000000'
+    l_led_187: '070500'
+    
+- time: +80ms
+  lights:
+    l_led_187: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: +80ms
+    
+#No change this frame - take another step
+#  lights:
+- time: +80ms
+    
+- time: +80ms
+  lights:
+    l_led_061: '020200'
+    
+- time: +80ms
+  lights:
+    l_led_055: '1A1903'
+    l_led_058: '0E0E01'
+    l_led_061: '2A2804'
+    l_led_064: '1F1E03'
+    
+- time: +80ms
+  lights:
+    l_led_055: '3C4108'
+    l_led_058: '313507'
+    l_led_061: '4A510A'
+    l_led_064: '404509'
+    
+- time: +80ms
+  lights:
+    l_led_055: '6F8813'
+    l_led_058: '647A11'
+    l_led_061: '7C9716'
+    l_led_064: '738C14'
+    
+- time: +80ms
+  lights:
+    l_led_055: '85B81D'
+    l_led_058: '84B61D'
+    l_led_061: '86B91D'
+    l_led_064: '85B81D'
+    
+- time: +80ms
+  lights:
+    l_led_055: '7BC222'
+    l_led_058: '7AC122'
+    l_led_061: '7CC422'
+    l_led_064: '7BC322'
+    
+- time: +80ms
+  lights:
+    l_led_055: '71CE28'
+    l_led_058: '70CD28'
+    l_led_061: '70CE28'
+    l_led_064: '71CF28'
+    
+- time: +80ms
+  lights:
+    l_led_055: '61D12B'
+    l_led_058: '61D22B'
+    l_led_061: '60CF2B'
+    l_led_064: '61D02B'
+    
+- time: +80ms
+  lights:
+    l_led_055: '51D02E'
+    l_led_058: '51D12E'
+    l_led_061: '50CF2D'
+    l_led_064: '51D02E'
+    
+- time: +80ms
+  lights:
+    l_led_055: '36A927'
+    l_led_058: '3AB52A'
+    l_led_061: '2F9422'
+    l_led_064: '34A326'
+    
+- time: +80ms
+  lights:
+    l_led_055: '1E791E'
+    l_led_058: '228822'
+    l_led_061: '196419'
+    l_led_064: '1D731C'
+    
+- time: +80ms
+  lights:
+    l_led_055: '07270A'
+    l_led_058: '0A370E'
+    l_led_061: '031104'
+    l_led_064: '062008'
+    
+- time: +80ms
+  lights:
+    l_led_055: '010702'
+    l_led_058: '010B03'
+    l_led_061: '000100'
+    l_led_064: '010501'
+    
+- time: +80ms
+  lights:
+    l_led_055: '000000'
+    l_led_058: '000000'
+    l_led_061: '000000'
+    l_led_064: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: +80ms
+    
+- time: +80ms
+  lights:
+    l_led_178: '372702'
+    l_led_181: '332402'
+    l_led_184: '392902'
+    l_led_187: '4C3602'
+    
+- time: +80ms
+  lights:
+    l_led_178: '5D4905'
+    l_led_181: '584505'
+    l_led_184: '5E4A05'
+    l_led_187: '6F5706'
+    
+- time: +80ms
+  lights:
+    l_led_178: '7D6D0A'
+    l_led_181: '786909'
+    l_led_184: '7C6C09'
+    l_led_187: '8C7A0B'
+    
+- time: +80ms
+  lights:
+    l_led_178: '928E0F'
+    l_led_181: '8F8B0F'
+    l_led_184: '918D0F'
+    l_led_187: '999510'
+    
+- time: +80ms
+  lights:
+    l_led_178: '98A615'
+    l_led_181: '97A415'
+    l_led_184: '97A515'
+    l_led_187: '9AA815'
+    
+- time: +80ms
+  lights:
+    l_led_178: '90B019'
+    l_led_181: '8FAE19'
+    l_led_184: '8FAE19'
+    l_led_187: '91B119'
+    
+- time: +80ms
+  lights:
+    l_led_178: '8ABF1F'
+    l_led_181: '89BE1E'
+    l_led_184: '89BE1E'
+    l_led_187: '8BC01F'
+    
+- time: +80ms
+  lights:
+    l_led_178: '7AC222'
+    l_led_181: '7CC422'
+    l_led_184: '7CC422'
+    l_led_187: '7AC222'
+    
+- time: +80ms
+  lights:
+    l_led_178: '68C024'
+    l_led_181: '69C225'
+    l_led_184: '69C225'
+    l_led_187: '68C024'
+    
+- time: +80ms
+  lights:
+    l_led_178: '57BC26'
+    l_led_181: '58BF27'
+    l_led_184: '58BF27'
+    l_led_187: '57BD26'
+    
+- time: +80ms
+  lights:
+    l_led_178: '3EA123'
+    l_led_181: '42AB25'
+    l_led_184: '42AC25'
+    l_led_187: '3FA423'
+    
+- time: +80ms
+  lights:
+    l_led_178: '2A851E'
+    l_led_181: '2F9522'
+    l_led_184: '309823'
+    l_led_187: '2C8D20'
+    
+- time: +80ms
+  lights:
+    l_led_178: '124B12'
+    l_led_181: '165B16'
+    l_led_184: '175F17'
+    l_led_187: '155514'
+    
+- time: +80ms
+  lights:
+    l_led_178: '051C07'
+    l_led_181: '082E0C'
+    l_led_184: '09330D'
+    l_led_187: '082A0B'
+    
+- time: +80ms
+  lights:
+    l_led_178: '000100'
+    l_led_181: '010C03'
+    l_led_184: '020F04'
+    l_led_187: '010A03'
+    
+- time: +80ms
+  lights:
+    l_led_178: '000000'
+    l_led_181: '000000'
+    l_led_184: '000000'
+    l_led_187: '000000'
+    
+#No change this frame - take another step
+#  lights:
+- time: +80ms
+    

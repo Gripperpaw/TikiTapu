@@ -1,0 +1,109 @@
+#config_version=6
+
+#mb_sneakitiki
+
+mode:
+  start_events: multiball_sneaki_tiki_mb_started
+  stop_events: game_ended, ball_will_end, ball_ended, player_turn_ended, multiball_sneaki_tiki_mb_ended  
+  events_when_stopped: play_base_music_again, reset_multiball_engaged, reset_sneaki_mb_active     #jim added this for MB conditional
+  events_when_started: set_multiball_engaged, set_sneaki_mb_active      #jim added this for MB conditional  ***** linked to base line 184 *****
+      
+#----------------------------------------------------------------------------------------------
+
+multiballs:
+  sneaki_tiki_mb:
+    ball_count: 2
+    ball_count_type: total
+    shoot_again: 20s
+    ball_locks: bd_kicker
+    start_events: mode_mb_sneakitiki_started
+    reset_events: machine_reset_phase_3, ball_started
+      
+#----------------------------------------------------------------------------------------------
+
+widget_player:
+  mode_mb_sneakitiki_started:
+    mb_sneakitiki:
+      slide: base
+      expire: 10
+
+    shoot_jp:
+      action: play    
+      
+#----------------------------------------------------------------------------------------------
+
+sound_player:
+  mode_mb_sneakitiki_started:
+    sneakitikimusic:
+      bus: music
+      action: play
+      volume: 1.5
+      loops: -1   
+      
+#----------------------------------------------------------------------------------------------
+
+show_player:
+  mode_mb_sneakitiki_started:     #event calls show created in showcreator and in shows folder
+    updown_side_pink:
+      speed: 150
+      loops: 1
+
+    blink_stiki_jp:
+      action: play
+      priority: 500
+
+  ball_save_sneaki_tiki_mb_timer_start:
+    ballsave_blink:
+      speed: 25
+      loops: -1
+  multiball_sneaki_tiki_mb_shoot_again_ended:
+    ballsave_blink:
+      action: stop
+      
+#----------------------------------------------------------------------------------------------
+
+shots:
+  jackpot_stiki:
+    switch: s_side_right
+    profile: stiki_jp_success
+    enable_events: mode_mb_sneakitiki_started
+    disable_events: multiball_sneaki_tiki_mb_ended, game_ended, stop_blink_stiki_jp
+      
+#----------------------------------------------------------------------------------------------
+
+shows:
+  blink_stiki_jp:
+    - time: 0
+      lights:
+        l_led_079: ffffff   #white
+    - time: +250ms
+      lights:
+        l_led_079: 000000
+    - time: +250ms
+      lights:
+        l_led_079: d88fd8  #thistle
+      
+#----------------------------------------------------------------------------------------------
+
+shot_profiles:
+  stiki_jp_success:
+    states:
+      - name: unlit
+        show: off
+      - name: lit
+        show: blink_stiki_jp
+      
+#----------------------------------------------------------------------------------------------
+
+variable_player:
+  s_side_right_active:
+    score: 75000 * current_player.pf_multiplier     
+
+#---------------------------------------------------------------------------------------------
+
+coil_player:
+  mode_mb_sneakitiki_started:
+    c_trap_release:
+      action: pulse
+      pulse_power: .5
+  
